@@ -4,8 +4,11 @@ function App() {
       {/* Top Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-[#f9f9f9]/80 dark:bg-zinc-950/80 backdrop-blur-xl transition-all duration-300">
         <div className="flex justify-between items-center px-12 py-6 max-w-[1920px] mx-auto">
-          <div className="text-2xl font-black tracking-tighter text-[#6e0609] dark:text-[#f3f3f3] font-headline">
-            ROUTE 44
+          <div className="flex items-center gap-3">
+            <img src="/route44_logo.avif" alt="Route 44 Logo" className="h-12 w-auto" />
+            <div className="text-2xl font-black tracking-tighter text-[#6e0609] dark:text-[#f3f3f3] font-headline">
+              ROUTE 44
+            </div>
           </div>
           <div className="hidden md:flex gap-10 items-center">
             <a className="font-headline font-bold tracking-tight uppercase text-sm text-[#6e0609] dark:text-[#f3f3f3] border-b-2 border-[#6e0609] pb-1" href="#">Fleet</a>
@@ -233,7 +236,10 @@ function App() {
       <footer className="bg-[#f3f3f3] dark:bg-zinc-900 w-full border-t border-zinc-200 dark:border-zinc-800">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 max-w-[1920px] mx-auto">
           <div className="col-span-1 md:col-span-1">
-            <div className="text-lg font-bold text-[#1a1c1c] dark:text-[#f9f9f9] font-headline mb-6">ROUTE 44</div>
+            <div className="flex items-center gap-3 mb-6">
+              <img src="/route44_logo.avif" alt="Route 44 Logo" className="h-10 w-auto" />
+              <div className="text-lg font-bold text-[#1a1c1c] dark:text-[#f9f9f9] font-headline">ROUTE 44</div>
+            </div>
             <p className="text-zinc-500 text-xs leading-relaxed max-w-[200px]">
               Delivering precision across global networks with industrial integrity and technological speed.
             </p>
@@ -264,7 +270,7 @@ function App() {
           </div>
         </div>
         <div className="px-12 py-8 border-t border-zinc-200 dark:border-zinc-800 text-center opacity-80">
-          <p className="font-body text-xs tracking-wide uppercase font-medium text-zinc-400">© 2024 Route 44 Logistics. All rights reserved. Precision in Motion.</p>
+          <p className="font-body text-xs tracking-wide uppercase font-medium text-zinc-400">© {new Date().getFullYear()} Route 44 Logistics. All rights reserved. Precision in Motion.</p>
         </div>
       </footer>
     </div>
