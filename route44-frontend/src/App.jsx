@@ -3,7 +3,7 @@ function App() {
     <div className="bg-surface font-body text-on-surface antialiased">
       {/* Top Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-[#f9f9f9]/80 dark:bg-zinc-950/80 backdrop-blur-xl transition-all duration-300">
-        <div className="flex justify-between items-center px-12 py-6 max-w-[1920px] mx-auto">
+        <div className="flex justify-between items-center px-12 py-4 max-w-[1920px] mx-auto">
           <div className="flex items-center gap-3">
             <img src="/route44_logo.avif" alt="Route 44 Logo" className="h-12 w-auto" />
             <div className="text-2xl font-black tracking-tighter text-[#6e0609] dark:text-[#f3f3f3] font-headline">
