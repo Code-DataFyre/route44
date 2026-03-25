@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed-dim": "#ffb4ab",
+              "primary-fixed": "#ffdad6",
+              "surface-bright": "#f9f9f9",
+              "primary-container": "#8f211d",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed-variant": "#464747",
+              "on-secondary": "#ffffff",
+              "on-tertiary-container": "#bbbbbb",
+              "surface-variant": "#e2e2e2",
+              "secondary-container": "#c0ddfe",
+              "secondary-fixed-dim": "#adc9ea",
+              "on-error-container": "#93000a",
+              "on-background": "#1a1c1c",
+              "tertiary-fixed": "#e3e2e2",
+              "on-secondary-fixed-variant": "#2d4964",
+              "background": "#f9f9f9",
+              "inverse-on-surface": "#f1f1f1",
+              "surface-container": "#eeeeee",
+              "surface-container-highest": "#e2e2e2",
+              "primary": "#6e0609",
+              "on-primary-fixed": "#410002",
+              "tertiary-fixed-dim": "#c6c6c6",
+              "on-surface": "#1a1c1c",
+              "on-surface-variant": "#58413f",
+              "surface-container-lowest": "#ffffff",
+              "error-container": "#ffdad6",
+              "outline": "#8b716e",
+              "surface-container-high": "#e8e8e8",
+              "on-primary-fixed-variant": "#891c19",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed": "#1a1c1c",
+              "inverse-primary": "#ffb4ab",
+              "on-secondary-container": "#46617e",
+              "error": "#ba1a1a",
+              "tertiary": "#333535",
+              "on-secondary-fixed": "#001d34",
+              "surface": "#f9f9f9",
+              "tertiary-container": "#4a4b4b",
+              "surface-container-low": "#f3f3f3",
+              "secondary-fixed": "#cfe5ff",
+              "surface-dim": "#dadada",
+              "secondary": "#45617d",
+              "on-primary-container": "#ffa399",
+              "inverse-surface": "#2f3131",
+              "surface-tint": "#aa352e",
+              "outline-variant": "#dfbfbb"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-nav {
+        backdrop-filter: blur(12px);
+      }
+      .kinetic-gradient {
+        background: linear-gradient(135deg, #6e0609 0%, #8f211d 100%);
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#f9f9f9]/80 dark:bg-zinc-950/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-12 py-6 max-w-[1920px] mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#6e0609] dark:text-[#f3f3f3] font-headline uppercase">
+                ROUTE 44
+            </div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="font-['Plus_Jakarta_Sans'] font-bold tracking-tight uppercase text-sm text-zinc-500 dark:text-zinc-400 hover:text-[#6e0609] transition-colors duration-300" href="#">Fleet</a>
+<a class="font-['Plus_Jakarta_Sans'] font-bold tracking-tight uppercase text-sm text-zinc-500 dark:text-zinc-400 hover:text-[#6e0609] transition-colors duration-300" href="#">Tracking</a>
+<a class="font-['Plus_Jakarta_Sans'] font-bold tracking-tight uppercase text-sm text-zinc-500 dark:text-zinc-400 hover:text-[#6e0609] transition-colors duration-300" href="#">Services</a>
+<a class="font-['Plus_Jakarta_Sans'] font-bold tracking-tight uppercase text-sm text-zinc-500 dark:text-zinc-400 hover:text-[#6e0609] transition-colors duration-300" href="#">About Us</a>
+<a class="font-['Plus_Jakarta_Sans'] font-bold tracking-tight uppercase text-sm text-[#6e0609] dark:text-[#f3f3f3] border-b-2 border-[#6e0609] pb-1" href="#">Contact</a>
+</div>
+<button class="kinetic-gradient text-on-primary px-6 py-2 rounded-md font-headline font-bold text-sm uppercase tracking-widest scale-95 active:scale-90 transition-transform">
+                Client Portal
+            </button>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Hero Title Section -->
+<header class="px-12 max-w-[1920px] mx-auto mb-20">
+<div class="max-w-4xl">
+<span class="text-primary font-headline font-extrabold uppercase tracking-[0.2em] text-xs mb-4 block">Connect with Precision</span>
+<h1 class="text-display-lg font-headline font-black text-6xl md:text-8xl tracking-tighter leading-none mb-8">
+                    GET IN <span class="text-primary italic">MOTION.</span>
+</h1>
+<p class="text-on-surface-variant text-xl max-w-2xl leading-relaxed">
+                    Our global logistics infrastructure is active 24/7. Whether you require fleet scheduling, complex supply chain consultation, or real-time tracking support, our command center is standing by.
+                </p>
+</div>
+</header>
+<!-- Main Interaction Section -->
+<section class="px-12 max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+<!-- Contact Form Column -->
+<div class="bg-surface-container-low p-12 rounded-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">mail</span>
+</div>
+<h2 class="font-headline font-bold text-3xl mb-10 tracking-tight">Send a Message</h2>
+<form class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-on-surface-variant font-semibold">Full Name</label>
+<input class="w-full bg-surface-container-high border-none rounded-md px-4 py-4 focus:ring-1 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all" placeholder="Johnathan Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-on-surface-variant font-semibold">Email Address</label>
+<input class="w-full bg-surface-container-high border-none rounded-md px-4 py-4 focus:ring-1 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all" placeholder="j.doe@logistics.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-on-surface-variant font-semibold">Inquiry Type</label>
+<select class="w-full bg-surface-container-high border-none rounded-md px-4 py-4 focus:ring-1 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all appearance-none">
+<option>Fleet Inquiry</option>
+<option>Enterprise Partnerships</option>
+<option>Carrier Application</option>
+<option>General Support</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-on-surface-variant font-semibold">Project Details</label>
+<textarea class="w-full bg-surface-container-high border-none rounded-md px-4 py-4 focus:ring-1 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all" placeholder="Describe your logistics requirements..." rows="5"></textarea>
+</div>
+<button class="kinetic-gradient text-on-primary w-full py-5 rounded-md font-headline font-extrabold text-sm uppercase tracking-[0.2em] shadow-lg hover:brightness-110 transition-all active:scale-[0.98]" type="submit">
+                        Initialize Transmission
+                    </button>
+</form>
+</div>
+<!-- Global HQ & Map Column -->
+<div class="space-y-12">
+<div class="bg-surface-container-lowest p-10 shadow-[0_10px_40px_rgba(26,28,28,0.06)] rounded-xl">
+<h2 class="font-headline font-bold text-3xl mb-8 tracking-tight">Global Headquarters</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<div>
+<p class="font-headline font-bold text-sm uppercase tracking-wide mb-1">Physical Address</p>
+<p class="text-on-surface-variant leading-relaxed">
+                                        44 Logistics Plaza, Suite 900<br/>
+                                        Houston, TX 77002<br/>
+                                        United States
+                                    </p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">call</span>
+<div>
+<p class="font-headline font-bold text-sm uppercase tracking-wide mb-1">Direct Line</p>
+<p class="text-on-surface-variant">+1 (800) 44-ROUTE</p>
+<p class="text-on-surface-variant">+1 (713) 555-0144</p>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">mail</span>
+<div>
+<p class="font-headline font-bold text-sm uppercase tracking-wide mb-1">Electronic Mail</p>
+<p class="text-on-surface-variant">ops@route44.com</p>
+<p class="text-on-surface-variant">press@route44.com</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">schedule</span>
+<div>
+<p class="font-headline font-bold text-sm uppercase tracking-wide mb-1">Operational Hours</p>
+<p class="text-on-surface-variant">Command Center: 24/7/365</p>
+<p class="text-on-surface-variant">Admin: 08:00 — 18:00 CST</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Map Integration -->
+<div class="h-[400px] w-full rounded-xl overflow-hidden bg-surface-container-high relative group">
+<img alt="Clean minimalist digital map of Houston logistics hub" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all duration-700" data-alt="Clean minimalist digital map of Houston logistics hub" data-location="Houston" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNzLS3F7DNJTDzjIfKv6Z2PpxtzJiH_fTTxi45Qs9VOaVHbhc18yS9FcHV7rtcw4CkZGxqnYg-y7PAIa3AxAEss1Ay5uwvfPICnKra_8ngFef8nO0uabte7G3sQLanqaroiTLj5JEkV3xNXzG9z7EocefV_usvOdG2Nx0sU6ztB5wYmGPjer64IlcXp2xLAbMWUgJ6iyw0WaFcrSv-dn_zfGq49E968EJkZqEbcIfdVD2VM3qRxtLr7pN-1fnPZUlUYpSeS0jZbM1X"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-surface-container-lowest p-4 rounded-full shadow-2xl animate-pulse">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Responsive Infrastructure / Bento Grid -->
+<section class="mt-32 px-12 max-w-[1920px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div class="max-w-xl">
+<h2 class="font-headline font-black text-4xl tracking-tighter uppercase mb-4">Responsive Infrastructure</h2>
+<p class="text-on-surface-variant">Precision reliability built into every mile of our operation. Our network never sleeps.</p>
+</div>
+<div class="flex gap-4">
+<span class="px-4 py-2 bg-tertiary-fixed-dim text-on-tertiary-fixed rounded-full text-xs font-bold uppercase tracking-widest">Network Live</span>
+<span class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold uppercase tracking-widest">Uptime: 99.9%</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- 24/7 Monitoring Card -->
+<div class="md:col-span-2 bg-surface-container-low p-12 rounded-xl flex flex-col justify-between min-h-[400px]">
+<div>
+<div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-on-primary text-3xl">hub</span>
+</div>
+<h3 class="font-headline font-bold text-3xl mb-4 tracking-tight">Active Command Center</h3>
+<p class="text-on-surface-variant max-w-lg text-lg leading-relaxed">
+                            Our proprietary monitoring system provides real-time telemetry on every asset in the Route 44 fleet. We track environmental conditions, fuel efficiency, and route optimization metrics in milliseconds.
+                        </p>
+</div>
+<div class="flex gap-8 mt-12 overflow-x-auto pb-4">
+<div class="flex flex-col">
+<span class="text-3xl font-headline font-black text-primary">12ms</span>
+<span class="text-xs uppercase tracking-widest font-bold text-on-surface-variant">Telemetry Lag</span>
+</div>
+<div class="flex flex-col">
+<span class="text-3xl font-headline font-black text-primary">4.2k</span>
+<span class="text-xs uppercase tracking-widest font-bold text-on-surface-variant">Active Assets</span>
+</div>
+<div class="flex flex-col">
+<span class="text-3xl font-headline font-black text-primary">Global</span>
+<span class="text-xs uppercase tracking-widest font-bold text-on-surface-variant">Reach</span>
+</div>
+</div>
+</div>
+<!-- Global Network Card -->
+<div class="bg-primary p-12 rounded-xl text-on-primary flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-4xl mb-6">public</span>
+<h3 class="font-headline font-bold text-2xl mb-4">Global Network</h3>
+<p class="text-on-primary-container leading-relaxed">
+                            Strategically placed logistics hubs across 6 continents ensuring rapid response times regardless of destination.
+                        </p>
+</div>
+<div class="mt-8">
+<ul class="space-y-4">
+<li class="flex items-center gap-3 border-b border-primary-container pb-2">
+<span class="w-2 h-2 bg-on-primary rounded-full"></span>
+<span class="font-label text-sm font-semibold uppercase tracking-wide">North America Hub</span>
+</li>
+<li class="flex items-center gap-3 border-b border-primary-container pb-2">
+<span class="w-2 h-2 bg-on-primary rounded-full"></span>
+<span class="font-label text-sm font-semibold uppercase tracking-wide">Euro-Transit Hub</span>
+</li>
+<li class="flex items-center gap-3 border-b border-primary-container pb-2">
+<span class="w-2 h-2 bg-on-primary rounded-full"></span>
+<span class="font-label text-sm font-semibold uppercase tracking-wide">Asia-Pacific Hub</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full border-t border-zinc-200 dark:border-zinc-800 bg-[#f3f3f3] dark:bg-zinc-900">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 max-w-[1920px] mx-auto">
+<div class="space-y-6">
+<div class="text-lg font-bold text-[#1a1c1c] dark:text-[#f9f9f9] font-headline uppercase tracking-tighter">
+                    ROUTE 44
+                </div>
+<p class="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed max-w-xs">
+                    Precision-engineered logistics solutions for the modern global enterprise. Motion without friction.
+                </p>
+</div>
+<div class="space-y-6">
+<h4 class="font-['Inter'] text-xs tracking-wide uppercase font-black text-[#6e0609] dark:text-[#8f211d]">Resources</h4>
+<div class="flex flex-col gap-4">
+<a class="text-zinc-500 dark:text-zinc-400 text-xs tracking-wide uppercase font-medium hover:translate-x-1 transition-transform duration-200 hover:text-[#1a1c1c]" href="#">Sitemap</a>
+<a class="text-zinc-500 dark:text-zinc-400 text-xs tracking-wide uppercase font-medium hover:translate-x-1 transition-transform duration-200 hover:text-[#1a1c1c]" href="#">Carrier Terms</a>
+<a class="text-zinc-500 dark:text-zinc-400 text-xs tracking-wide uppercase font-medium hover:translate-x-1 transition-transform duration-200 hover:text-[#1a1c1c]" href="#">Cookie Settings</a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-['Inter'] text-xs tracking-wide uppercase font-black text-[#6e0609] dark:text-[#8f211d]">Legal</h4>
+<div class="flex flex-col gap-4">
+<a class="text-zinc-500 dark:text-zinc-400 text-xs tracking-wide uppercase font-medium hover:translate-x-1 transition-transform duration-200 hover:text-[#1a1c1c]" href="#">Privacy Policy</a>
+<a class="text-zinc-500 dark:text-zinc-400 text-xs tracking-wide uppercase font-medium hover:translate-x-1 transition-transform duration-200 hover:text-[#1a1c1c]" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-['Inter'] text-xs tracking-wide uppercase font-black text-[#6e0609] dark:text-[#8f211d]">HQ Signal</h4>
+<p class="text-zinc-500 dark:text-zinc-400 text-xs leading-relaxed uppercase tracking-tighter">
+                    44 Logistics Plaza<br/>
+                    Houston, TX 77002
+                </p>
+<div class="flex gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-sm group-hover:text-on-primary">public</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-sm group-hover:text-on-primary">alternate_email</span>
+</div>
+</div>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-zinc-200 dark:border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-['Inter'] text-xs tracking-wide uppercase font-medium text-zinc-500 dark:text-zinc-400">
+                © 2024 Route 44 Logistics. All rights reserved. Precision in Motion.
+            </p>
+<div class="flex gap-6">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">System Status: Operational</span>
+</div>
+</div>
+</footer>
+</body></html>
