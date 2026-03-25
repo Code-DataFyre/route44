@@ -1,13 +1,55 @@
+import { useState } from 'react';
+
 function Tracking() {
+  const [showShipmentsList, setShowShipmentsList] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
+
   return (
-    <main className="min-h-screen flex pt-20 bg-surface-dim">
+    <main className="min-h-screen flex pt-16 md:pt-20 bg-surface-dim relative">
+      {/* Mobile Overlay */}
+      {(showShipmentsList || showDetails) && (
+        <div
+          className="lg:hidden fixed inset-0 bg-black/50 z-10"
+          onClick={() => {
+            setShowShipmentsList(false);
+            setShowDetails(false);
+          }}
+        />
+      )}
+
+      {/* Mobile Toggle Buttons */}
+      <div className="lg:hidden fixed top-20 left-4 z-30 flex gap-2">
+        <button
+          onClick={() => setShowShipmentsList(!showShipmentsList)}
+          className="bg-primary text-white p-3 rounded-lg shadow-lg flex items-center gap-2"
+        >
+          <span className="material-symbols-outlined">list</span>
+          <span className="text-xs font-bold">Shipments</span>
+        </button>
+        <button
+          onClick={() => setShowDetails(!showDetails)}
+          className="bg-secondary text-white p-3 rounded-lg shadow-lg flex items-center gap-2"
+        >
+          <span className="material-symbols-outlined">info</span>
+          <span className="text-xs font-bold">Details</span>
+        </button>
+      </div>
+
       {/* Left Sidebar - Shipments List */}
-      <aside className="w-80 flex flex-col bg-white border-r border-surface-container-high">
+      <aside className={`${showShipmentsList ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 fixed lg:relative w-80 flex flex-col bg-white border-r border-surface-container-high z-20 transition-transform duration-300 h-full`}>
         {/* Sidebar Header */}
-        <div className="p-6 border-b border-surface-container-high">
-          <h2 className="font-headline font-extrabold text-xl tracking-tighter text-on-surface mb-4">
-            ACTIVE SHIPMENTS
-          </h2>
+        <div className="p-4 md:p-6 border-b border-surface-container-high">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="font-headline font-extrabold text-lg md:text-xl tracking-tighter text-on-surface">
+              ACTIVE SHIPMENTS
+            </h2>
+            <button
+              onClick={() => setShowShipmentsList(false)}
+              className="lg:hidden material-symbols-outlined text-on-surface-variant"
+            >
+              close
+            </button>
+          </div>
           <div className="relative">
             <input
               type="text"
@@ -147,14 +189,22 @@ function Tracking() {
       </section>
 
       {/* Right Panel: Detailed Info & Telemetry */}
-      <aside className="w-[400px] flex flex-col bg-white overflow-y-auto">
+      <aside className={`${showDetails ? 'translate-x-0' : 'translate-x-full'} lg:translate-x-0 fixed lg:relative right-0 w-full md:w-[400px] flex flex-col bg-white overflow-y-auto z-20 transition-transform duration-300 h-full`}>
         {/* Header Section */}
-        <div className="p-8 border-b border-surface-container-high">
-          <div className="flex justify-between items-start mb-6">
-            <div>
-              <h2 className="font-headline font-extrabold text-2xl tracking-tighter text-red-900">
-                KN-9421-XB
-              </h2>
+        <div className="p-4 md:p-8 border-b border-surface-container-high">
+          <div className="flex justify-between items-start mb-4 md:mb-6">
+            <div className="flex-1">
+              <div className="flex justify-between items-start mb-2">
+                <h2 className="font-headline font-extrabold text-xl md:text-2xl tracking-tighter text-red-900">
+                  KN-9421-XB
+                </h2>
+                <button
+                  onClick={() => setShowDetails(false)}
+                  className="lg:hidden material-symbols-outlined text-on-surface-variant"
+                >
+                  close
+                </button>
+              </div>
               <p className="text-xs font-medium text-on-surface-variant mt-1 uppercase tracking-widest">
                 Asset: Scania R730 Heavy Duty
               </p>
@@ -179,7 +229,7 @@ function Tracking() {
         </div>
 
         {/* Telemetry Grid */}
-        <div className="p-8 space-y-8">
+        <div className="p-4 md:p-8 space-y-6 md:space-y-8">
           <div>
             <h3 className="font-headline font-bold text-sm tracking-tight mb-4 flex items-center gap-2">
               <span className="material-symbols-outlined text-primary text-lg">analytics</span>

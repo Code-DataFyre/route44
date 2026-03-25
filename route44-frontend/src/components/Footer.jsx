@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 function Footer() {
   return (
     <footer className="bg-[#f3f3f3] dark:bg-zinc-900 w-full border-t border-zinc-200 dark:border-zinc-800">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 max-w-[1920px] mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 px-4 md:px-8 lg:px-12 py-12 md:py-16 max-w-[1920px] mx-auto">
         <div className="col-span-1 md:col-span-1">
           <div className="flex items-center gap-3 mb-6">
             <img src="/route44_logo.avif" alt="Route 44 Logo" className="h-10 w-auto" />
@@ -38,7 +38,7 @@ function Footer() {
           </nav>
         </div>
       </div>
-      <div className="px-12 py-8 border-t border-zinc-200 dark:border-zinc-800 text-center opacity-80">
+      <div className="px-4 md:px-8 lg:px-12 py-6 md:py-8 border-t border-zinc-200 dark:border-zinc-800 text-center opacity-80">
         <p className="font-body text-xs tracking-wide uppercase font-medium text-zinc-400">© {new Date().getFullYear()} Route 44 Logistics. All rights reserved. Precision in Motion.</p>
       </div>
     </footer>

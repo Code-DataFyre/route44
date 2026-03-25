@@ -10,7 +10,7 @@ function About() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/60 to-transparent"></div>
         </div>
-        <div className="container mx-auto px-12 relative z-10">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="max-w-4xl">
             <span className="inline-block px-4 py-1 mb-6 bg-primary text-white font-label text-xs tracking-widest uppercase rounded-full">
               EST. 1998
@@ -26,9 +26,9 @@ function About() {
         </div>
       </header>
 
-      <section className="py-32 bg-surface">
-        <div className="container mx-auto px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+      <section className="py-20 md:py-32 bg-surface">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-center">
             <div className="relative group">
               <div className="absolute -top-12 -left-12 w-64 h-64 bg-primary-fixed-dim/20 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
               <img
@@ -65,8 +65,8 @@ function About() {
         </div>
       </section>
 
-      <section className="py-24 bg-surface-container-low">
-        <div className="container mx-auto px-12">
+      <section className="py-16 md:py-24 bg-surface-container-low">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
             <div className="p-8">
               <div className="font-headline font-black text-6xl text-primary tracking-tighter mb-2">1.2M</div>
@@ -84,9 +84,9 @@ function About() {
         </div>
       </section>
 
-      <section className="py-32 bg-surface">
-        <div className="container mx-auto px-12">
-          <div className="mb-20 text-center max-w-3xl mx-auto">
+      <section className="py-20 md:py-32 bg-surface">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12">
+          <div className="mb-12 md:mb-20 text-center max-w-3xl mx-auto">
             <h2 className="font-headline font-extrabold text-5xl tracking-tighter mb-6">The Monolith Principles</h2>
             <p className="text-on-surface-variant">
               Our operations are guided by five core pillars that ensure absolute structural integrity across every transit and transaction.

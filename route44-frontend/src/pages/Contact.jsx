@@ -2,7 +2,7 @@ function Contact() {
   return (
     <main className="pt-32 pb-24">
       {/* Hero Title Section */}
-      <header className="px-12 max-w-[1920px] mx-auto mb-20">
+      <header className="px-4 md:px-8 lg:px-12 max-w-[1920px] mx-auto mb-12 md:mb-20">
         <div className="max-w-4xl">
           <span className="text-primary font-headline font-extrabold uppercase tracking-[0.2em] text-xs mb-4 block">
             Connect with Precision
@@ -17,7 +17,7 @@ function Contact() {
       </header>
 
       {/* Main Interaction Section */}
-      <section className="px-12 max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <section className="px-4 md:px-8 lg:px-12 max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16">
         {/* Contact Form Column */}
         <div className="bg-surface-container-low p-12 rounded-xl relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 opacity-5 pointer-events-none">
@@ -154,7 +154,7 @@ function Contact() {
       </section>
 
       {/* Responsive Infrastructure / Bento Grid */}
-      <section className="mt-32 px-12 max-w-[1920px] mx-auto">
+      <section className="mt-20 md:mt-32 px-4 md:px-8 lg:px-12 max-w-[1920px] mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div className="max-w-xl">
             <h2 className="font-headline font-black text-4xl tracking-tighter uppercase mb-4">Responsive Infrastructure</h2>

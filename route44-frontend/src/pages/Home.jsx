@@ -9,7 +9,7 @@ function Home() {
           className="absolute inset-0 w-full h-full object-cover"
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqhOh-6acDZR5gTaULLHGHMsG_X-_FJAfyaYTXqeky95cHKrmlPFHYS0KaG2vOXZvDLsF1uQXZfzg7rzHb1IBh_BiHp9dVmgbdGWYXsMorKLDc-vSyvhXqcMC93oj8mdJj0x8RONhMTFryr4HyWPVdFEyfi9ATpRHPAjCjcOsk8wShnvG8wRVGqNeLgpXTKlEpqNtbSuyL8pxFYKOmGCoB4OQzxzmfkBG81rUraFXD_smvDMFN1mw5EGJ3x8zxkp-y1NPDXLpnm_F1"
         />
-        <div className="relative z-20 px-12 max-w-[1920px] mx-auto w-full">
+        <div className="relative z-20 px-4 md:px-8 lg:px-12 max-w-[1920px] mx-auto w-full">
           <div className="max-w-4xl">
             <span className="inline-block px-4 py-1.5 bg-primary/90 text-white font-headline text-xs font-bold tracking-[0.2em] uppercase mb-6">
               Pioneering Logistics
@@ -37,7 +37,7 @@ function Home() {
       </section>
 
       {/* Capabilities: Bento Grid Style */}
-      <section className="py-32 px-12 bg-surface max-w-[1920px] mx-auto">
+      <section className="py-16 md:py-24 lg:py-32 px-4 md:px-8 lg:px-12 bg-surface max-w-[1920px] mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div className="max-w-2xl">
             <h2 className="font-headline text-5xl font-extrabold tracking-tighter text-on-surface mb-6">Capabilities</h2>
@@ -104,7 +104,7 @@ function Home() {
 
       {/* Fleet Status Visualization */}
       <section className="py-24 bg-surface-container-low overflow-hidden">
-        <div className="px-12 max-w-[1920px] mx-auto">
+        <div className="px-4 md:px-8 lg:px-12 max-w-[1920px] mx-auto">
           <div className="mb-16">
             <h2 className="font-headline text-4xl font-extrabold tracking-tighter mb-2">Fleet Status</h2>
             <div className="flex items-center gap-3">
@@ -170,7 +170,7 @@ function Home() {
       {/* About Us Teaser */}
       <section className="relative h-[600px] flex items-center bg-surface-container-low overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 w-full h-full">
-          <div className="flex flex-col justify-center px-12 lg:px-24">
+          <div className="flex flex-col justify-center px-4 md:px-8 lg:px-24">
             <span className="text-primary font-headline font-black text-sm uppercase tracking-[0.3em] mb-6">Our Infrastructure</span>
             <h2 className="font-headline text-5xl font-extrabold tracking-tighter mb-8 max-w-lg">The Architecture of Global Trade</h2>
             <p className="text-on-surface-variant text-lg leading-relaxed mb-10 max-w-md">
@@ -195,7 +195,7 @@ function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 px-12 bg-white text-center">
+      <section className="py-16 md:py-24 px-4 md:px-8 lg:px-12 bg-white text-center">
         <h2 className="font-headline text-6xl font-extrabold tracking-tighter mb-8">Ready to Scale?</h2>
         <p className="text-on-surface-variant text-xl max-w-2xl mx-auto mb-12">
           Join the 500+ global brands that rely on Route 44 for precision distribution and uncompromised reliability.

@@ -1,11 +1,11 @@
 function Analytics() {
   return (
-    <main className="min-h-screen bg-surface pt-32 pb-16">
-      <div className="max-w-[1440px] mx-auto px-12">
+    <main className="min-h-screen bg-surface pt-24 md:pt-32 pb-12 md:pb-16">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12">
         {/* Dashboard Header */}
-        <div className="mb-12 flex justify-between items-center">
+        <div className="mb-8 md:mb-12 flex flex-col md:flex-row justify-between md:items-center gap-4">
           <div>
-            <h1 className="font-headline font-extrabold text-5xl tracking-tighter text-on-surface mb-2">
+            <h1 className="font-headline font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tighter text-on-surface mb-2">
               STRATEGIC ANALYTICS
             </h1>
             <p className="text-sm text-on-surface-variant uppercase tracking-widest font-label">

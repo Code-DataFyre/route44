@@ -2,7 +2,7 @@ function Services() {
   return (
     <main className="pt-32">
       {/* Hero Section */}
-      <section className="px-12 mb-24">
+      <section className="px-4 md:px-8 lg:px-12 mb-16 md:mb-24">
         <div className="max-w-[1920px] mx-auto">
           <span className="font-label text-xs uppercase tracking-[0.2em] text-primary font-bold mb-4 block">
             Precision In Motion
@@ -20,7 +20,7 @@ function Services() {
       </section>
 
       {/* Haulage Solutions - Bento Grid */}
-      <section className="px-12 py-24 bg-surface-container-low">
+      <section className="px-4 md:px-8 lg:px-12 py-16 md:py-24 bg-surface-container-low">
         <div className="max-w-[1920px] mx-auto">
           <div className="flex justify-between items-end mb-16">
             <div>
@@ -82,7 +82,7 @@ function Services() {
       </section>
 
       {/* Metrics Dashboard */}
-      <section className="px-12 py-24 bg-on-surface text-white overflow-hidden relative">
+      <section className="px-4 md:px-8 lg:px-12 py-16 md:py-24 bg-on-surface text-white overflow-hidden relative">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/10 -skew-x-12 transform translate-x-1/4"></div>
         <div className="max-w-[1920px] mx-auto relative z-10">
           <div className="text-center mb-20">
@@ -118,7 +118,7 @@ function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-12 py-32">
+      <section className="px-4 md:px-8 lg:px-12 py-20 md:py-32">
         <div className="max-w-[1920px] mx-auto bg-surface-container-high rounded-3xl p-16 md:p-24 flex flex-col items-center text-center">
           <span className="material-symbols-outlined text-primary text-6xl mb-8">analytics</span>
           <h2 className="font-headline text-5xl md:text-6xl font-black tracking-tighter mb-8 max-w-3xl">
