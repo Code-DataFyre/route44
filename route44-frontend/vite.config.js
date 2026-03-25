@@ -8,4 +8,12 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+  server: {
+    // Ensure dev server handles SPA routing correctly
+    historyApiFallback: true,
+  },
+  preview: {
+    // Ensure preview server handles SPA routing correctly
+    historyApiFallback: true,
+  },
 })
