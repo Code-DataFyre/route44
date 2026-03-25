@@ -27,12 +27,26 @@ function Header() {
           >
             Home
           </Link>
-          <a 
-            className="font-headline font-bold tracking-tight uppercase text-sm text-zinc-500 dark:text-zinc-400 hover:text-[#6e0609] transition-colors duration-300" 
-            href="#"
+          <Link 
+            className={`font-headline font-bold tracking-tight uppercase text-sm transition-colors duration-300 ${
+              isActive('/analytics') 
+                ? 'text-[#6e0609] dark:text-[#f3f3f3] border-b-2 border-[#6e0609] pb-1' 
+                : 'text-zinc-500 dark:text-zinc-400 hover:text-[#6e0609]'
+            }`} 
+            to="/analytics"
+          >
+            Analytics
+          </Link>
+          <Link 
+            className={`font-headline font-bold tracking-tight uppercase text-sm transition-colors duration-300 ${
+              isActive('/tracking') 
+                ? 'text-[#6e0609] dark:text-[#f3f3f3] border-b-2 border-[#6e0609] pb-1' 
+                : 'text-zinc-500 dark:text-zinc-400 hover:text-[#6e0609]'
+            }`} 
+            to="/tracking"
           >
             Tracking
-          </a>
+          </Link>
           <Link 
             className={`font-headline font-bold tracking-tight uppercase text-sm transition-colors duration-300 ${
               isActive('/services') 
