@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { usePageTransition } from "../hooks/usePageTransition";
 
 function Contact() {
+  const mainRef = usePageTransition();
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
@@ -17,7 +19,7 @@ function Contact() {
   };
 
   return (
-    <main className="neural-grid pt-32 min-h-screen">
+    <main ref={mainRef} className="neural-grid pt-20 min-h-screen page-fade-in">
       <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop py-16">
         {/* ── Hero ── */}
         <section className="mb-24 text-center md:text-left">

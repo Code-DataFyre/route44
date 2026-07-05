@@ -1,6 +1,10 @@
+import { usePageTransition } from "../hooks/usePageTransition";
+
 function About() {
+  const mainRef = usePageTransition();
+
   return (
-    <main className="pt-32">
+    <main ref={mainRef} className="pt-20 page-fade-in">
       {/* ── Hero ── */}
       <section className="relative px-6 md:px-margin-desktop py-24 overflow-hidden">
         <div className="grid-pattern absolute inset-0 -z-10 grid-bg" />

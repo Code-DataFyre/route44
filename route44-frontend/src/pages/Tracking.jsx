@@ -1,11 +1,16 @@
-import { useState } from 'react';
+import { useState } from "react";
+import { usePageTransition } from "../hooks/usePageTransition";
 
 function Tracking() {
+  const mainRef = usePageTransition();
   const [showShipmentsList, setShowShipmentsList] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <main className="min-h-screen flex pt-16 md:pt-20 bg-surface-dim relative">
+    <main
+      ref={mainRef}
+      className="min-h-screen flex pt-16 md:pt-20 bg-surface-dim relative page-fade-in"
+    >
       {/* Mobile Overlay */}
       {(showShipmentsList || showDetails) && (
         <div
@@ -36,7 +41,9 @@ function Tracking() {
       </div>
 
       {/* Left Sidebar - Shipments List */}
-      <aside className={`${showShipmentsList ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 fixed lg:relative w-80 flex flex-col bg-white border-r border-surface-container-high z-20 transition-transform duration-300 h-full`}>
+      <aside
+        className={`${showShipmentsList ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0 fixed lg:relative w-80 flex flex-col bg-white border-r border-surface-container-high z-20 transition-transform duration-300 h-full`}
+      >
         {/* Sidebar Header */}
         <div className="p-4 md:p-6 border-b border-surface-container-high">
           <div className="flex justify-between items-center mb-4">
@@ -70,12 +77,20 @@ function Tracking() {
               <span className="text-[10px] font-label font-bold tracking-widest text-primary uppercase">
                 IN TRANSIT
               </span>
-              <span className="text-[10px] font-label text-on-surface-variant">KN-9421-XB</span>
+              <span className="text-[10px] font-label text-on-surface-variant">
+                KN-9421-XB
+              </span>
             </div>
-            <h3 className="font-headline font-bold text-sm text-on-surface">Precision Machining Parts</h3>
-            <p className="text-xs text-on-surface-variant mt-1">Munich → Stockholm</p>
+            <h3 className="font-headline font-bold text-sm text-on-surface">
+              Precision Machining Parts
+            </h3>
+            <p className="text-xs text-on-surface-variant mt-1">
+              Munich → Stockholm
+            </p>
             <div className="mt-3 pt-3 border-t border-surface-container flex items-center justify-between">
-              <span className="text-[10px] text-on-surface-variant uppercase">ETA</span>
+              <span className="text-[10px] text-on-surface-variant uppercase">
+                ETA
+              </span>
               <span className="text-xs font-bold text-primary">4 mins</span>
             </div>
           </div>
@@ -86,13 +101,23 @@ function Tracking() {
               <span className="text-[10px] font-label font-bold tracking-widest text-amber-600 uppercase">
                 DELAYED
               </span>
-              <span className="text-[10px] font-label text-on-surface-variant">KN-8234-MW</span>
+              <span className="text-[10px] font-label text-on-surface-variant">
+                KN-8234-MW
+              </span>
             </div>
-            <h3 className="font-headline font-bold text-sm text-on-surface">Pharmaceutical Cold Chain</h3>
-            <p className="text-xs text-on-surface-variant mt-1">Lyon → Barcelona</p>
+            <h3 className="font-headline font-bold text-sm text-on-surface">
+              Pharmaceutical Cold Chain
+            </h3>
+            <p className="text-xs text-on-surface-variant mt-1">
+              Lyon → Barcelona
+            </p>
             <div className="mt-3 flex items-center gap-2">
-              <span className="material-symbols-outlined text-on-surface-variant text-sm">emergency_home</span>
-              <span className="text-xs font-medium text-on-surface-variant">Weather Alert</span>
+              <span className="material-symbols-outlined text-on-surface-variant text-sm">
+                emergency_home
+              </span>
+              <span className="text-xs font-medium text-on-surface-variant">
+                Weather Alert
+              </span>
             </div>
           </div>
 
@@ -102,10 +127,16 @@ function Tracking() {
               <span className="text-[10px] font-label font-bold tracking-widest text-on-tertiary-fixed-variant uppercase">
                 QUEUED
               </span>
-              <span className="text-[10px] font-label text-on-surface-variant">KN-5523-WQ</span>
+              <span className="text-[10px] font-label text-on-surface-variant">
+                KN-5523-WQ
+              </span>
             </div>
-            <h3 className="font-headline font-bold text-sm text-on-surface">Automotive Casting Unit</h3>
-            <p className="text-xs text-on-surface-variant mt-1">Stuttgart → Turin</p>
+            <h3 className="font-headline font-bold text-sm text-on-surface">
+              Automotive Casting Unit
+            </h3>
+            <p className="text-xs text-on-surface-variant mt-1">
+              Stuttgart → Turin
+            </p>
           </div>
 
           {/* In Transit Shipment Card */}
@@ -114,10 +145,16 @@ function Tracking() {
               <span className="text-[10px] font-label font-bold tracking-widest text-primary uppercase">
                 IN TRANSIT
               </span>
-              <span className="text-[10px] font-label text-on-surface-variant">KN-0021-LA</span>
+              <span className="text-[10px] font-label text-on-surface-variant">
+                KN-0021-LA
+              </span>
             </div>
-            <h3 className="font-headline font-bold text-sm text-on-surface">Heavy Machinery Logistics</h3>
-            <p className="text-xs text-on-surface-variant mt-1">Rotterdam → Berlin</p>
+            <h3 className="font-headline font-bold text-sm text-on-surface">
+              Heavy Machinery Logistics
+            </h3>
+            <p className="text-xs text-on-surface-variant mt-1">
+              Rotterdam → Berlin
+            </p>
           </div>
         </div>
       </aside>
@@ -189,7 +226,9 @@ function Tracking() {
       </section>
 
       {/* Right Panel: Detailed Info & Telemetry */}
-      <aside className={`${showDetails ? 'translate-x-0' : 'translate-x-full'} lg:translate-x-0 fixed lg:relative right-0 w-full md:w-[400px] flex flex-col bg-white overflow-y-auto z-20 transition-transform duration-300 h-full`}>
+      <aside
+        className={`${showDetails ? "translate-x-0" : "translate-x-full"} lg:translate-x-0 fixed lg:relative right-0 w-full md:w-[400px] flex flex-col bg-white overflow-y-auto z-20 transition-transform duration-300 h-full`}
+      >
         {/* Header Section */}
         <div className="p-4 md:p-8 border-b border-surface-container-high">
           <div className="flex justify-between items-start mb-4 md:mb-6">
@@ -209,20 +248,32 @@ function Tracking() {
                 Asset: Scania R730 Heavy Duty
               </p>
             </div>
-            <div className="px-3 py-1 bg-primary text-white text-[10px] font-bold rounded-full">LIVE</div>
+            <div className="px-3 py-1 bg-primary text-white text-[10px] font-bold rounded-full">
+              LIVE
+            </div>
           </div>
           <div className="flex items-center gap-4 bg-surface-container-low p-4 rounded-md">
             <div className="flex-1">
-              <p className="text-[10px] font-label text-on-surface-variant uppercase">Current Speed</p>
+              <p className="text-[10px] font-label text-on-surface-variant uppercase">
+                Current Speed
+              </p>
               <p className="font-headline font-bold text-xl text-on-surface">
-                82 <span className="text-xs font-normal text-on-surface-variant">km/h</span>
+                82{" "}
+                <span className="text-xs font-normal text-on-surface-variant">
+                  km/h
+                </span>
               </p>
             </div>
             <div className="w-px h-8 bg-surface-container-high"></div>
             <div className="flex-1">
-              <p className="text-[10px] font-label text-on-surface-variant uppercase">Efficiency</p>
+              <p className="text-[10px] font-label text-on-surface-variant uppercase">
+                Efficiency
+              </p>
               <p className="font-headline font-bold text-xl text-green-700">
-                94<span className="text-xs font-normal text-on-surface-variant">%</span>
+                94
+                <span className="text-xs font-normal text-on-surface-variant">
+                  %
+                </span>
               </p>
             </div>
           </div>
@@ -232,12 +283,16 @@ function Tracking() {
         <div className="p-4 md:p-8 space-y-6 md:space-y-8">
           <div>
             <h3 className="font-headline font-bold text-sm tracking-tight mb-4 flex items-center gap-2">
-              <span className="material-symbols-outlined text-primary text-lg">analytics</span>
+              <span className="material-symbols-outlined text-primary text-lg">
+                analytics
+              </span>
               Telemetry Data
             </h3>
             <div className="grid grid-cols-2 gap-4">
               <div className="p-4 bg-surface rounded-md">
-                <p className="text-[10px] font-label text-on-surface-variant uppercase mb-1">Fuel Level</p>
+                <p className="text-[10px] font-label text-on-surface-variant uppercase mb-1">
+                  Fuel Level
+                </p>
                 <div className="flex items-end gap-1">
                   <span className="text-lg font-bold font-headline">68%</span>
                   <div className="flex-1 h-1.5 bg-surface-container-high rounded-full mb-1.5 overflow-hidden">
@@ -246,18 +301,26 @@ function Tracking() {
                 </div>
               </div>
               <div className="p-4 bg-surface rounded-md">
-                <p className="text-[10px] font-label text-on-surface-variant uppercase mb-1">Cargo Temp</p>
+                <p className="text-[10px] font-label text-on-surface-variant uppercase mb-1">
+                  Cargo Temp
+                </p>
                 <div className="flex items-center gap-2">
-                  <span className="material-symbols-outlined text-sm text-secondary">thermostat</span>
+                  <span className="material-symbols-outlined text-sm text-secondary">
+                    thermostat
+                  </span>
                   <span className="text-lg font-bold font-headline">4.2°C</span>
                 </div>
               </div>
               <div className="p-4 bg-surface rounded-md">
-                <p className="text-[10px] font-label text-on-surface-variant uppercase mb-1">Axle Load</p>
+                <p className="text-[10px] font-label text-on-surface-variant uppercase mb-1">
+                  Axle Load
+                </p>
                 <span className="text-lg font-bold font-headline">22.4 t</span>
               </div>
               <div className="p-4 bg-surface rounded-md">
-                <p className="text-[10px] font-label text-on-surface-variant uppercase mb-1">Engine RPM</p>
+                <p className="text-[10px] font-label text-on-surface-variant uppercase mb-1">
+                  Engine RPM
+                </p>
                 <span className="text-lg font-bold font-headline">1,450</span>
               </div>
             </div>
@@ -266,7 +329,9 @@ function Tracking() {
           {/* Delivery Timeline */}
           <div>
             <h3 className="font-headline font-bold text-sm tracking-tight mb-4 flex items-center gap-2">
-              <span className="material-symbols-outlined text-primary text-lg">route</span>
+              <span className="material-symbols-outlined text-primary text-lg">
+                route
+              </span>
               Shipment Milestones
             </h3>
             <div className="space-y-6 relative ml-2">
@@ -276,22 +341,34 @@ function Tracking() {
               {/* Milestone - Completed */}
               <div className="relative flex items-start gap-4">
                 <div className="w-4 h-4 rounded-full bg-green-600 ring-4 ring-green-100 z-10 flex items-center justify-center">
-                  <span className="material-symbols-outlined text-white text-[10px]">check</span>
+                  <span className="material-symbols-outlined text-white text-[10px]">
+                    check
+                  </span>
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-on-surface">Departed Terminal Munich</p>
-                  <p className="text-[10px] text-on-surface-variant mt-0.5">Oct 24, 08:30 AM</p>
+                  <p className="text-xs font-bold text-on-surface">
+                    Departed Terminal Munich
+                  </p>
+                  <p className="text-[10px] text-on-surface-variant mt-0.5">
+                    Oct 24, 08:30 AM
+                  </p>
                 </div>
               </div>
 
               {/* Milestone - Completed */}
               <div className="relative flex items-start gap-4">
                 <div className="w-4 h-4 rounded-full bg-green-600 ring-4 ring-green-100 z-10 flex items-center justify-center">
-                  <span className="material-symbols-outlined text-white text-[10px]">check</span>
+                  <span className="material-symbols-outlined text-white text-[10px]">
+                    check
+                  </span>
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-on-surface">Customs Clearance - Denmark</p>
-                  <p className="text-[10px] text-on-surface-variant mt-0.5">Oct 25, 02:15 PM</p>
+                  <p className="text-xs font-bold text-on-surface">
+                    Customs Clearance - Denmark
+                  </p>
+                  <p className="text-[10px] text-on-surface-variant mt-0.5">
+                    Oct 25, 02:15 PM
+                  </p>
                 </div>
               </div>
 
@@ -301,8 +378,12 @@ function Tracking() {
                   <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-primary">In Transit - Øresund Bridge</p>
-                  <p className="text-[10px] text-on-surface-variant mt-0.5">Expected: In 4 mins</p>
+                  <p className="text-xs font-bold text-primary">
+                    In Transit - Øresund Bridge
+                  </p>
+                  <p className="text-[10px] text-on-surface-variant mt-0.5">
+                    Expected: In 4 mins
+                  </p>
                 </div>
               </div>
 
@@ -310,8 +391,12 @@ function Tracking() {
               <div className="relative flex items-start gap-4 opacity-40">
                 <div className="w-4 h-4 rounded-full bg-surface-container-high z-10"></div>
                 <div>
-                  <p className="text-xs font-bold text-on-surface">Final Delivery - Stockholm</p>
-                  <p className="text-[10px] text-on-surface-variant mt-0.5">Scheduled: Oct 26, 09:00 AM</p>
+                  <p className="text-xs font-bold text-on-surface">
+                    Final Delivery - Stockholm
+                  </p>
+                  <p className="text-[10px] text-on-surface-variant mt-0.5">
+                    Scheduled: Oct 26, 09:00 AM
+                  </p>
                 </div>
               </div>
             </div>

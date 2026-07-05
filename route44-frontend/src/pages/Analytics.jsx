@@ -1,6 +1,13 @@
+import { usePageTransition } from "../hooks/usePageTransition";
+
 function Analytics() {
+  const mainRef = usePageTransition();
+
   return (
-    <main className="min-h-screen bg-surface pt-24 md:pt-32 pb-12 md:pb-16">
+    <main
+      ref={mainRef}
+      className="min-h-screen bg-surface pt-24 md:pt-32 pb-12 md:pb-16 page-fade-in"
+    >
       <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12">
         {/* Dashboard Header */}
         <div className="mb-8 md:mb-12 flex flex-col md:flex-row justify-between md:items-center gap-4">
@@ -50,7 +57,9 @@ function Analytics() {
                   </p>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                    <span className="text-xs font-bold">All Systems Operational</span>
+                    <span className="text-xs font-bold">
+                      All Systems Operational
+                    </span>
                   </div>
                 </div>
               </div>
@@ -60,13 +69,17 @@ function Analytics() {
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">
                   In-Transit Assets
                 </p>
-                <p className="text-4xl font-black font-headline text-on-surface">1,402</p>
+                <p className="text-4xl font-black font-headline text-on-surface">
+                  1,402
+                </p>
               </div>
               <div className="bg-surface/90 backdrop-blur-sm p-6 rounded-lg shadow-xl flex-1">
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">
                   On-Time Reliability
                 </p>
-                <p className="text-4xl font-black font-headline text-green-600">99.4%</p>
+                <p className="text-4xl font-black font-headline text-green-600">
+                  99.4%
+                </p>
               </div>
             </div>
           </div>
@@ -90,7 +103,9 @@ function Analytics() {
             <div className="space-y-6">
               <div>
                 <div className="flex justify-between items-end mb-2">
-                  <span className="text-xs font-bold uppercase tracking-widest">Efficiency Goal</span>
+                  <span className="text-xs font-bold uppercase tracking-widest">
+                    Efficiency Goal
+                  </span>
                   <span className="text-primary font-bold">82%</span>
                 </div>
                 <div className="h-2 bg-surface-container-high rounded-full overflow-hidden">
@@ -108,7 +123,9 @@ function Analytics() {
                   <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">
                     Bio-Fuel %
                   </p>
-                  <p className="text-lg font-black font-headline text-secondary">38%</p>
+                  <p className="text-lg font-black font-headline text-secondary">
+                    38%
+                  </p>
                 </div>
               </div>
             </div>
@@ -117,8 +134,12 @@ function Analytics() {
           {/* Fleet Performance - Secondary Visualization */}
           <div className="col-span-12 lg:col-span-5 bg-surface-container-low rounded-xl p-8">
             <div className="flex justify-between items-center mb-8">
-              <h3 className="font-headline font-extrabold text-2xl tracking-tighter">FLEET UPTIME</h3>
-              <span className="material-symbols-outlined text-slate-400">more_horiz</span>
+              <h3 className="font-headline font-extrabold text-2xl tracking-tighter">
+                FLEET UPTIME
+              </h3>
+              <span className="material-symbols-outlined text-slate-400">
+                more_horiz
+              </span>
             </div>
             <div className="flex items-center gap-8">
               <div className="relative w-40 h-40 flex items-center justify-center">
@@ -156,21 +177,27 @@ function Analytics() {
                   <div className="w-3 h-3 rounded-full bg-primary"></div>
                   <div>
                     <p className="text-xs font-bold">Heavy Haulage</p>
-                    <p className="text-[10px] text-slate-500 uppercase">98% Utilization</p>
+                    <p className="text-[10px] text-slate-500 uppercase">
+                      98% Utilization
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-3 h-3 rounded-full bg-secondary"></div>
                   <div>
                     <p className="text-xs font-bold">Express Air</p>
-                    <p className="text-[10px] text-slate-500 uppercase">84% Utilization</p>
+                    <p className="text-[10px] text-slate-500 uppercase">
+                      84% Utilization
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-3 h-3 rounded-full bg-slate-300"></div>
                   <div>
                     <p className="text-xs font-bold">Ocean Freight</p>
-                    <p className="text-[10px] text-slate-500 uppercase">72% Utilization</p>
+                    <p className="text-[10px] text-slate-500 uppercase">
+                      72% Utilization
+                    </p>
                   </div>
                 </div>
               </div>
@@ -180,7 +207,9 @@ function Analytics() {
           {/* Shipment History Table */}
           <div className="col-span-12 lg:col-span-7 bg-surface-container-lowest rounded-xl shadow-[0_10px_40px_rgba(26,28,28,0.06)] overflow-hidden">
             <div className="px-8 py-6 bg-surface-container-low flex justify-between items-center">
-              <h3 className="font-headline font-extrabold text-xl tracking-tighter">LATEST SHIPMENTS</h3>
+              <h3 className="font-headline font-extrabold text-xl tracking-tighter">
+                LATEST SHIPMENTS
+              </h3>
               <button className="text-primary font-bold text-xs uppercase tracking-widest hover:underline">
                 Export CSV
               </button>
@@ -212,7 +241,9 @@ function Analytics() {
                         ON TIME
                       </span>
                     </td>
-                    <td className="px-8 py-5 text-sm font-medium">Oct 24, 08:30</td>
+                    <td className="px-8 py-5 text-sm font-medium">
+                      Oct 24, 08:30
+                    </td>
                   </tr>
                   <tr className="hover:bg-surface-container-low transition-colors">
                     <td className="px-8 py-5 font-bold text-sm">#KN-92842</td>
@@ -222,7 +253,9 @@ function Analytics() {
                         IN TRANSIT
                       </span>
                     </td>
-                    <td className="px-8 py-5 text-sm font-medium">Oct 25, 14:00</td>
+                    <td className="px-8 py-5 text-sm font-medium">
+                      Oct 25, 14:00
+                    </td>
                   </tr>
                   <tr className="hover:bg-surface-container-low transition-colors">
                     <td className="px-8 py-5 font-bold text-sm">#KN-92855</td>
@@ -232,7 +265,9 @@ function Analytics() {
                         DELAYED
                       </span>
                     </td>
-                    <td className="px-8 py-5 text-sm font-medium">Oct 26, 12:45</td>
+                    <td className="px-8 py-5 text-sm font-medium">
+                      Oct 26, 12:45
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -243,25 +278,33 @@ function Analytics() {
           <div className="col-span-12 grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-gradient-to-br from-primary to-primary-container p-8 rounded-xl text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 p-4 opacity-20">
-                <span className="material-symbols-outlined text-6xl">trending_up</span>
+                <span className="material-symbols-outlined text-6xl">
+                  trending_up
+                </span>
               </div>
               <p className="text-[10px] font-bold uppercase tracking-[0.3em] mb-4 opacity-70">
                 Predictive Modeling
               </p>
-              <h4 className="font-headline font-bold text-lg mb-2">Demand Forecast</h4>
+              <h4 className="font-headline font-bold text-lg mb-2">
+                Demand Forecast
+              </h4>
               <p className="text-3xl font-black mb-4">+12.4%</p>
               <p className="text-xs opacity-80 leading-relaxed">
-                Projected volume increase for the APAC region over the next 14 operational days.
+                Projected volume increase for the APAC region over the next 14
+                operational days.
               </p>
             </div>
             <div className="bg-surface-container-high p-8 rounded-xl border-l-4 border-secondary">
               <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.3em] mb-4">
                 Route Optimization
               </p>
-              <h4 className="font-headline font-bold text-lg mb-2 text-on-surface">Efficiency Gains</h4>
+              <h4 className="font-headline font-bold text-lg mb-2 text-on-surface">
+                Efficiency Gains
+              </h4>
               <p className="text-3xl font-black text-secondary mb-4">-$4.2k</p>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Daily fuel savings realized through AI-driven pathfinding and weight distribution.
+                Daily fuel savings realized through AI-driven pathfinding and
+                weight distribution.
               </p>
             </div>
             <div className="bg-white p-8 rounded-xl shadow-sm border border-outline-variant/20">
@@ -269,12 +312,19 @@ function Analytics() {
                 Risk Mitigation
               </p>
               <div className="flex items-center gap-2 mb-2">
-                <span className="material-symbols-outlined text-amber-600 text-sm">warning</span>
-                <h4 className="font-headline font-bold text-lg text-on-surface">Weather Alert</h4>
+                <span className="material-symbols-outlined text-amber-600 text-sm">
+                  warning
+                </span>
+                <h4 className="font-headline font-bold text-lg text-on-surface">
+                  Weather Alert
+                </h4>
               </div>
-              <p className="text-xs font-bold text-slate-900 mb-4">North Atlantic Storm Warning</p>
+              <p className="text-xs font-bold text-slate-900 mb-4">
+                North Atlantic Storm Warning
+              </p>
               <p className="text-xs text-slate-500 leading-relaxed">
-                Rerouting 12 active vessels to southern corridors. Estimated 4h delay buffer required.
+                Rerouting 12 active vessels to southern corridors. Estimated 4h
+                delay buffer required.
               </p>
             </div>
           </div>

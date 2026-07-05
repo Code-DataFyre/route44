@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { usePageTransition } from "../hooks/usePageTransition";
 
 function Home() {
+  const mainRef = usePageTransition();
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -16,7 +18,7 @@ function Home() {
   };
 
   return (
-    <main className="pt-18">
+    <main ref={mainRef} className="pt-20 page-fade-in">
       {/* ── Cinematic Hero ── */}
       <section className="relative h-screen min-h-[700px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { usePageTransition } from "../hooks/usePageTransition";
 
 const FILTERS = [
   "All Intelligence",
@@ -36,6 +37,7 @@ const articles = [
 ];
 
 function Media() {
+  const mainRef = usePageTransition();
   const [activeFilter, setActiveFilter] = useState("All Intelligence");
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
@@ -46,7 +48,10 @@ function Media() {
   };
 
   return (
-    <main className="pt-32 pb-24 px-6 md:px-margin-desktop max-w-container-max mx-auto w-full grid-bg">
+    <main
+      ref={mainRef}
+      className="pt-20 pb-24 px-6 md:px-margin-desktop max-w-container-max mx-auto w-full grid-bg page-fade-in"
+    >
       {/* ── Hero HUD ── */}
       <section className="mb-16">
         <div className="glass-panel p-12 border border-outline-variant/20 relative overflow-hidden">
