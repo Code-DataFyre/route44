@@ -16,7 +16,7 @@ function Home() {
   };
 
   return (
-    <main className="pt-32">
+    <main className="pt-18">
       {/* ── Cinematic Hero ── */}
       <section className="relative h-screen min-h-[700px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
