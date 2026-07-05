@@ -5,7 +5,7 @@ function Services() {
   const mainRef = usePageTransition();
 
   return (
-    <main ref={mainRef} className="pt-20 md:pt-24 grid-bg page-fade-in">
+    <main ref={mainRef} className="pt-32 grid-bg page-fade-in">
       {/* ── Hero ── */}
       <section className="pb-24 px-6 md:px-margin-desktop">
         <div className="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

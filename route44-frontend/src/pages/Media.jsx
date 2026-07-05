@@ -50,7 +50,7 @@ function Media() {
   return (
     <main
       ref={mainRef}
-      className="pt-20 pb-24 px-6 md:px-margin-desktop max-w-container-max mx-auto w-full grid-bg page-fade-in"
+      className="pt-36 pb-24 px-6 md:px-margin-desktop max-w-container-max mx-auto w-full grid-bg page-fade-in"
     >
       {/* ── Hero HUD ── */}
       <section className="mb-16">
