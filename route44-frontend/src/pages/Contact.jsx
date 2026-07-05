@@ -311,7 +311,7 @@ function Contact() {
               <img
                 alt="Route 44 Global Headquarters, Essex, UK"
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                src="https://lh3.googleusercontent.com/aida/AB6AXuCJwGzVeQ_t4Tm7D0u-qAnQbIx0ZQuLRXczKDAvPDtHgY6tmDgUXFvm5D0U1DIY7JtQfeol0CrlsFTgNuu97-jf17Z8c7l47WAwqleAuH1vZ0SL9HrLbZwZRvp5s4aJmVGmojbop8QoBpkMJK4xLifavCmUqeMRfOZjFfrs5DlZnjHeKeP4s41E3EWqfzO0LE7ek-7Hdf74JXSebkcYzQsL3Ll4EqXVDS06KzFjarj0_SV5ulb7ywxzx0ZANw9012_k4HctubIFp2eC"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJwGzVeQ_t4Tm7D0u-qAnQbIx0ZQuLRXczKDAvPDtHgY6tmDgUXFvm5D0U1DIY7JtQfeol0CrlsFTgNuu97-jf17Z8c7l47WAwqleAuH1vZ0SL9HrLbZwZRvp5s4aJmVGmojbop8QoBpkMJK4xLifavCmUqeMRfOZjFfrs5DlZnjHeKeP4s41E3EWqfzO0LE7ek-7Hdf74JXSebkcYzQsL3Ll4EqXVDS06KzFjarj0_SV5ulb7ywxzx0ZANw9012_k4HctubIFp2eC"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent" />
               <div className="absolute bottom-6 left-6 text-white">

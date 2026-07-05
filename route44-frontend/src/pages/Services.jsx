@@ -7,8 +7,8 @@ function Services() {
       <section className="pb-24 px-6 md:px-margin-desktop">
         <div className="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <span className="inline-flex items-center px-3 py-1 bg-primary/10 text-primary font-label-sm mb-6">
-              <span className="w-2 h-2 bg-primary animate-pulse mr-2" />
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary font-label-sm mb-6">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse mr-2" />
               NEURAL LOGISTICS NETWORK ACTIVE
             </span>
             <h1 className="font-display-lg text-[28px] sm:text-[36px] md:text-display-lg mb-8 text-on-surface leading-tight">
@@ -30,11 +30,11 @@ function Services() {
               </span>
             </a>
           </div>
-          <div className="relative h-64 md:h-[500px] glass-panel p-4 overflow-hidden group">
+          <div className="relative h-64 md:h-[500px] rounded-xl overflow-hidden glass-panel p-4 group">
             <img
               alt="Route 44 modern semi-trailer fleet at distribution hub"
               className="w-full h-full object-cover shadow-lg group-hover:scale-105 transition-transform duration-700"
-              src="https://lh3.googleusercontent.com/aida/AB6AXuB4Rj33UBcqhx6tK7lIv2paop_VUXjJWAm4L_7_ebo1_mcstSwbaynDSc7mvD34o8WgOzectdD4FXizz5w_lKEU-2YtLqMQ0JDBbNmuL5fWq0xkJA8SAmQq6_wDkmzkry0h2tbk3xKhYbA2oagN3khOgenKlJiqzWn2wi1bE_FOLKFwZmiWPDcDF891ZcO8F-Ql38xDY81GTMuKtz4KMEVGuA2KkxMx_Xq6bGcoWJrm69nEB9bg46ABmyc3w32LXuqhLa9EzkzUME_d"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4Rj33UBcqhx6tK7lIv2paop_VUXjJWAm4L_7_ebo1_mcstSwbaynDSc7mvD34o8WgOzectdD4FXizz5w_lKEU-2YtLqMQ0JDBbNmuL5fWq0xkJA8SAmQq6_wDkmzkry0h2tbk3xKhYbA2oagN3khOgenKlJiqzWn2wi1bE_FOLKFwZmiWPDcDF891ZcO8F-Ql38xDY81GTMuKtz4KMEVGuA2KkxMx_Xq6bGcoWJrm69nEB9bg46ABmyc3w32LXuqhLa9EzkzUME_d"
             />
             <div className="absolute bottom-8 left-8 p-6 glass-panel border-l-4 border-primary">
               <p className="font-mono-data text-mono-data text-primary uppercase mb-1">
@@ -149,7 +149,7 @@ function Services() {
                 system, we offer unparalleled transparency into transit times
                 and fuel efficiency.
               </p>
-              <div className="grid grid-cols-2 gap-8 mb-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
                 <div className="p-6 bg-surface-container-low border-l-2 border-primary">
                   <h4 className="font-label-md text-primary mb-2">
                     Payload Capacity
@@ -188,7 +188,7 @@ function Services() {
                 <img
                   alt="Route 44 distribution hub aerial view"
                   className="rounded-lg w-full h-auto"
-                  src="https://lh3.googleusercontent.com/aida/AB6AXuDMjh9MIljJQ1Ud5qw1OR4a8fD7MAshobpJ2QHYNJ6qwnvqJfUDUpL7enJ3hHpDdVO40X7j_IZe3DyD_ghVR8dV-JQ-097juOBwjTEwWCVZSWhP9saVX71_1p_M46INO0yfCILkN__0Slc13cuiEoMUiw1lN9mEFZqVnCaRG5l3kkRcvEeRVCYS_jIpPGvmbcdMApi4fW3bowKXupYgfGgMfVrM3iP4dsjajaN7uMGv3dRlXlqPoGtTu5W5oY7_XB31AYBO7IOGfL_q"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMjh9MIljJQ1Ud5qw1OR4a8fD7MAshobpJ2QHYNJ6qwnvqJfUDUpL7enJ3hHpDdVO40X7j_IZe3DyD_ghVR8dV-JQ-097juOBwjTEwWCVZSWhP9saVX71_1p_M46INO0yfCILkN__0Slc13cuiEoMUiw1lN9mEFZqVnCaRG5l3kkRcvEeRVCYS_jIpPGvmbcdMApi4fW3bowKXupYgfGgMfVrM3iP4dsjajaN7uMGv3dRlXlqPoGtTu5W5oY7_XB31AYBO7IOGfL_q"
                 />
               </div>
             </div>
@@ -271,9 +271,9 @@ function Services() {
                 <img
                   alt="Northampton Moulton Park warehousing facility interior"
                   className="rounded-xl shadow-2xl relative z-10 w-full"
-                  src="https://lh3.googleusercontent.com/aida/AB6AXuBYY0H-zBRSR337Vhne08d4Y4Rfrb_vEsfepzcP8XofxyjgKYmnSaH8ceohAKjQOEA1zFu-rKD-dQNLLdmBM_95Sz-tPIRDyZry8c7VAwoeNwUz9mAzhVP4yfyisJGM5qs8SmDgze6vXNHm68KWoGlJIPqqO0m3uXBK9mp5rlEL4FhE34SlysjR5jM3KDYzmhLoYU9ovrqKP_czK3Zbg1BrDfwvyAn6P6Ig7UeuJpthppfbdwbFhDekV5pycrhDYq6xkyPpQX-3dSm6"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYY0H-zBRSR337Vhne08d4Y4Rfrb_vEsfepzcP8XofxyjgKYmnSaH8ceohAKjQOEA1zFu-rKD-dQNLLdmBM_95Sz-tPIRDyZry8c7VAwoeNwUz9mAzhVP4yfyisJGM5qs8SmDgze6vXNHm68KWoGlJIPqqO0m3uXBK9mp5rlEL4FhE34SlysjR5jM3KDYzmhLoYU9ovrqKP_czK3Zbg1BrDfwvyAn6P6Ig7UeuJpthppfbdwbFhDekV5pycrhDYq6xkyPpQX-3dSm6"
                 />
-                <div className="absolute -top-6 -right-6 p-6 glass-panel border border-outline-variant/30 z-20">
+                <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 p-4 sm:p-6 glass-panel border border-outline-variant/30 z-20">
                   <span className="font-mono-data text-primary text-headline-md">
                     85,000+
                   </span>
@@ -346,7 +346,7 @@ function Services() {
             { value: "24/7", label: "Telemetry Monitoring" },
           ].map(({ value, label }) => (
             <div key={label}>
-              <p className="font-display-lg text-display-lg text-primary">
+              <p className="text-[32px] sm:text-[40px] md:font-display-lg md:text-display-lg font-bold text-primary">
                 {value}
               </p>
               <p className="font-label-md text-on-surface-variant uppercase">

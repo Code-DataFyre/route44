@@ -137,7 +137,7 @@ function Media() {
             <div className="relative h-96 overflow-hidden">
               <img
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                src="https://lh3.googleusercontent.com/aida/AB6AXuBpFKzjpOg722PmyuT5bhZep27_9PRFJr1y33Zvn4ZuyBqXIbf6dnjJGQXy0SCqVRdesdv-CV9qrn2Lfogf3hFoQl3zt8d_4i1az9c-YTD8T1Agi2pxg2HSzSLatQOomvT18OJitR3RWd3L0SdjUY1Qi0hP6xmsb4rkKTnUr1b-fuW1YO4SVVkfWtr6ns3H9IRUNhSJiGSyIc1ac2cDeCIXGKDjQ1CiF4_P846A-JGFLLcJh-diG3WEXMOo3OA3itJyqF4OjbzxE8Sb"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpFKzjpOg722PmyuT5bhZep27_9PRFJr1y33Zvn4ZuyBqXIbf6dnjJGQXy0SCqVRdesdv-CV9qrn2Lfogf3hFoQl3zt8d_4i1az9c-YTD8T1Agi2pxg2HSzSLatQOomvT18OJitR3RWd3L0SdjUY1Qi0hP6xmsb4rkKTnUr1b-fuW1YO4SVVkfWtr6ns3H9IRUNhSJiGSyIc1ac2cDeCIXGKDjQ1CiF4_P846A-JGFLLcJh-diG3WEXMOo3OA3itJyqF4OjbzxE8Sb"
                 alt="AI-driven route optimization in trans-continental haulage"
               />
               <div className="absolute top-6 left-6 flex gap-2">
@@ -169,7 +169,7 @@ function Media() {
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant overflow-hidden">
                     <img
-                      src="https://lh3.googleusercontent.com/aida/AB6AXuDJ700Cn10_OTHdlrfBKuYK_GHa8KM4x826vVmWSl1fuF6E6z9gs5QADnL6N6zHCSmgUvLDkl84GXuHVLTeggKBYNEcZdEaaKsM2uFKUNiPALKT8HG-Q-d75h0dVOptH25D15e2hSEUbPpMCyStAbIukKNzTqYLtyG79q07MSaWyXVc8AmFw970V6vpU-e5_AhkWq6FTbmWffMQTVKglORmhIZzThBchZejHMfhqnPEJ-ktR56F8Mzi9jtqQhElsfh3V9MNX_66dOAJ"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ700Cn10_OTHdlrfBKuYK_GHa8KM4x826vVmWSl1fuF6E6z9gs5QADnL6N6zHCSmgUvLDkl84GXuHVLTeggKBYNEcZdEaaKsM2uFKUNiPALKT8HG-Q-d75h0dVOptH25D15e2hSEUbPpMCyStAbIukKNzTqYLtyG79q07MSaWyXVc8AmFw970V6vpU-e5_AhkWq6FTbmWffMQTVKglORmhIZzThBchZejHMfhqnPEJ-ktR56F8Mzi9jtqQhElsfh3V9MNX_66dOAJ"
                       alt="Dr. Elias Vance"
                       className="w-full h-full object-cover"
                     />
@@ -195,7 +195,7 @@ function Media() {
         <div className="md:col-span-4 flex flex-col gap-gutter">
           {[
             {
-              src: "https://lh3.googleusercontent.com/aida/AB6AXuAtcE-sLHUynh9pp9NvwHwcPUPdX_hAeI5PodGxPAuYKjN3_N6acQ15VWeShl9iLli9O-R5-Gscm9I095wo6D4ddVmylhGR72JbXQYpG617pz47vsUuxBflRenxMqgEuUKpp6Zp6un1GsNbjHYNwAh7FZ7auzfxNsnJjBlIdubLctDuHPKnOOwASKHjQCqjKT5Mt-N5q1bN8U-6p-xSx0LjBHywbh1QLQal_BZksymlC6dgxVW90koXQ4cA1oD7vJKIZ5ceX1aQW7t5",
+              src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAtcE-sLHUynh9pp9NvwHwcPUPdX_hAeI5PodGxPAuYKjN3_N6acQ15VWeShl9iLli9O-R5-Gscm9I095wo6D4ddVmylhGR72JbXQYpG617pz47vsUuxBflRenxMqgEuUKpp6Zp6un1GsNbjHYNwAh7FZ7auzfxNsnJjBlIdubLctDuHPKnOOwASKHjQCqjKT5Mt-N5q1bN8U-6p-xSx0LjBHywbh1QLQal_BZksymlC6dgxVW90koXQ4cA1oD7vJKIZ5ceX1aQW7t5",
               label: "Fleet News",
               labelColor: "bg-secondary text-on-secondary",
               read: "5 Min Read",
@@ -203,7 +203,7 @@ function Media() {
               desc: "Our entire UK fleet is now equipped with second-generation sensor suites for extreme visibility.",
             },
             {
-              src: "https://lh3.googleusercontent.com/aida/AB6AXuD9_VnpHKSoR3FtVaB-Er9xiet-IGvgW5t9HHj_ARlJcmFRRdNYbly4PWto18e_k-aF7N9-cQdFdtku48JCrqfvnN3CofCAsYeAGOycWGR-WPUBE4c5RoG9XpyWn4dWC8tNutskenEzWUc0O2iVF078tLTY-nSmNu0MR0GZw4hKjvI7MUWU6vVPPOMmGOYDKO8-roY3cEtVLAJ38Skuos8rsiQ6S3vB-a4lpjR3iYRG5FfVNdMEBXLJBH8A6wQxCy2-JlDwHiSqvjLt",
+              src: "https://lh3.googleusercontent.com/aida-public/AB6AXuD9_VnpHKSoR3FtVaB-Er9xiet-IGvgW5t9HHj_ARlJcmFRRdNYbly4PWto18e_k-aF7N9-cQdFdtku48JCrqfvnN3CofCAsYeAGOycWGR-WPUBE4c5RoG9XpyWn4dWC8tNutskenEzWUc0O2iVF078tLTY-nSmNu0MR0GZw4hKjvI7MUWU6vVPPOMmGOYDKO8-roY3cEtVLAJ38Skuos8rsiQ6S3vB-a4lpjR3iYRG5FfVNdMEBXLJBH8A6wQxCy2-JlDwHiSqvjLt",
               label: "Internal",
               labelColor: "bg-primary text-on-primary",
               read: "8 Min Read",
