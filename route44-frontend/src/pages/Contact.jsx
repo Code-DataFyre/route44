@@ -27,7 +27,7 @@ function Contact() {
               Global Support Command
             </span>
           </div>
-          <h1 className="font-display-lg text-display-lg text-primary mb-6">
+          <h1 className="font-display-lg text-[30px] sm:text-[40px] md:text-display-lg text-primary mb-6">
             Neural Logistics Hub
           </h1>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
@@ -38,32 +38,32 @@ function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
           {/* ── Multi-Step Quote Form ── */}
-          <div className="lg:col-span-8 glass-panel p-10">
-            <div className="flex items-center justify-between mb-12">
+          <div className="lg:col-span-8 glass-panel p-6 md:p-10">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
               <h2 className="font-headline-lg text-headline-lg text-primary">
                 Freight Intake Engine
               </h2>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3">
                 <div
-                  className={`flex items-center gap-2 font-label-md ${step === 1 ? "text-primary" : "text-outline"}`}
+                  className={`flex items-center gap-1.5 font-label-md text-sm ${step === 1 ? "text-primary" : "text-outline"}`}
                 >
                   <span
-                    className={`w-8 h-8 rounded-full border-2 flex items-center justify-center ${step === 1 ? "border-primary" : "border-outline-variant"}`}
+                    className={`w-7 h-7 rounded-full border-2 flex items-center justify-center text-xs ${step === 1 ? "border-primary" : "border-outline-variant"}`}
                   >
                     01
                   </span>
-                  <span>Origins</span>
+                  <span className="hidden sm:inline">Origins</span>
                 </div>
-                <div className="w-12 h-[1px] bg-outline-variant/30" />
+                <div className="w-8 h-[1px] bg-outline-variant/30" />
                 <div
-                  className={`flex items-center gap-2 font-label-md ${step === 2 ? "text-primary" : "text-outline"}`}
+                  className={`flex items-center gap-1.5 font-label-md text-sm ${step === 2 ? "text-primary" : "text-outline"}`}
                 >
                   <span
-                    className={`w-8 h-8 rounded-full border-2 flex items-center justify-center ${step === 2 ? "border-primary" : "border-outline-variant"}`}
+                    className={`w-7 h-7 rounded-full border-2 flex items-center justify-center text-xs ${step === 2 ? "border-primary" : "border-outline-variant"}`}
                   >
                     02
                   </span>
-                  <span>Specs</span>
+                  <span className="hidden sm:inline">Specs</span>
                 </div>
               </div>
             </div>

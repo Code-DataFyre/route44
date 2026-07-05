@@ -36,7 +36,7 @@ function Home() {
                 Live Global Network Active
               </span>
             </div>
-            <h1 className="font-display-lg text-display-lg text-white mb-6">
+            <h1 className="font-display-lg text-[32px] sm:text-[40px] md:text-display-lg leading-tight text-white mb-6">
               Precision Logistics.
               <br />
               <span className="text-secondary">Global Scale.</span>
@@ -300,11 +300,12 @@ function Home() {
               />
               <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />
             </div>
-            <div className="absolute -bottom-8 -right-8 glass-panel p-8 max-w-xs border-l-4 border-l-secondary">
-              <span className="material-symbols-outlined text-secondary text-[40px] mb-4">
+            {/* Quote box — absolute on lg+, inline below image on mobile */}
+            <div className="mt-6 lg:mt-0 lg:absolute lg:-bottom-8 lg:-right-8 glass-panel p-6 lg:p-8 lg:max-w-xs border-l-4 border-l-secondary">
+              <span className="material-symbols-outlined text-secondary text-[32px] lg:text-[40px] mb-3 lg:mb-4">
                 format_quote
               </span>
-              <p className="font-headline-md text-headline-md italic leading-tight text-on-surface mb-4">
+              <p className="font-headline-md text-headline-md italic leading-tight text-on-surface mb-3 lg:mb-4">
                 "We're not just moving cargo; we're optimizing the neural
                 pathways of global commerce."
               </p>
@@ -439,7 +440,7 @@ function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-gutter md:h-[600px]">
             {/* Featured */}
-            <div className="md:col-span-2 md:row-span-2 glass-panel p-10 relative overflow-hidden group cursor-pointer">
+            <div className="md:col-span-2 md:row-span-2 glass-panel p-10 relative overflow-hidden group cursor-pointer min-h-[400px] md:min-h-0">
               <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-20 transition-opacity">
                 <div className="absolute inset-0 technical-grid" />
               </div>
@@ -557,7 +558,7 @@ function Home() {
               aria-label="Request a logistics quote"
             >
               <div className="space-y-6">
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label
                       htmlFor="home-name"

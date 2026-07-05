@@ -1,13 +1,90 @@
-/* Custom styles for Route 44 UI */
+/* ── Route 44 Design System ── */
+
+/* Material Symbols base */
 .material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
 }
 
+/* Glassmorphism panel */
+.glass-panel {
+  background: rgba(234, 237, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(192, 199, 208, 0.3);
+}
+
+/* Glassmorphism nav (legacy) */
 .glass-nav {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
+/* Secondary / coral button glow */
+.coral-glow {
+  box-shadow: 0 0 15px rgba(182, 23, 34, 0.15);
+}
+
+/* Subtle technical grid overlay */
+.technical-grid {
+  background-image:
+    linear-gradient(rgba(113, 120, 128, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(113, 120, 128, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Hero dark gradient overlay */
+.hero-gradient {
+  background: linear-gradient(
+    to right,
+    rgba(19, 27, 46, 0.9) 0%,
+    rgba(19, 27, 46, 0.4) 50%,
+    transparent 100%
+  );
+}
+
+/* Dot-matrix background */
+.grid-bg {
+  background-image: radial-gradient(
+    circle at 2px 2px,
+    rgba(113, 120, 128, 0.05) 1px,
+    transparent 0
+  );
+  background-size: 40px 40px;
+}
+
+/* Neural grid (primary-tinted) */
+.neural-grid {
+  background-image:
+    linear-gradient(rgba(0, 72, 112, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 72, 112, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Timeline vertical gradient axis */
+.timeline-line {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #004870,
+    #b61722,
+    transparent
+  );
+}
+
+/* Bottom fade overlay */
+.gradient-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(250, 248, 255, 0) 0%,
+    rgba(250, 248, 255, 1) 100%
+  );
+}
+
+/* Strong text shadow for hero headings */
 .text-shadow-strong {
-  text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }

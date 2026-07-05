@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Services() {
   return (
-    <main className="pt-48 grid-bg">
+    <main className="pt-32 md:pt-48 grid-bg">
       {/* ── Hero ── */}
       <section className="pb-24 px-6 md:px-margin-desktop">
         <div className="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -11,7 +11,7 @@ function Services() {
               <span className="w-2 h-2 bg-primary animate-pulse mr-2" />
               NEURAL LOGISTICS NETWORK ACTIVE
             </span>
-            <h1 className="font-display-lg text-display-lg mb-8 text-on-surface leading-tight">
+            <h1 className="font-display-lg text-[28px] sm:text-[36px] md:text-display-lg mb-8 text-on-surface leading-tight">
               Precision-Engineered{" "}
               <span className="text-primary">Transport Solutions.</span>
             </h1>
@@ -30,7 +30,7 @@ function Services() {
               </span>
             </a>
           </div>
-          <div className="relative h-[500px] glass-panel p-4 overflow-hidden group">
+          <div className="relative h-64 md:h-[500px] glass-panel p-4 overflow-hidden group">
             <img
               alt="Route 44 modern semi-trailer fleet at distribution hub"
               className="w-full h-full object-cover shadow-lg group-hover:scale-105 transition-transform duration-700"
