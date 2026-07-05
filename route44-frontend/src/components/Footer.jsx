@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FOOTER_LINKS, SOCIAL_MEDIA } from "../constants";
+import logoImage from "../assets/route44_logo.avif";
 
 function Footer() {
   const year = new Date().getFullYear();
@@ -67,11 +68,7 @@ function Footer() {
           <div className="md:col-span-3">
             <div className="flex items-center gap-3 mb-4">
               <Link to="/" className="flex items-center gap-3">
-                <img
-                  src="/route44_logo.avif"
-                  alt="Route 44"
-                  className="h-8 w-auto"
-                />
+                <img src={logoImage} alt="Route 44" className="h-8 w-auto" />
                 <span className="font-headline-md text-on-inverse-surface">
                   Route 44
                 </span>

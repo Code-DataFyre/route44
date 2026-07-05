@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
+import logoImage from "../assets/route44_logo.avif";
 
 function Header() {
   const location = useLocation();
@@ -44,7 +45,7 @@ function Header() {
             onClick={() => setMobileMenuOpen(false)}
           >
             <img
-              src="/route44_logo.avif"
+              src={logoImage}
               alt="Route 44 Logo"
               className="h-8 w-auto object-contain"
             />

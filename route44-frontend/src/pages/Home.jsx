@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { usePageTransition } from "../hooks/usePageTransition";
+import heroBg from "../assets/hero bg.png";
 
 function Home() {
   const mainRef = usePageTransition();
@@ -25,7 +26,7 @@ function Home() {
           <img
             alt="Route 44 precision logistics fleet on highway"
             className="w-full h-full object-cover"
-            src="https://lh3.googleusercontent.com/aida/AP1WRLvdiox0-4FLPVJ8R-UARX0zu7SEOpr5afK4l9XNRHfZBwEDrLTL_erYWboBmp2woqRPwdevaD4rZbJDwrT3mioiXa7g2GdjAEnHQafucYntA5SJZHVWLMc8WY0eO5gxuN1BCAFyAxK2eFSxx8iOjKuc0IuPcN-UQMdId5Cobuq0fB9V_mypzrC7PPEneD3rByZ6Pthg4eh6-Y0A5mPorPAIdZYIV_vzeQuN1ft_aL-ht8cMcb5O2DGNcrp5"
+            src={heroBg}
           />
           <div className="absolute inset-0 hero-gradient" />
           <div className="absolute inset-0 technical-grid opacity-30" />
