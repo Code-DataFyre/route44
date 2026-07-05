@@ -1,4 +1,5 @@
 import { usePageTransition } from "../hooks/usePageTransition";
+import leadershipImg from "../assets/Route 44 executive leadership team.png";
 
 function About() {
   const mainRef = usePageTransition();
@@ -56,7 +57,7 @@ function About() {
               <img
                 alt="James Arkwright and Sarah Chen, Joint Managing Directors of Route 44"
                 className="w-full aspect-square object-cover rounded-xl shadow-2xl border border-outline-variant/30"
-                src="https://lh3.googleusercontent.com/aida/AP1WRLviAIGEHGbUZfom8yeiRfuH7mYE0JGdfK_YtSTZoXO-dw6Fu48BGffqFelmLvSQ6qtUCMXrWKRtVc2QPiC4j17lJnnGCOoieXhPFXz8w3EjX_Ru-EVsvaQSzTKgDGvH9gX0mFF8PqsQbhVoQhukFEZHZ8z3j1ZgNJbt6FAKwKdpUwqg6k0avJ3jxNPV0uHht2UgbA_0U5_3uWwJiydR0r4cBkHJk2V4czkUzq1yIZ1Vw6_Xzlcnd0EvPJZ6"
+                src={leadershipImg}
               />
               <div className="absolute bottom-6 left-6 right-6 glass-panel p-6 border-l-4 border-secondary">
                 <h3 className="font-headline-md text-headline-md text-on-surface">

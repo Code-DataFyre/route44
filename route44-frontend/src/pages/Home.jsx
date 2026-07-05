@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { usePageTransition } from "../hooks/usePageTransition";
 import heroBg from "../assets/hero bg.png";
+import leadershipImg from "../assets/Route 44 executive leadership team.png";
 
 function Home() {
   const mainRef = usePageTransition();
@@ -299,7 +300,7 @@ function Home() {
               <img
                 alt="Route 44 executive leadership team"
                 className="w-full h-full object-cover grayscale contrast-125"
-                src="https://lh3.googleusercontent.com/aida/AP1WRLviAIGEHGbUZfom8yeiRfuH7mYE0JGdfK_YtSTZoXO-dw6Fu48BGffqFelmLvSQ6qtUCMXrWKRtVc2QPiC4j17lJnnGCOoieXhPFXz8w3EjX_Ru-EVsvaQSzTKgDGvH9gX0mFF8PqsQbhVoQhukFEZHZ8z3j1ZgNJbt6FAKwKdpUwqg6k0avJ3jxNPV0uHht2UgbA_0U5_3uWwJiydR0r4cBkHJk2V4czkUzq1yIZ1Vw6_Xzlcnd0EvPJZ6"
+                src={leadershipImg}
               />
               <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />
             </div>
