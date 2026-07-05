@@ -110,3 +110,53 @@ export const MEDIA_FILTERS = [
   "Fleet Dispatch",
   "Whitepapers",
 ];
+
+// Social Media Links
+export const SOCIAL_MEDIA = [
+  {
+    name: "LinkedIn",
+    icon: "share",
+    url: "https://linkedin.com",
+    label: "Follow us on LinkedIn",
+  },
+  {
+    name: "Twitter",
+    icon: "groups",
+    url: "https://twitter.com",
+    label: "Follow us on Twitter",
+  },
+  {
+    name: "Facebook",
+    icon: "hub",
+    url: "https://facebook.com",
+    label: "Follow us on Facebook",
+  },
+  {
+    name: "Instagram",
+    icon: "image",
+    url: "https://instagram.com",
+    label: "Follow us on Instagram",
+  },
+];
+
+// Footer Links
+export const FOOTER_LINKS = {
+  HAULAGE: [
+    "Contract Haulage",
+    "Specialist Logistics",
+    "European Distribution",
+    "Ad-hoc Freight",
+  ],
+  COMPLIANCE: [
+    "RHA Conditions",
+    "ISO Certifications",
+    "DVSA Excellence",
+    "ESG Commitments",
+  ],
+  LEGAL: [
+    "Privacy Policy",
+    "Terms of Service",
+    "Cookie Settings",
+    "Carrier Liability",
+  ],
+};
