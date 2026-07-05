@@ -6,7 +6,7 @@ function Analytics() {
   return (
     <main
       ref={mainRef}
-      className="min-h-screen bg-surface pt-24 md:pt-32 pb-12 md:pb-16 page-fade-in"
+      className="neural-grid min-h-screen bg-surface pt-24 md:pt-32 pb-12 md:pb-16 page-fade-in"
     >
       <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12">
         {/* Dashboard Header */}

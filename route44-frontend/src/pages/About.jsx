@@ -26,7 +26,7 @@ function About() {
   };
 
   return (
-    <main ref={mainRef} className="pt-20 page-fade-in">
+    <main ref={mainRef} className="neural-grid pt-20 page-fade-in">
       {/* ── Hero ── */}
       <section className="relative px-6 md:px-margin-desktop py-24 overflow-hidden">
         <div className="grid-pattern absolute inset-0 -z-10 grid-bg" />

@@ -9,7 +9,7 @@ function Tracking() {
   return (
     <main
       ref={mainRef}
-      className="min-h-screen flex pt-24 bg-surface-dim relative page-fade-in"
+      className="neural-grid min-h-screen flex pt-24 bg-surface-dim relative page-fade-in"
     >
       {/* Mobile Overlay */}
       {(showShipmentsList || showDetails) && (
