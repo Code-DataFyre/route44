@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { FOOTER_LINKS, SOCIAL_MEDIA } from "../constants";
 
@@ -60,10 +61,10 @@ function Footer() {
     <footer className="bg-inverse-surface text-surface border-t border-outline-variant/20 relative w-full">
       {/* Main Content */}
       <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop py-8">
-        {/* Top: Logo + Newsletter */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8 pb-8 border-b border-outline-variant/20">
-          {/* Left: Brand + Social */}
-          <div className="md:col-span-2">
+        {/* Main Footer Section - Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+          {/* Left: Brand + Social (3 columns) */}
+          <div className="md:col-span-3">
             <div className="flex items-center gap-3 mb-4">
               <Link to="/" className="flex items-center gap-3">
                 <img
@@ -77,14 +78,14 @@ function Footer() {
               </Link>
             </div>
 
-            <p className="text-surface-variant font-body-sm text-body-sm mb-4 max-w-md">
+            <p className="text-surface-variant font-body-sm text-body-sm mb-4 max-w-sm text-xs">
               Neural Logistics for the modern enterprise. Defining precision in
               the haulage industry since 1998.
             </p>
 
             {/* Social Media */}
             <div>
-              <p className="font-label-sm text-label-sm text-primary-fixed uppercase tracking-widest mb-3">
+              <p className="font-label-sm text-label-sm text-primary-fixed uppercase tracking-widest mb-2 text-xs">
                 Connect With Us
               </p>
               <div className="flex gap-2">
@@ -96,99 +97,99 @@ function Footer() {
                     rel="noopener noreferrer"
                     target="_blank"
                     title={name}
-                    className="w-10 h-10 rounded-md border border-primary-fixed/30 flex items-center justify-center text-primary-fixed hover:bg-primary-fixed/10 hover:border-primary-fixed/60 transition-all duration-300"
+                    className="w-9 h-9 rounded-md border border-primary-fixed/30 flex items-center justify-center text-primary-fixed hover:bg-primary-fixed/10 hover:border-primary-fixed/60 transition-all duration-300"
                   >
-                    {icon}
+                    {React.cloneElement(icon, { className: "w-4 h-4" })}
                   </a>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Right: Newsletter Compact */}
-          <div>
-            <h4 className="font-label-md text-label-md text-primary-fixed uppercase tracking-widest mb-3">
+          {/* Middle: Footer Links (6 columns) - 3 columns for links */}
+          <div className="md:col-span-6 grid grid-cols-3 gap-6">
+            {/* Services */}
+            <div>
+              <h4 className="font-label-sm text-label-sm text-primary-fixed mb-2 uppercase tracking-widest text-xs">
+                Services
+              </h4>
+              <ul className="space-y-1.5">
+                {FOOTER_LINKS.HAULAGE.map((item) => (
+                  <li key={item}>
+                    <Link
+                      to="/services"
+                      className="font-body-sm text-body-sm text-surface-variant hover:text-primary-fixed transition-colors text-xs"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Compliance */}
+            <div>
+              <h4 className="font-label-sm text-label-sm text-primary-fixed mb-2 uppercase tracking-widest text-xs">
+                Compliance
+              </h4>
+              <ul className="space-y-1.5">
+                {FOOTER_LINKS.COMPLIANCE.map((item) => (
+                  <li key={item}>
+                    <a
+                      href="#"
+                      className="font-body-sm text-body-sm text-surface-variant hover:text-primary-fixed transition-colors text-xs"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Legal */}
+            <div>
+              <h4 className="font-label-sm text-label-sm text-primary-fixed mb-2 uppercase tracking-widest text-xs">
+                Legal
+              </h4>
+              <ul className="space-y-1.5">
+                {FOOTER_LINKS.LEGAL.map((item) => (
+                  <li key={item}>
+                    <a
+                      href="#"
+                      className="font-body-sm text-body-sm text-surface-variant hover:text-primary-fixed transition-colors text-xs"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Right: Newsletter Compact (3 columns) */}
+          <div className="md:col-span-3">
+            <h4 className="font-label-md text-label-md text-primary-fixed uppercase tracking-widest mb-2 text-xs">
               Stay Updated
             </h4>
             <form className="flex flex-col gap-2">
               <input
                 type="email"
                 placeholder="Your email"
-                className="px-3 py-2 rounded-md bg-white/10 border border-outline-variant/30 text-surface placeholder:text-surface-variant/60 text-sm focus:outline-none focus:border-primary-fixed transition-colors"
+                className="px-3 py-2 rounded-md bg-white/10 border border-outline-variant/30 text-surface placeholder:text-surface-variant/60 text-xs focus:outline-none focus:border-primary-fixed transition-colors"
               />
               <button
                 type="submit"
-                className="px-4 py-2 bg-secondary text-on-secondary font-label-sm rounded-md hover:brightness-110 transition-all text-sm"
+                className="px-4 py-2 bg-secondary text-on-secondary font-label-sm rounded-md hover:brightness-110 transition-all text-xs"
               >
                 Subscribe
               </button>
             </form>
           </div>
         </div>
-
-        {/* Footer Links */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8 pb-8 border-b border-outline-variant/20">
-          {/* Haulage Services */}
-          <div>
-            <h4 className="font-label-md text-label-md text-primary-fixed mb-3 uppercase tracking-widest text-xs">
-              Services
-            </h4>
-            <ul className="space-y-2">
-              {FOOTER_LINKS.HAULAGE.map((item) => (
-                <li key={item}>
-                  <Link
-                    to="/services"
-                    className="font-body-sm text-body-sm text-surface-variant hover:text-primary-fixed transition-colors text-sm"
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Compliance */}
-          <div>
-            <h4 className="font-label-md text-label-md text-primary-fixed mb-3 uppercase tracking-widest text-xs">
-              Compliance
-            </h4>
-            <ul className="space-y-2">
-              {FOOTER_LINKS.COMPLIANCE.map((item) => (
-                <li key={item}>
-                  <a
-                    href="#"
-                    className="font-body-sm text-body-sm text-surface-variant hover:text-primary-fixed transition-colors text-sm"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h4 className="font-label-md text-label-md text-primary-fixed mb-3 uppercase tracking-widest text-xs">
-              Legal
-            </h4>
-            <ul className="space-y-2">
-              {FOOTER_LINKS.LEGAL.map((item) => (
-                <li key={item}>
-                  <a
-                    href="#"
-                    className="font-body-sm text-body-sm text-surface-variant hover:text-primary-fixed transition-colors text-sm"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="px-6 md:px-margin-desktop py-4 border-t border-outline-variant/10">
+      <div className="px-6 md:px-margin-desktop py-3">
         <div className="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-3 text-center md:text-left">
           <p className="font-label-sm text-label-sm text-surface-variant text-xs">
             &copy; {year} Route 44 Neural Logistics. All Rights Reserved.
