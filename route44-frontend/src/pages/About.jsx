@@ -3,6 +3,27 @@ import { usePageTransition } from "../hooks/usePageTransition";
 function About() {
   const mainRef = usePageTransition();
 
+  // Color mapping for timeline
+  const getColorClasses = (color) => {
+    const colorMap = {
+      primary: {
+        bg: "bg-primary",
+        ring: "ring-primary/10",
+        text: "text-primary",
+        textMuted: "text-primary/50",
+        border: "border-primary",
+      },
+      secondary: {
+        bg: "bg-secondary",
+        ring: "ring-secondary/10",
+        text: "text-secondary",
+        textMuted: "text-secondary/50",
+        border: "border-secondary",
+      },
+    };
+    return colorMap[color];
+  };
+
   return (
     <main ref={mainRef} className="pt-20 page-fade-in">
       {/* ── Hero ── */}
@@ -147,38 +168,41 @@ function About() {
                   pulse: true,
                 },
               ].map(
-                ({ year, color, title, subtitle, body, pulse }, idx, arr) => (
-                  <div key={year} className="flex gap-5 pb-10 last:pb-0">
-                    <div className="flex flex-col items-center flex-shrink-0">
-                      <div
-                        className={`w-4 h-4 rounded-full bg-${color} ring-4 ring-${color}/10 mt-1 ${pulse ? "animate-pulse" : ""}`}
-                      />
-                      {idx < arr.length - 1 && (
-                        <div className="w-px flex-1 bg-outline-variant/40 mt-1" />
-                      )}
-                    </div>
-                    <div className="flex-1 pb-2">
-                      <span
-                        className={`font-mono-data text-mono-data text-${color}/50 uppercase tracking-tighter text-xs`}
-                      >
-                        {year}
-                      </span>
-                      <h4
-                        className={`font-headline-md text-headline-md text-${color} mt-0.5`}
-                      >
-                        {title}
-                      </h4>
-                      <p className="text-sm text-on-surface-variant mt-2 italic">
-                        {subtitle}
-                      </p>
-                      <div
-                        className={`glass-panel p-5 mt-4 rounded-xl border-l-4 border-${color}`}
-                      >
-                        <p className="font-body-md text-body-md">{body}</p>
+                ({ year, color, title, subtitle, body, pulse }, idx, arr) => {
+                  const colorClass = getColorClasses(color);
+                  return (
+                    <div key={year} className="flex gap-5 pb-10 last:pb-0">
+                      <div className="flex flex-col items-center flex-shrink-0">
+                        <div
+                          className={`w-4 h-4 rounded-full ${colorClass.bg} ${colorClass.ring} ring-4 mt-1 ${pulse ? "animate-pulse" : ""}`}
+                        />
+                        {idx < arr.length - 1 && (
+                          <div className="w-px flex-1 bg-outline-variant/40 mt-1" />
+                        )}
+                      </div>
+                      <div className="flex-1 pb-2">
+                        <span
+                          className={`font-mono-data text-mono-data ${colorClass.textMuted} uppercase tracking-tighter text-xs`}
+                        >
+                          {year}
+                        </span>
+                        <h4
+                          className={`font-headline-md text-headline-md ${colorClass.text} mt-0.5`}
+                        >
+                          {title}
+                        </h4>
+                        <p className="text-sm text-on-surface-variant mt-2 italic">
+                          {subtitle}
+                        </p>
+                        <div
+                          className={`glass-panel p-5 mt-4 rounded-xl border-l-4 ${colorClass.border}`}
+                        >
+                          <p className="font-body-md text-body-md">{body}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ),
+                  );
+                },
               )}
             </div>
 
@@ -225,40 +249,43 @@ function About() {
                   pulse: true,
                 },
               ].map(
-                ({ year, color, title, subtitle, body, reverse, pulse }) => (
-                  <div
-                    key={year}
-                    className={`relative mb-24 last:mb-0 flex items-center justify-between ${reverse ? "flex-row-reverse" : ""}`}
-                  >
+                ({ year, color, title, subtitle, body, reverse, pulse }) => {
+                  const colorClass = getColorClasses(color);
+                  return (
                     <div
-                      className={`w-[45%] ${reverse ? "text-left pl-12" : "text-right pr-12"}`}
+                      key={year}
+                      className={`relative mb-24 last:mb-0 flex items-center justify-between ${reverse ? "flex-row-reverse" : ""}`}
                     >
-                      <h3
-                        className={`font-display-lg text-display-lg text-${color}/20`}
-                      >
-                        {year}
-                      </h3>
-                      <h4
-                        className={`font-headline-md text-headline-md text-${color} mt-[-20px]`}
-                      >
-                        {title}
-                      </h4>
-                      <p className="font-body-md text-body-md text-on-surface-variant mt-4 italic">
-                        {subtitle}
-                      </p>
-                    </div>
-                    <div
-                      className={`absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-${color} ring-8 ring-${color}/10 ${pulse ? "animate-pulse" : ""}`}
-                    />
-                    <div className={`w-[45%] ${reverse ? "pr-12" : "pl-12"}`}>
                       <div
-                        className={`glass-panel p-6 rounded-xl ${reverse ? "border-r-4 border-" + color + " text-right" : "border-l-4 border-" + color}`}
+                        className={`w-[45%] ${reverse ? "text-left pl-12" : "text-right pr-12"}`}
                       >
-                        <p className="font-body-md text-body-md">{body}</p>
+                        <h3
+                          className={`font-display-lg text-display-lg ${colorClass.textMuted}`}
+                        >
+                          {year}
+                        </h3>
+                        <h4
+                          className={`font-headline-md text-headline-md ${colorClass.text} mt-[-20px]`}
+                        >
+                          {title}
+                        </h4>
+                        <p className="font-body-md text-body-md text-on-surface-variant mt-4 italic">
+                          {subtitle}
+                        </p>
+                      </div>
+                      <div
+                        className={`absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full ${colorClass.bg} ring-8 ${colorClass.ring} ${pulse ? "animate-pulse" : ""}`}
+                      />
+                      <div className={`w-[45%] ${reverse ? "pr-12" : "pl-12"}`}>
+                        <div
+                          className={`glass-panel p-6 rounded-xl ${reverse ? `border-r-4 ${colorClass.border} text-right` : `border-l-4 ${colorClass.border}`}`}
+                        >
+                          <p className="font-body-md text-body-md">{body}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ),
+                  );
+                },
               )}
             </div>
             {/* end desktop timeline */}
