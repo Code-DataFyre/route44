@@ -1,45 +1,131 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="bg-[#f3f3f3] dark:bg-zinc-900 w-full border-t border-zinc-200 dark:border-zinc-800">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 px-4 md:px-8 lg:px-12 py-12 md:py-16 max-w-[1920px] mx-auto">
-        <div className="col-span-1 md:col-span-1">
-          <div className="flex items-center gap-3 mb-6">
-            <img src="/route44_logo.avif" alt="Route 44 Logo" className="h-10 w-auto" />
-            <div className="text-lg font-bold text-[#1a1c1c] dark:text-[#f9f9f9] font-headline">ROUTE 44</div>
+    <footer className="bg-inverse-surface border-t border-outline-variant/20 relative w-full">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-6 md:px-margin-desktop py-16 md:py-24 max-w-container-max mx-auto">
+        {/* Brand */}
+        <div>
+          <div className="font-headline-lg text-headline-lg font-bold text-surface-container-lowest mb-6">
+            Route 44
           </div>
-          <p className="text-zinc-500 text-xs leading-relaxed max-w-[200px]">
-            Delivering precision across global networks with industrial integrity and technological speed.
+          <p className="text-surface-variant font-body-md text-body-md mb-8 max-w-xs">
+            Neural Logistics for the modern enterprise. Defining precision in
+            the haulage industry since 1998.
           </p>
+          <div className="flex gap-4">
+            <a
+              href="https://www.route44.org"
+              aria-label="Route 44 website"
+              rel="noopener noreferrer"
+              className="w-10 h-10 border border-outline-variant/30 flex items-center justify-center text-surface-variant hover:text-primary-fixed transition-all"
+            >
+              <span className="material-symbols-outlined">language</span>
+            </a>
+            <a
+              href="#"
+              aria-label="Share"
+              className="w-10 h-10 border border-outline-variant/30 flex items-center justify-center text-surface-variant hover:text-primary-fixed transition-all"
+            >
+              <span className="material-symbols-outlined">share</span>
+            </a>
+            <a
+              href="#"
+              aria-label="Network"
+              className="w-10 h-10 border border-outline-variant/30 flex items-center justify-center text-surface-variant hover:text-primary-fixed transition-all"
+            >
+              <span className="material-symbols-outlined">hub</span>
+            </a>
+          </div>
         </div>
-        <div className="flex flex-col gap-4">
-          <h5 className="font-body text-xs tracking-wide uppercase font-medium text-[#6e0609] dark:text-[#8f211d]">Services</h5>
-          <nav className="flex flex-col gap-2">
-            <Link className="font-body text-xs tracking-wide uppercase font-medium text-zinc-500 dark:text-zinc-400 hover:text-[#1a1c1c] hover:translate-x-1 transition-transform duration-200" to="/services">Freight Elite</Link>
-            <Link className="font-body text-xs tracking-wide uppercase font-medium text-zinc-500 dark:text-zinc-400 hover:text-[#1a1c1c] hover:translate-x-1 transition-transform duration-200" to="/services">Precision Ops</Link>
-            <Link className="font-body text-xs tracking-wide uppercase font-medium text-zinc-500 dark:text-zinc-400 hover:text-[#1a1c1c] hover:translate-x-1 transition-transform duration-200" to="/services">Carrier Network</Link>
-          </nav>
+
+        {/* Haulage Services */}
+        <div>
+          <h4 className="font-label-md text-label-md text-primary-fixed mb-6 uppercase tracking-widest">
+            Haulage Services
+          </h4>
+          <ul className="space-y-4">
+            {[
+              "Contract Haulage",
+              "Specialist Logistics",
+              "European Distribution",
+              "Ad-hoc Freight",
+            ].map((item) => (
+              <li key={item}>
+                <Link
+                  to="/services"
+                  className="font-body-md text-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all"
+                >
+                  {item}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
-        <div className="flex flex-col gap-4">
-          <h5 className="font-body text-xs tracking-wide uppercase font-medium text-[#6e0609] dark:text-[#8f211d]">Resources</h5>
-          <nav className="flex flex-col gap-2">
-            <a className="font-body text-xs tracking-wide uppercase font-medium text-zinc-500 dark:text-zinc-400 hover:text-[#1a1c1c] hover:translate-x-1 transition-transform duration-200" href="#">Tracking Tool</a>
-            <a className="font-body text-xs tracking-wide uppercase font-medium text-zinc-500 dark:text-zinc-400 hover:text-[#1a1c1c] hover:translate-x-1 transition-transform duration-200" href="#">Compliance</a>
-            <a className="font-body text-xs tracking-wide uppercase font-medium text-zinc-500 dark:text-zinc-400 hover:text-[#1a1c1c] hover:translate-x-1 transition-transform duration-200" href="#">Sustainability</a>
-          </nav>
+
+        {/* Compliance */}
+        <div>
+          <h4 className="font-label-md text-label-md text-primary-fixed mb-6 uppercase tracking-widest">
+            Compliance
+          </h4>
+          <ul className="space-y-4">
+            {[
+              "RHA Conditions",
+              "ISO Certifications",
+              "DVSA Excellence",
+              "ESG Commitments",
+            ].map((item) => (
+              <li key={item}>
+                <a
+                  href="#"
+                  className="font-body-md text-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all"
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-        <div className="flex flex-col gap-4">
-          <h5 className="font-body text-xs tracking-wide uppercase font-medium text-[#6e0609] dark:text-[#8f211d]">Legal</h5>
-          <nav className="flex flex-col gap-2">
-            <a className="font-body text-xs tracking-wide uppercase font-medium text-zinc-500 dark:text-zinc-400 hover:text-[#1a1c1c] hover:translate-x-1 transition-transform duration-200" href="#">Privacy Policy</a>
-            <a className="font-body text-xs tracking-wide uppercase font-medium text-zinc-500 dark:text-zinc-400 hover:text-[#1a1c1c] hover:translate-x-1 transition-transform duration-200" href="#">Carrier Terms</a>
-            <a className="font-body text-xs tracking-wide uppercase font-medium text-zinc-500 dark:text-zinc-400 hover:text-[#1a1c1c] hover:translate-x-1 transition-transform duration-200" href="#">Cookie Settings</a>
-          </nav>
+
+        {/* Legal */}
+        <div>
+          <h4 className="font-label-md text-label-md text-primary-fixed mb-6 uppercase tracking-widest">
+            Legal
+          </h4>
+          <ul className="space-y-4">
+            {[
+              "Privacy Policy",
+              "Terms of Service",
+              "Cookie Settings",
+              "Carrier Liability",
+            ].map((item) => (
+              <li key={item}>
+                <a
+                  href="#"
+                  className="font-body-md text-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all"
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-      <div className="px-4 md:px-8 lg:px-12 py-6 md:py-8 border-t border-zinc-200 dark:border-zinc-800 text-center opacity-80">
-        <p className="font-body text-xs tracking-wide uppercase font-medium text-zinc-400">© {new Date().getFullYear()} Route 44 Logistics. All rights reserved. Precision in Motion.</p>
+
+      {/* Bottom Bar */}
+      <div className="px-6 md:px-margin-desktop py-6 border-t border-outline-variant/10 max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+        <p className="font-label-sm text-label-sm text-surface-variant">
+          &copy; {year} Route 44 Neural Logistics. All Rights Reserved. RHA
+          Conditions of Carriage 2024 Apply.
+        </p>
+        <div className="flex items-center gap-2">
+          <span className="w-2 h-2 bg-primary-fixed rounded-full" />
+          <span className="font-mono-data text-mono-data text-surface-variant uppercase tracking-widest">
+            System Status: Nominal
+          </span>
+        </div>
       </div>
     </footer>
   );

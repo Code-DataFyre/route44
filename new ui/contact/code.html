@@ -1,0 +1,416 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Route 44 | Neural Logistics Contact Center</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#006194",
+                        "on-tertiary-fixed": "#2e1500",
+                        "tertiary-fixed-dim": "#ffb77a",
+                        "on-tertiary-fixed-variant": "#6d3a00",
+                        "glass-fill": "rgba(234, 237, 255, 0.6)",
+                        "warning-glow": "#b61722",
+                        "on-primary-fixed-variant": "#004b73",
+                        "surface-container-high": "#e1e7ff",
+                        "on-secondary-container": "#fffbff",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#faf8ff",
+                        "surface-container-low": "#f2f3ff",
+                        "success-glow": "#006194",
+                        "surface": "#faf8ff",
+                        "on-surface": "#131b2e",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#cce5ff",
+                        "on-error": "#ffffff",
+                        "surface-bg": "#faf8ff",
+                        "on-background": "#131b2e",
+                        "outline": "#717880",
+                        "surface-container-highest": "#dae2fc",
+                        "on-secondary-fixed-variant": "#930013",
+                        "outline-muted": "rgba(112, 120, 129, 0.15)",
+                        "secondary-container": "#da3437",
+                        "background": "#faf8ff",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#410004",
+                        "primary": "#004870",
+                        "surface-tint": "#076396",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-surface-variant": "#40474f",
+                        "outline-variant": "#c0c7d0",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#eaedff",
+                        "primary-fixed-dim": "#93ccff",
+                        "tertiary-accent": "#894d00",
+                        "on-primary-fixed": "#001d31",
+                        "tertiary-container": "#8b4c03",
+                        "inverse-primary": "#93ccff",
+                        "on-primary-container": "#b2d9ff",
+                        "surface-variant": "#dae2fc",
+                        "tertiary": "#6a3800",
+                        "inverse-surface": "#283044",
+                        "on-tertiary-container": "#ffcaa1",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#ffdad7",
+                        "secondary": "#b61722",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#ffb3ae",
+                        "tertiary-fixed": "#ffdcc2",
+                        "surface-dim": "#d2d9f4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "container-max": "1280px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "headline-xl": ["Geist"],
+                        "mono-data": ["JetBrains Mono"],
+                        "label-md": ["Geist"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["10px", {"lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-lg": ["30px", {"lineHeight": "38px", "fontWeight": "600"}],
+                        "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "mono-data": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(234, 237, 255, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(192, 199, 208, 0.3);
+        }
+        .neural-grid {
+            background-image: linear-gradient(rgba(0, 72, 112, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 72, 112, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .step-active { color: #004870; border-color: #004870; }
+        .step-inactive { color: #717880; border-color: #c0c7d0; }
+    </style>
+</head>
+<body class="bg-surface-bg text-on-surface font-body-md selection:bg-primary/20">
+<!-- Trust Bar -->
+<div class="w-full h-8 flex items-center justify-center bg-secondary dark:bg-secondary-container shadow-inner">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-secondary dark:text-on-secondary-container">
+            RHA 2024 | ISO Certified | Qargo Tracked
+        </span>
+</div>
+<!-- Navigation -->
+<header class="fixed top-8 w-full z-50 bg-glass-fill backdrop-blur-md dark:bg-inverse-surface/80 border-b border-outline-variant/30 shadow-sm">
+<nav class="flex items-center justify-between px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center h-8"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRE7UPYyJTNbApgYEi_CACMWptL0sEsWjOBeS7wUEO9NjuVnVDTAdkDNhUA9v8QmUt2RNr-u9972iI3tUDBe9jaoMnHMmcnQvND25uoVHYzC4CXJLgC0LNeNxrO5gnmIzqU1YbKrMcH-CGrljl7JBPPTYzWYBdbhdx4W8Veb857zO1zB17AEmmF9LMm43FUo1kKbg_RK29OR1nP0n2RMVAK-eh_Ydkjkx3MIEHOsvCcpGoZtcPTEB5I3FeHDxOYZ5VumagqULfl5de" alt="Route 44 Logo" class="h-8 w-auto object-contain"></div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-on-surface dark:text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Services</a>
+<a class="font-label-md text-label-md text-on-surface dark:text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Logistics</a>
+<a class="font-label-md text-label-md text-on-surface dark:text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Sectors</a>
+<a class="font-label-md text-label-md text-on-surface dark:text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Careers</a>
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim font-bold border-b-2 border-secondary" href="#">Media Hub</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2 bg-surface-container-low text-primary font-label-md rounded-lg hover:bg-surface-container-high transition-colors">Client Login</button>
+<button class="px-6 py-2 bg-primary text-on-primary font-label-md rounded-lg shadow-lg hover:brightness-110 active:scale-95 transition-all">Request a Quote</button>
+</div>
+</nav>
+</header>
+<main class="neural-grid pt-32 min-h-screen">
+<div class="max-w-container-max mx-auto px-margin-desktop py-16">
+<!-- Hero Section -->
+<section class="mb-24 text-center md:text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-container/10 border border-secondary/20 rounded-full mb-6">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-secondary uppercase tracking-widest">Global Support Command</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary mb-6">Neural Logistics Hub</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Connect with our specialized departments through our unified directory or initiate a precision logistics intake below.</p>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left: Multi-step Quote Form -->
+<div class="lg:col-span-8 glass-panel p-10 rounded-xl">
+<div class="flex items-center justify-between mb-12">
+<h2 class="font-headline-lg text-headline-lg text-primary">Freight Intake Engine</h2>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 font-label-md step-active" id="step-1-indicator">
+<span class="w-8 h-8 rounded-full border-2 flex items-center justify-center">01</span>
+<span class="">Origins</span>
+</div>
+<div class="w-12 h-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-2 font-label-md step-inactive" id="step-2-indicator">
+<span class="w-8 h-8 rounded-full border-2 flex items-center justify-center">02</span>
+<span class="">Specs</span>
+</div>
+</div>
+</div>
+<form id="quote-form">
+<!-- Step 1: Routing -->
+<div class="space-y-8" id="form-step-1">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-md text-on-surface-variant">Pickup Point (ZIP/City)</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">location_on</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-low border-transparent rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="London, UK (LHR)" type="text">
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-on-surface-variant">Destination Point (ZIP/City)</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">flag</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-low border-transparent rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="Rotterdam, NL (RTM)" type="text">
+</div>
+</div>
+</div>
+<div class="p-6 rounded-xl border border-primary/10 bg-primary/5">
+<h3 class="font-label-md text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">info</span>
+                                    AI Routing Suggestion
+                                </h3>
+<p class="text-sm text-on-surface-variant">Route 44 Neural Engine suggests <span class="font-bold text-primary">Channel Tunnel Corridor 4</span> for optimal transit speed and 12% lower CO2 emissions.</p>
+</div>
+<div class="flex justify-end">
+<button class="px-8 py-3 bg-primary text-on-primary font-label-md rounded-lg flex items-center gap-2 hover:brightness-110 transition-all" onclick="nextStep()" type="button">
+                                    Specifications <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Step 2: Specs (Hidden Initially) -->
+<div class="hidden space-y-8" id="form-step-2">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="space-y-2">
+<label class="font-label-md text-on-surface-variant">Freight Type</label>
+<select class="w-full px-4 py-3 bg-surface-container-low border-transparent rounded-lg focus:ring-2 focus:ring-primary">
+<option>Dry Van</option>
+<option>Refrigerated (Pharma)</option>
+<option>HazMat (Neural Grade)</option>
+<option>Oversized/Heavy Lift</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-on-surface-variant">Total Weight (KG)</label>
+<input class="w-full px-4 py-3 bg-surface-container-low border-transparent rounded-lg focus:ring-2 focus:ring-primary" placeholder="24000" type="number">
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-on-surface-variant">Urgency Level</label>
+<div class="flex gap-2">
+<button class="flex-1 py-3 bg-surface-container-low rounded-lg font-label-md hover:bg-surface-container-high transition-all" type="button">Standard</button>
+<button class="flex-1 py-3 bg-secondary text-white rounded-lg font-label-md shadow-lg shadow-secondary/20" type="button">Critical</button>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center pt-6 border-t border-outline-variant/20">
+<button class="font-label-md text-outline hover:text-primary transition-colors" onclick="prevStep()" type="button">Go Back</button>
+<button class="px-12 py-4 bg-primary text-on-primary font-headline-md rounded-lg shadow-xl shadow-primary/20 hover:brightness-110 transition-all" type="submit">Deploy Request</button>
+</div>
+</div>
+</form>
+</div>
+<!-- Right Side: Directory & Map -->
+<div class="lg:col-span-4 space-y-gutter">
+<!-- Phone Directory -->
+<div class="glass-panel p-8 rounded-xl">
+<h3 class="font-headline-md text-headline-md text-primary mb-6">Support Directory</h3>
+<div class="space-y-6">
+<!-- Dispatch -->
+<div class="flex items-start gap-4 group">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface">Dispatch Operations</p>
+<p class="font-mono-data text-mono-data text-primary">+44 (0) 20 8444 0901</p>
+<p class="text-xs text-on-surface-variant mt-1">24/7 Real-time Tracking &amp; Updates</p>
+</div>
+</div>
+<!-- Billing -->
+<div class="flex items-start gap-4 group">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface">Accounts &amp; Billing</p>
+<p class="font-mono-data text-mono-data text-primary">+44 (0) 20 8444 0905</p>
+<p class="text-xs text-on-surface-variant mt-1">Mon-Fri: 09:00 - 17:30 GMT</p>
+</div>
+</div>
+<!-- General -->
+<div class="flex items-start gap-4 group">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">hub</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface">General Inquiries</p>
+<p class="font-mono-data text-mono-data text-primary">info@route44.neural</p>
+<p class="text-xs text-on-surface-variant mt-1">Global HQ Concierge</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Map/HQ visualization -->
+<div class="glass-panel overflow-hidden rounded-xl h-80 relative group">
+<img class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" data-alt="A highly detailed 3D architectural visualization of a futuristic logistics headquarters building at night. The structure features sleek glass panels with integrated blue neon lighting strips and a massive 'Route 44' digital signage glowing on the facade. The surrounding environment is a clean, modern industrial park with high-tech security gates and a fleet of electric semi-trucks parked in perfectly aligned docks. The scene is illuminated by cool cinematic lighting with deep shadows and vibrant primary blue accents, creating an atmosphere of advanced corporate authority and precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJwGzVeQ_t4Tm7D0u-qAnQbIx0ZQuLRXczKDAvPDtHgY6tmDgUXFvm5D0U1DIY7JtQfeol0CrlsFTgNuu97-jf17Z8c7l47WAwqleAuH1vZ0SL9HrLbZwZRvp5s4aJmVGmojbop8QoBpkMJK4xLifavCmUqeMRfOZjFfrs5DlZnjHeKeP4s41E3EWqfzO0LE7ek-7Hdf74JXSebkcYzQsL3Ll4EqXVDS06KzFjarj0_SV5ulb7ywxzx0ZANw9012_k4HctubIFp2eC">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<p class="font-label-sm uppercase tracking-tighter opacity-80 mb-1">Global Headquarters</p>
+<p class="font-headline-md leading-tight">London Gateway Tech Center,<br>Essex, SS17 9DY, UK</p>
+<a class="mt-4 inline-flex items-center gap-2 font-label-md bg-white/20 backdrop-blur-md px-4 py-2 rounded-lg hover:bg-white/30 transition-all" href="#">
+<span class="material-symbols-outlined text-sm">directions</span>
+                                Get Directions
+                            </a>
+</div>
+<!-- GPS Overlay -->
+<div class="absolute top-6 right-6 font-mono-data text-[10px] text-primary-fixed bg-primary/40 backdrop-blur px-2 py-1 rounded">
+                            LAT: 51.5033° N | LON: 0.4700° E
+                        </div>
+</div>
+</div>
+</div>
+<!-- Global Status Ticker -->
+<section class="mt-24 grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="glass-panel p-6 border-l-4 border-primary">
+<p class="font-label-sm text-on-surface-variant uppercase mb-1">Current Network Load</p>
+<p class="font-headline-md text-primary">87.4%</p>
+<div class="w-full bg-surface-container-high h-1 mt-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[87%]"></div>
+</div>
+</div>
+<div class="glass-panel p-6 border-l-4 border-secondary">
+<p class="font-label-sm text-on-surface-variant uppercase mb-1">Active Deliveries</p>
+<p class="font-headline-md text-secondary">4,902</p>
+<p class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                        Live tracking active
+                    </p>
+</div>
+<div class="glass-panel p-6 border-l-4 border-primary-container">
+<p class="font-label-sm text-on-surface-variant uppercase mb-1">Average Transit</p>
+<p class="font-headline-md text-primary">14.2 hrs</p>
+<p class="text-xs text-on-surface-variant mt-1">Intra-Europe Fleet</p>
+</div>
+<div class="glass-panel p-6 border-l-4 border-outline">
+<p class="font-label-sm text-on-surface-variant uppercase mb-1">Neural Latency</p>
+<p class="font-headline-md text-on-surface">12ms</p>
+<p class="text-xs text-on-surface-variant mt-1">Direct Cloud Sync</p>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="relative w-full mt-auto bg-inverse-surface dark:bg-surface-container-lowest border-t border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-24 max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-lg text-headline-lg font-bold text-surface-container-lowest mb-6">Route 44</div>
+<p class="font-body-md text-body-md text-surface-variant opacity-80 mb-8">Redefining global logistics through neural networks and precision automation.</p>
+<div class="flex gap-4">
+<span class="w-10 h-10 rounded-full border border-surface-variant/30 flex items-center justify-center text-surface-variant hover:text-primary-fixed transition-all cursor-pointer"><span class="material-symbols-outlined">share</span></span>
+<span class="w-10 h-10 rounded-full border border-surface-variant/30 flex items-center justify-center text-surface-variant hover:text-primary-fixed transition-all cursor-pointer"><span class="material-symbols-outlined">mail</span></span>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-primary-fixed">Services</h4>
+<ul class="space-y-2">
+<li class=""><a class="font-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all opacity-80 hover:opacity-100" href="#">Haulage Services</a></li>
+<li class=""><a class="font-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all opacity-80 hover:opacity-100" href="#">Specialist Logistics</a></li>
+<li class=""><a class="font-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all opacity-80 hover:opacity-100" href="#">Compliance</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-primary-fixed">Legal</h4>
+<ul class="space-y-2">
+<li class=""><a class="font-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a></li>
+<li class=""><a class="font-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-md text-primary-fixed">Certification</h4>
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 bg-white/5 border border-white/10 rounded flex items-center justify-center text-white/50 font-bold text-xs uppercase text-center p-2">RHA Approved</div>
+<div class="w-16 h-16 bg-white/5 border border-white/10 rounded flex items-center justify-center text-white/50 font-bold text-xs uppercase text-center p-2">ISO 9001</div>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 py-8 px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-sm text-label-sm text-surface-variant opacity-60">© 2024 Route 44 Neural Logistics. All Rights Reserved. RHA Conditions of Carriage 2024 Apply.</p>
+<div class="flex items-center gap-6">
+<span class="flex items-center gap-1 text-xs text-green-400"><span class="w-2 h-2 bg-green-400 rounded-full"></span> System Status: Online</span>
+</div>
+</div>
+</footer>
+<script>
+        function nextStep() {
+            document.getElementById('form-step-1').classList.add('hidden');
+            document.getElementById('form-step-2').classList.remove('hidden');
+            
+            document.getElementById('step-1-indicator').classList.remove('step-active');
+            document.getElementById('step-1-indicator').classList.add('step-inactive');
+            document.getElementById('step-2-indicator').classList.add('step-active');
+            document.getElementById('step-2-indicator').classList.remove('step-inactive');
+        }
+
+        function prevStep() {
+            document.getElementById('form-step-2').classList.add('hidden');
+            document.getElementById('form-step-1').classList.remove('hidden');
+            
+            document.getElementById('step-2-indicator').classList.remove('step-active');
+            document.getElementById('step-2-indicator').classList.add('step-inactive');
+            document.getElementById('step-1-indicator').classList.add('step-active');
+            document.getElementById('step-1-indicator').classList.remove('step-inactive');
+        }
+
+        // Micro-interaction for form inputs
+        const inputs = document.querySelectorAll('input, select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('scale-[1.01]');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('scale-[1.01]');
+            });
+        });
+
+        // Form submission prevention for demo
+        document.getElementById('quote-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Logistics Data Packaged. Deploying to Route 44 Neural Network...');
+        });
+    </script>
+
+
+
+
+</body></html>

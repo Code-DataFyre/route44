@@ -1,0 +1,460 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Services Hub | Route 44 Neural Logistics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(234, 237, 255, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(192, 199, 208, 0.3);
+        }
+        .coral-glow {
+            box-shadow: 0 0 15px rgba(182, 13, 19, 0.15);
+        }
+        .grid-bg {
+            background-image: radial-gradient(circle at 2px 2px, rgba(113, 120, 128, 0.05) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+        .gradient-overlay {
+            background: linear-gradient(180deg, rgba(250, 248, 255, 0) 0%, rgba(250, 248, 255, 1) 100%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#006194",
+                        "on-tertiary-fixed": "#2e1500",
+                        "tertiary-fixed-dim": "#ffb77a",
+                        "on-tertiary-fixed-variant": "#6d3a00",
+                        "glass-fill": "rgba(234, 237, 255, 0.6)",
+                        "warning-glow": "#b61722",
+                        "on-primary-fixed-variant": "#004b73",
+                        "surface-container-high": "#e1e7ff",
+                        "on-secondary-container": "#fffbff",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#faf8ff",
+                        "surface-container-low": "#f2f3ff",
+                        "success-glow": "#006194",
+                        "surface": "#faf8ff",
+                        "on-surface": "#131b2e",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#cce5ff",
+                        "on-error": "#ffffff",
+                        "surface-bg": "#faf8ff",
+                        "on-background": "#131b2e",
+                        "outline": "#717880",
+                        "surface-container-highest": "#dae2fc",
+                        "on-secondary-fixed-variant": "#930013",
+                        "outline-muted": "rgba(112, 120, 129, 0.15)",
+                        "secondary-container": "#da3437",
+                        "background": "#faf8ff",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#410004",
+                        "primary": "#004870",
+                        "surface-tint": "#076396",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-surface-variant": "#40474f",
+                        "outline-variant": "#c0c7d0",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#eaedff",
+                        "primary-fixed-dim": "#93ccff",
+                        "tertiary-accent": "#894d00",
+                        "on-primary-fixed": "#001d31",
+                        "tertiary-container": "#8b4c03",
+                        "inverse-primary": "#93ccff",
+                        "on-primary-container": "#b2d9ff",
+                        "surface-variant": "#dae2fc",
+                        "tertiary": "#6a3800",
+                        "inverse-surface": "#283044",
+                        "on-tertiary-container": "#ffcaa1",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#ffdad7",
+                        "secondary": "#b61722",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#ffb3ae",
+                        "tertiary-fixed": "#ffdcc2",
+                        "surface-dim": "#d2d9f4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "container-max": "1280px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "headline-xl": ["Geist"],
+                        "mono-data": ["JetBrains Mono"],
+                        "label-md": ["Geist"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["10px", {"lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-lg": ["30px", {"lineHeight": "38px", "fontWeight": "600"}],
+                        "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "mono-data": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden grid-bg">
+<!-- TopAppBar -->
+<header class="w-full h-8 flex items-center justify-center bg-secondary dark:bg-secondary-container shadow-inner">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-secondary dark:text-on-secondary-container">
+            RHA 2024 | ISO Certified | Qargo Tracked
+        </span>
+</header>
+<!-- TopNavBar -->
+<nav class="fixed top-8 w-full z-50 bg-glass-fill backdrop-blur-md dark:bg-inverse-surface/80 border-b border-outline-variant/30 shadow-sm transition-all duration-300" id="main-nav">
+<div class="flex items-center justify-between px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="font-headline-xl text-headline-xl font-bold tracking-tighter text-primary dark:text-primary-fixed" href="/"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRE7UPYyJTNbApgYEi_CACMWptL0sEsWjOBeS7wUEO9NjuVnVDTAdkDNhUA9v8QmUt2RNr-u9972iI3tUDBe9jaoMnHMmcnQvND25uoVHYzC4CXJLgC0LNeNxrO5gnmIzqU1YbKrMcH-CGrljl7JBPPTYzWYBdbhdx4W8Veb857zO1zB17AEmmF9LMm43FUo1kKbg_RK29OR1nP0n2RMVAK-eh_Ydkjkx3MIEHOsvCcpGoZtcPTEB5I3FeHDxOYZ5VumagqULfl5de" alt="Route 44 Logo" class="h-10 w-auto object-contain"></a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim font-bold border-b-2 border-secondary" href="#services">Services</a>
+<a class="font-label-md text-label-md text-on-surface dark:text-on-surface-variant hover:text-primary transition-colors" href="#">Logistics</a>
+<a class="font-label-md text-label-md text-on-surface dark:text-on-surface-variant hover:text-primary transition-colors" href="#">Sectors</a>
+<a class="font-label-md text-label-md text-on-surface dark:text-on-surface-variant hover:text-primary transition-colors" href="#">Careers</a>
+<a class="font-label-md text-label-md text-on-surface dark:text-on-surface-variant hover:text-primary transition-colors" href="#">Media Hub</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="hidden lg:block px-4 py-2 text-primary font-label-md hover:bg-surface-container-low transition-colors">Client Login</button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded shadow-sm font-label-md scale-95 active:scale-90 transition-transform">Request a Quote</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-48 pb-24 px-margin-desktop">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary font-label-sm mb-6">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse mr-2"></span>
+                    NEURAL LOGISTICS NETWORK ACTIVE
+                </span>
+<h1 class="font-display-lg text-display-lg mb-8 text-on-surface leading-tight">Precision-Engineered <span class="text-primary">Transport Solutions.</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">
+                    Route 44 combines Tier-1 physical infrastructure with real-time telemetry. From general haulage to specialist NRP frameworks, we provide the backbone for global commerce.
+                </p>
+<div class="flex flex-wrap gap-4">
+<a class="px-8 py-4 bg-secondary text-on-secondary font-label-md flex items-center coral-glow hover:brightness-110 transition-all" href="#directory">
+                        Explore Service Directory
+                        <span class="material-symbols-outlined ml-2">arrow_downward</span>
+</a>
+</div>
+</div>
+<div class="relative h-[500px] rounded-xl overflow-hidden glass-panel p-4 group">
+<img alt="Route 44 Fleet Modern Logistics" class="w-full h-full object-cover rounded shadow-lg group-hover:scale-105 transition-transform duration-700" data-alt="A cinematic, high-contrast photograph of a sleek modern semi-trailer truck driving along a coastal motorway at twilight. The scene is illuminated by glowing blue LED highlights along the truck's chassis and the warm amber of its headlights. The overall aesthetic is professional and high-tech, using the Route 44 primary blue and deep crimson accent colors. The lighting creates a sense of continuous motion and reliability in a global logistics network." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4Rj33UBcqhx6tK7lIv2paop_VUXjJWAm4L_7_ebo1_mcstSwbaynDSc7mvD34o8WgOzectdD4FXizz5w_lKEU-2YtLqMQ0JDBbNmuL5fWq0xkJA8SAmQq6_wDkmzkry0h2tbk3xKhYbA2oagN3khOgenKlJiqzWn2wi1bE_FOLKFwZmiWPDcDF891ZcO8F-Ql38xDY81GTMuKtz4KMEVGuA2KkxMx_Xq6bGcoWJrm69nEB9bg46ABmyc3w32LXuqhLa9EzkzUME_d">
+<div class="absolute bottom-8 left-8 p-6 glass-panel border-l-4 border-primary">
+<p class="font-mono-data text-mono-data text-primary uppercase mb-1">Live Asset Tracking</p>
+<p class="font-headline-md text-headline-md">1,420+ Mobile Units</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Service Index (SEO Optimized) -->
+<section class="py-24 bg-surface-container-low" id="directory">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-xl text-headline-xl mb-4">Service Directory</h2>
+<p class="font-body-md text-on-surface-variant">Our comprehensive logistic framework categorized by operational requirements.</p>
+</div>
+<div class="font-mono-data text-outline">INDEX_REV_2024.01</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Service Item 1 -->
+<a class="group p-8 glass-panel hover:bg-surface-container-high transition-all border-l-4 border-primary" href="#haulage">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl">local_shipping</span>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">General Haulage</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Full and part-load distribution across the UK and Europe.</p>
+<span class="font-label-md text-primary flex items-center">
+                        View Specs <span class="material-symbols-outlined ml-2 text-sm">east</span>
+</span>
+</a>
+<!-- Service Item 2 -->
+<a class="group p-8 glass-panel hover:bg-surface-container-high transition-all border-l-4 border-secondary" href="#specialist">
+<span class="material-symbols-outlined text-secondary mb-6 text-3xl">warning</span>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-secondary transition-colors">ADR &amp; Hazardous</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Certified transport for regulated and dangerous chemicals.</p>
+<span class="font-label-md text-secondary flex items-center">
+                        View Specs <span class="material-symbols-outlined ml-2 text-sm">east</span>
+</span>
+</a>
+<!-- Service Item 3 -->
+<a class="group p-8 glass-panel hover:bg-surface-container-high transition-all border-l-4 border-primary" href="#specialist">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl">ac_unit</span>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">Chilled Logistics</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Multi-temp controlled transit for perishables.</p>
+<span class="font-label-md text-primary flex items-center">
+                        View Specs <span class="material-symbols-outlined ml-2 text-sm">east</span>
+</span>
+</a>
+<!-- Service Item 4 -->
+<a class="group p-8 glass-panel hover:bg-surface-container-high transition-all border-l-4 border-primary" href="#warehousing">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl">inventory_2</span>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">Warehousing</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Strategic storage solutions at Northampton hub.</p>
+<span class="font-label-md text-primary flex items-center">
+                        View Specs <span class="material-symbols-outlined ml-2 text-sm">east</span>
+</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Detailed Section: Contract/General Haulage -->
+<section class="py-32" id="haulage">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7">
+<div class="flex items-center gap-4 mb-6">
+<span class="w-12 h-[1px] bg-primary"></span>
+<span class="font-label-md text-primary uppercase tracking-widest">Core Infrastructure</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl mb-8">Contract &amp; General <span class="text-primary">Haulage</span></h2>
+<p class="font-body-lg text-body-lg mb-8 text-on-surface-variant">
+                        Our contract haulage division provides dedicated fleet solutions for enterprise partners. By integrating our neural tracking system, we offer unparalleled transparency into transit times and fuel efficiency.
+                    </p>
+<div class="grid grid-cols-2 gap-8 mb-12">
+<div class="p-6 bg-surface-container-low border-l-2 border-primary">
+<h4 class="font-label-md text-primary mb-2">Payload Capacity</h4>
+<p class="font-body-md font-bold">Up to 44 Tonnes GCW</p>
+</div>
+<div class="p-6 bg-surface-container-low border-l-2 border-primary">
+<h4 class="font-label-md text-primary mb-2">Fleet Composition</h4>
+<p class="font-body-md font-bold">Euro VI Compliant Units</p>
+</div>
+</div>
+<ul class="space-y-4 mb-10">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary mr-3 text-xl">check_circle</span>
+<span class="font-body-md text-on-surface-variant">24/7 Centralized Traffic Command Center monitoring</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary mr-3 text-xl">check_circle</span>
+<span class="font-body-md text-on-surface-variant">Real-time POD (Proof of Delivery) digital integration</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary mr-3 text-xl">check_circle</span>
+<span class="font-body-md text-on-surface-variant">Sustainable fuel-routing algorithms for lower carbon footprints</span>
+</li>
+</ul>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="absolute -top-6 -left-6 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="glass-panel p-2 rounded-xl overflow-hidden shadow-2xl">
+<img alt="Route 44 Distribution Hub" class="rounded-lg w-full h-auto" data-alt="A professional aerial view of a logistics hub with multiple parked white semi-trucks aligned perfectly in their loading bays. The scene is crisp and orderly, symbolizing efficiency and operational excellence. The lighting is bright and clear mid-day sun, emphasizing the cleanliness of the facilities. The color palette is dominated by neutral whites and grays with subtle primary blue accents in the company branding visible on the trailers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMjh9MIljJQ1Ud5qw1OR4a8fD7MAshobpJ2QHYNJ6qwnvqJfUDUpL7enJ3hHpDdVO40X7j_IZe3DyD_ghVR8dV-JQ-097juOBwjTEwWCVZSWhP9saVX71_1p_M46INO0yfCILkN__0Slc13cuiEoMUiw1lN9mEFZqVnCaRG5l3kkRcvEeRVCYS_jIpPGvmbcdMApi4fW3bowKXupYgfGgMfVrM3iP4dsjajaN7uMGv3dRlXlqPoGtTu5W5oY7_XB31AYBO7IOGfL_q">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Section: Specialist Frameworks -->
+<section class="py-32 bg-inverse-surface text-surface" id="specialist">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-20">
+<span class="font-label-md text-secondary-fixed-dim uppercase tracking-widest block mb-4">High-Compliance Operations</span>
+<h2 class="font-headline-xl text-headline-xl text-surface-container-lowest">Specialist Transport Frameworks</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Hazardous -->
+<div class="p-8 border border-outline/20 bg-white/5 backdrop-blur-sm relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-8xl">warning</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-secondary-fixed-dim">ADR &amp; Hazardous</h3>
+<p class="font-body-md text-surface-variant mb-8">Specialist drivers trained for all ADR classes (excluding Radioactives &amp; Explosives). Rigorous safety protocols for chemical and industrial fluid transit.</p>
+<div class="pt-6 border-t border-outline/30">
+<p class="font-mono-data text-mono-data text-surface-variant mb-2">TECH SPEC:</p>
+<p class="font-body-md">Spill-containment equipped, GPS-fenced hazardous routes.</p>
+</div>
+</div>
+<!-- Chilled -->
+<div class="p-8 border border-outline/20 bg-white/5 backdrop-blur-sm relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-8xl">ac_unit</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-primary-fixed">Temperature Controlled</h3>
+<p class="font-body-md text-surface-variant mb-8">Precision multi-temp trailers ensuring integrity of cold-chain pharmaceutical and food supply. Integrated thermal telemetry for live auditing.</p>
+<div class="pt-6 border-t border-outline/30">
+<p class="font-mono-data text-mono-data text-surface-variant mb-2">TECH SPEC:</p>
+<p class="font-body-md">+/- 0.5°C tolerance, Dual-temp capability, Remote adjustment.</p>
+</div>
+</div>
+<!-- NRP -->
+<div class="p-8 border border-outline/20 bg-white/5 backdrop-blur-sm relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-8xl">security</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-tertiary-fixed-dim">NRP Frameworks</h3>
+<p class="font-body-md text-surface-variant mb-8">Non-Regulated Protected (NRP) transit for high-value assets and electronics. Enhanced security escort and anti-theft telemetry packages.</p>
+<div class="pt-6 border-t border-outline/30">
+<p class="font-mono-data text-mono-data text-surface-variant mb-2">TECH SPEC:</p>
+<p class="font-body-md">Level 4 telematics, Hard-shell security, 2-man crews.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Section: Warehousing -->
+<section class="py-32 overflow-hidden" id="warehousing">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="order-2 lg:order-1">
+<div class="relative">
+<div class="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary/5 rounded-full blur-3xl"></div>
+<img alt="Northampton Warehousing Facility" class="rounded-xl shadow-2xl relative z-10 w-full" data-alt="A futuristic, clean interior of a large-scale warehouse featuring tall orange storage racks and polished concrete floors. The space is illuminated by overhead industrial lights that create sharp reflections. The image is framed to emphasize the scale and organization of the facility. The color palette is minimalist, highlighting the Route 44 brand colors through subtle equipment branding and safety lines on the floor. It looks highly automated and efficient." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYY0H-zBRSR337Vhne08d4Y4Rfrb_vEsfepzcP8XofxyjgKYmnSaH8ceohAKjQOEA1zFu-rKD-dQNLLdmBM_95Sz-tPIRDyZry8c7VAwoeNwUz9mAzhVP4yfyisJGM5qs8SmDgze6vXNHm68KWoGlJIPqqO0m3uXBK9mp5rlEL4FhE34SlysjR5jM3KDYzmhLoYU9ovrqKP_czK3Zbg1BrDfwvyAn6P6Ig7UeuJpthppfbdwbFhDekV5pycrhDYq6xkyPpQX-3dSm6">
+<div class="absolute -top-6 -right-6 p-6 glass-panel border border-outline-variant/30 z-20">
+<span class="font-mono-data text-primary text-headline-md">85,000+</span>
+<p class="font-label-md text-on-surface-variant">Square Feet Active</p>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<span class="font-label-md text-primary uppercase tracking-widest block mb-4">Regional Hub: Northampton</span>
+<h2 class="font-headline-xl text-headline-xl mb-8">Moulton Park <span class="text-primary">Storage Hub</span></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                        Strategically located in the heart of the Golden Triangle, our Moulton Park facility serves as a primary consolidation point for national distribution. 
+                    </p>
+<div class="space-y-6">
+<div class="flex gap-4 p-4 glass-panel border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary text-3xl">qr_code_scanner</span>
+<div>
+<h4 class="font-headline-md text-headline-md text-sm">WMS Integration</h4>
+<p class="font-body-md text-on-surface-variant">Real-time inventory visibility via our proprietary cloud portal.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 glass-panel border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+<div>
+<h4 class="font-headline-md text-headline-md text-sm">Bonded &amp; Secure</h4>
+<p class="font-body-md text-on-surface-variant">CCTV monitored, TAPA-standard security, and climate monitoring.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 glass-panel border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary text-3xl">forklift</span>
+<div>
+<h4 class="font-headline-md text-headline-md text-sm">Pick, Pack &amp; Despatch</h4>
+<p class="font-body-md text-on-surface-variant">Omnichannel fulfillment from single-unit to full pallet picking.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-24 bg-surface-container">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-2 lg:grid-cols-4 gap-gutter text-center">
+<div>
+<p class="font-display-lg text-display-lg text-primary">99.8%</p>
+<p class="font-label-md text-on-surface-variant uppercase">On-Time Performance</p>
+</div>
+<div>
+<p class="font-display-lg text-display-lg text-primary">2.4M</p>
+<p class="font-label-md text-on-surface-variant uppercase">Miles Covered Monthly</p>
+</div>
+<div>
+<p class="font-display-lg text-display-lg text-primary">150+</p>
+<p class="font-label-md text-on-surface-variant uppercase">Full-Time Operatives</p>
+</div>
+<div>
+<p class="font-display-lg text-display-lg text-primary">24/7</p>
+<p class="font-label-md text-on-surface-variant uppercase">Telemetry Monitoring</p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="relative w-full mt-auto bg-inverse-surface dark:bg-surface-container-lowest py-24 border-t border-outline-variant/20">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="col-span-1 md:col-span-2">
+<span class="font-headline-lg text-headline-lg font-bold text-surface-container-lowest block mb-6">Route 44</span>
+<p class="font-body-md text-surface-variant max-w-sm mb-8">
+                    Defining the next generation of neural logistics through precision, technology, and unyielding reliability.
+                </p>
+<div class="flex space-x-4">
+<a class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-primary-fixed mb-6 uppercase tracking-widest">Solutions</h4>
+<ul class="space-y-4">
+<li class=""><a class="font-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all" href="#">Haulage Services</a></li>
+<li class=""><a class="font-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all" href="#">Specialist Logistics</a></li>
+<li class=""><a class="font-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all" href="#">Warehouse Operations</a></li>
+<li class=""><a class="font-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all" href="#">Supply Chain Tech</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-primary-fixed mb-6 uppercase tracking-widest">Compliance</h4>
+<ul class="space-y-4">
+<li class=""><a class="font-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all" href="#">Privacy Policy</a></li>
+<li class=""><a class="font-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all" href="#">Terms of Service</a></li>
+<li class=""><a class="font-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all" href="#">RHA Conditions</a></li>
+<li class=""><a class="font-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all" href="#">ISO 9001:2015</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-16 pt-8 border-t border-outline/10 text-center">
+<p class="font-label-sm text-label-sm text-surface-variant">© 2024 Route 44 Neural Logistics. All Rights Reserved. RHA Conditions of Carriage 2024 Apply.</p>
+</div>
+</footer>
+<script>
+        // Simple scroll interaction for header
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'bg-glass-fill/95');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.add('py-4');
+                nav.classList.remove('py-2', 'bg-glass-fill/95');
+            }
+        });
+
+        // Anchor smoothing
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+
+
+
+</body></html>

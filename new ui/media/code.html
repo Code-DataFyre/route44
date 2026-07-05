@@ -1,0 +1,399 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(234, 237, 255, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(192, 199, 208, 0.3);
+        }
+        .coral-glow:hover {
+            box-shadow: 0 0 15px rgba(182, 17, 34, 0.15);
+        }
+        .grid-bg {
+            background-image: radial-gradient(circle at 2px 2px, rgba(113, 120, 128, 0.05) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        .active-filter {
+            background-color: #b61722;
+            color: #ffffff;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#006194",
+                        "on-tertiary-fixed": "#2e1500",
+                        "tertiary-fixed-dim": "#ffb77a",
+                        "on-tertiary-fixed-variant": "#6d3a00",
+                        "glass-fill": "rgba(234, 237, 255, 0.6)",
+                        "warning-glow": "#b61722",
+                        "on-primary-fixed-variant": "#004b73",
+                        "surface-container-high": "#e1e7ff",
+                        "on-secondary-container": "#fffbff",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#faf8ff",
+                        "surface-container-low": "#f2f3ff",
+                        "success-glow": "#006194",
+                        "surface": "#faf8ff",
+                        "on-surface": "#131b2e",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#cce5ff",
+                        "on-error": "#ffffff",
+                        "surface-bg": "#faf8ff",
+                        "on-background": "#131b2e",
+                        "outline": "#717880",
+                        "surface-container-highest": "#dae2fc",
+                        "on-secondary-fixed-variant": "#930013",
+                        "outline-muted": "rgba(112, 120, 129, 0.15)",
+                        "secondary-container": "#da3437",
+                        "background": "#faf8ff",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#410004",
+                        "primary": "#004870",
+                        "surface-tint": "#076396",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-surface-variant": "#40474f",
+                        "outline-variant": "#c0c7d0",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#eaedff",
+                        "primary-fixed-dim": "#93ccff",
+                        "tertiary-accent": "#894d00",
+                        "on-primary-fixed": "#001d31",
+                        "tertiary-container": "#8b4c03",
+                        "inverse-primary": "#93ccff",
+                        "on-primary-container": "#b2d9ff",
+                        "surface-variant": "#dae2fc",
+                        "tertiary": "#6a3800",
+                        "inverse-surface": "#283044",
+                        "on-tertiary-container": "#ffcaa1",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#ffdad7",
+                        "secondary": "#b61722",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#ffb3ae",
+                        "tertiary-fixed": "#ffdcc2",
+                        "surface-dim": "#d2d9f4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "container-max": "1280px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "headline-xl": ["Geist"],
+                        "mono-data": ["JetBrains Mono"],
+                        "label-md": ["Geist"],
+                        "body-lg": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-secondary/30 grid-bg min-h-screen flex flex-col">
+<!-- TopAppBar (Trust Bar) -->
+<header class="w-full h-8 flex items-center justify-center bg-secondary shadow-inner">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-secondary">RHA 2024 | ISO Certified | Qargo Tracked</span>
+</header>
+<!-- TopNavBar -->
+<nav class="fixed top-8 w-full z-50 bg-glass-fill backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+<div class="flex items-center justify-between px-margin-desktop py-4 max-w-container-max mx-auto w-full">
+<div class="flex items-center h-8"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoHbwvlgT_S9HM52XtILBZ9uOj4lOIerVVmWFRe4SbOkCf1lzdTG9nqHDw_54aEM6VkuvtdqzA95vYSaRX34cPteKKYa52A2PY6zUo9Zkq_0Djqly7e9NYaKDWRiMRJlJZb0uGy3WGxbYHesJ5Ws-bLqnOm7NCyLCCuqjeHWOekW_ilXNhTXTt3KNM3ME1rBM7b_sWXPV8JAz8da6BF44d8YUwSWmydNXhXK6XSJIe73l_xZAy-HxLK1ZevaSu6epP-cfztE7QyiSk" alt="Route 44 Logo" class="h-6 w-auto object-contain"></div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-label-md text-label-md text-on-surface hover:text-primary transition-colors duration-200" href="#">Services</a>
+<a class="font-label-md text-label-md text-on-surface hover:text-primary transition-colors duration-200" href="#">Logistics</a>
+<a class="font-label-md text-label-md text-on-surface hover:text-primary transition-colors duration-200" href="#">Sectors</a>
+<a class="font-label-md text-label-md text-on-surface hover:text-primary transition-colors duration-200" href="#">Careers</a>
+<a class="font-label-md text-label-md text-secondary font-bold border-b-2 border-secondary" href="#">Media Hub</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-label-md text-label-md text-on-surface hover:bg-surface-container-low px-4 py-2 rounded transition-colors duration-200">Client Login</button>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-lg font-bold transition-transform active:scale-95 shadow-sm">Request a Quote</button>
+</div>
+</div>
+</nav>
+<main class="flex-grow pt-32 pb-24 px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Hero HUD Section -->
+<section class="mb-16">
+<div class="glass-panel p-12 rounded-xl border border-outline-variant/20 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 flex flex-col items-end opacity-20 pointer-events-none">
+<span class="font-mono-data text-mono-data uppercase tracking-tighter">System Latency: 42ms</span>
+<span class="font-mono-data text-mono-data uppercase tracking-tighter">Fleet Status: Operational</span>
+</div>
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary/10 text-secondary rounded-full border border-secondary/20 mb-6">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Neural Insights Live</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary mb-6">Media Hub &amp; Neural Insights</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed">
+                        Navigating the global trade arteries with real-time dispatch data and deep analytical forecasts. 
+                        Explore our latest supply chain breakthroughs and internal fleet developments.
+                    </p>
+<div class="flex flex-col md:flex-row gap-4">
+<div class="flex-1 glass-panel border-outline-variant/30 flex items-center px-4 py-3 rounded-lg group focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<span class="material-symbols-outlined text-outline group-focus-within:text-primary transition-colors">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full ml-3 text-on-surface placeholder:text-outline/60 font-body-md" placeholder="Search insights, reports, fleet logs..." type="text">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Filter & Stats HUD -->
+<div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
+<div class="flex flex-wrap gap-3">
+<button class="px-6 py-2 rounded-full font-label-md text-label-md bg-primary text-on-primary shadow-sm hover:brightness-110 transition-all">All Intelligence</button>
+<button class="px-6 py-2 rounded-full font-label-md text-label-md glass-panel text-on-surface hover:bg-surface-container-high transition-all">Supply Chain Trends</button>
+<button class="px-6 py-2 rounded-full font-label-md text-label-md glass-panel text-on-surface hover:bg-surface-container-high transition-all">Fleet Dispatch</button>
+<button class="px-6 py-2 rounded-full font-label-md text-label-md glass-panel text-on-surface hover:bg-surface-container-high transition-all">Whitepapers</button>
+</div>
+<div class="flex gap-8 border-l border-outline-variant/30 pl-8 hidden lg:flex">
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-outline uppercase">Active Fleet</p>
+<p class="font-headline-md text-headline-md text-primary">1,402</p>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-outline uppercase">Avg Delivery</p>
+<p class="font-headline-md text-headline-md text-secondary">22.4h</p>
+</div>
+</div>
+</div>
+<!-- Featured Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-24">
+<!-- Major Featured Article -->
+<article class="md:col-span-8 group cursor-pointer">
+<div class="glass-panel h-full rounded-xl overflow-hidden flex flex-col hover:border-primary/40 transition-all duration-300">
+<div class="relative h-96 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="High-tech logistics hub with glowing digital data overlays across shipping containers in a night-time harbor. The scene is illuminated with deep primary blues and sharp crimson light trails, reflecting on the metallic surfaces. The atmosphere is professional, cinematic, and evokes a sense of global scale and neural-network precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpFKzjpOg722PmyuT5bhZep27_9PRFJr1y33Zvn4ZuyBqXIbf6dnjJGQXy0SCqVRdesdv-CV9qrn2Lfogf3hFoQl3zt8d_4i1az9c-YTD8T1Agi2pxg2HSzSLatQOomvT18OJitR3RWd3L0SdjUY1Qi0hP6xmsb4rkKTnUr1b-fuW1YO4SVVkfWtr6ns3H9IRUNhSJiGSyIc1ac2cDeCIXGKDjQ1CiF4_P846A-JGFLLcJh-diG3WEXMOo3OA3itJyqF4OjbzxE8Sb">
+<div class="absolute top-6 left-6 flex gap-2">
+<span class="px-3 py-1 bg-primary text-on-primary text-label-sm font-label-sm rounded uppercase">Trends</span>
+<span class="px-3 py-1 bg-surface/90 backdrop-blur text-on-surface text-label-sm font-label-sm rounded uppercase">Featured</span>
+</div>
+</div>
+<div class="p-10 flex flex-col flex-grow">
+<div class="flex items-center gap-4 mb-4 font-mono-data text-mono-data text-outline uppercase">
+<span class="">Oct 24, 2024</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="">12 Min Read</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-primary mb-6 group-hover:text-secondary transition-colors">The Neural Path: AI-Driven Route Optimization in Trans-Continental Haulage</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 line-clamp-3">Predictive logistics is no longer a luxury; it's the operational standard. Route 44 explores how machine learning models are reshaping the efficiency of European supply arteries, reducing carbon footprints by 22% while accelerating dispatch times.</p>
+<div class="mt-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up professional portrait of a male logistics executive in a clean-cut corporate attire. High-key soft lighting, minimalist background, authoritative yet approachable expression, matching the Route 44 professional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ700Cn10_OTHdlrfBKuYK_GHa8KM4x826vVmWSl1fuF6E6z9gs5QADnL6N6zHCSmgUvLDkl84GXuHVLTeggKBYNEcZdEaaKsM2uFKUNiPALKT8HG-Q-d75h0dVOptH25D15e2hSEUbPpMCyStAbIukKNzTqYLtyG79q07MSaWyXVc8AmFw970V6vpU-e5_AhkWq6FTbmWffMQTVKglORmhIZzThBchZejHMfhqnPEJ-ktR56F8Mzi9jtqQhElsfh3V9MNX_66dOAJ">
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Dr. Elias Vance</p>
+<p class="font-label-sm text-label-sm text-outline">Chief Technology Officer</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Side Secondary Articles -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<article class="glass-panel rounded-xl overflow-hidden group cursor-pointer hover:border-secondary/40 transition-all flex flex-col h-1/2">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A line of modern freight trucks with glowing crimson taillights parked in a perfectly symmetrical row at a clean, high-tech distribution center. Soft dusk lighting creates a cool blue ambiance, accented by the sharp red lights of the vehicles, embodying the Route 44 fleet dispatch aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtcE-sLHUynh9pp9NvwHwcPUPdX_hAeI5PodGxPAuYKjN3_N6acQ15VWeShl9iLli9O-R5-Gscm9I095wo6D4ddVmylhGR72JbXQYpG617pz47vsUuxBflRenxMqgEuUKpp6Zp6un1GsNbjHYNwAh7FZ7auzfxNsnJjBlIdubLctDuHPKnOOwASKHjQCqjKT5Mt-N5q1bN8U-6p-xSx0LjBHywbh1QLQal_BZksymlC6dgxVW90koXQ4cA1oD7vJKIZ5ceX1aQW7t5">
+<span class="absolute top-4 left-4 px-3 py-1 bg-secondary text-on-secondary text-label-sm font-label-sm rounded uppercase">Fleet News</span>
+</div>
+<div class="p-6">
+<p class="font-mono-data text-mono-data text-outline uppercase mb-2">5 Min Read</p>
+<h3 class="font-headline-md text-headline-md text-primary mb-3 leading-tight group-hover:text-secondary transition-colors">Qargo Track 2.0 Deployment: Real-time Telemetry</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Our entire UK fleet is now equipped with second-generation sensor suites for extreme visibility.</p>
+</div>
+</article>
+<article class="glass-panel rounded-xl overflow-hidden group cursor-pointer hover:border-secondary/40 transition-all flex flex-col h-1/2">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A wide-angle landscape shot of a highway curving through a modern industrial landscape under a deep blue evening sky. High-contrast lighting captures the motion of traffic with bright light streaks, emphasizing speed and efficiency in a high-tech corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9_VnpHKSoR3FtVaB-Er9xiet-IGvgW5t9HHj_ARlJcmFRRdNYbly4PWto18e_k-aF7N9-cQdFdtku48JCrqfvnN3CofCAsYeAGOycWGR-WPUBE4c5RoG9XpyWn4dWC8tNutskenEzWUc0O2iVF078tLTY-nSmNu0MR0GZw4hKjvI7MUWU6vVPPOMmGOYDKO8-roY3cEtVLAJ38Skuos8rsiQ6S3vB-a4lpjR3iYRG5FfVNdMEBXLJBH8A6wQxCy2-JlDwHiSqvjLt">
+<span class="absolute top-4 left-4 px-3 py-1 bg-primary text-on-primary text-label-sm font-label-sm rounded uppercase">Internal</span>
+</div>
+<div class="p-6">
+<p class="font-mono-data text-mono-data text-outline uppercase mb-2">8 Min Read</p>
+<h3 class="font-headline-md text-headline-md text-primary mb-3 leading-tight group-hover:text-secondary transition-colors">Route 44 Internal Hub: Empowering Dispatchers</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Inside the new command center dashboard that simplified over 400 daily task workflows.</p>
+</div>
+</article>
+</div>
+</div>
+<!-- Latest Insights Grid -->
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8 border-l-4 border-secondary pl-6">Latest Dispatch Intelligence</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="glass-panel rounded-xl overflow-hidden group hover:border-primary transition-all border-l-4 border-l-primary">
+<div class="p-8">
+<div class="flex justify-between items-start mb-6">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-widest bg-primary/10 px-2 py-1">Sustainability</span>
+<span class="material-symbols-outlined text-outline">bookmark_add</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Hydrogen-Cell Long Haul: The 2025 Roadmap</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Evaluating the infrastructure requirements for zero-emission heavy haulage across the Route 44 network.</p>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/20">
+<span class="font-mono-data text-mono-data text-outline">REPORT #884</span>
+<button class="text-secondary font-label-md text-label-md flex items-center gap-1 group-hover:gap-2 transition-all">READ MORE <span class="material-symbols-outlined text-[18px]">chevron_right</span></button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel rounded-xl overflow-hidden group hover:border-secondary transition-all border-l-4 border-l-secondary">
+<div class="p-8">
+<div class="flex justify-between items-start mb-6">
+<span class="text-label-sm font-label-sm text-secondary uppercase tracking-widest bg-secondary/10 px-2 py-1">Fleet Dispatch</span>
+<span class="material-symbols-outlined text-outline">bookmark_add</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Managing Peak-Season Volatility</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">How Route 44's elastic fleet scaling models handle a 400% surge in e-commerce demand surges.</p>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/20">
+<span class="font-mono-data text-mono-data text-outline">GUIDE #212</span>
+<button class="text-secondary font-label-md text-label-md flex items-center gap-1 group-hover:gap-2 transition-all">READ MORE <span class="material-symbols-outlined text-[18px]">chevron_right</span></button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel rounded-xl overflow-hidden group hover:border-primary transition-all border-l-4 border-l-primary">
+<div class="p-8">
+<div class="flex justify-between items-start mb-6">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-widest bg-primary/10 px-2 py-1">Global Trends</span>
+<span class="material-symbols-outlined text-outline">bookmark_add</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Navigating the Suez: An In-Depth Resilience Case Study</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Analyzing the ripple effects of maritime blockages on UK-bound overland freight schedules.</p>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/20">
+<span class="font-mono-data text-mono-data text-outline">CASE #009</span>
+<button class="text-secondary font-label-md text-label-md flex items-center gap-1 group-hover:gap-2 transition-all">READ MORE <span class="material-symbols-outlined text-[18px]">chevron_right</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Newsletter / Dispatch Alerts -->
+<section class="mt-32">
+<div class="bg-inverse-surface rounded-xl p-12 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="w-full h-full grid-bg"></div>
+</div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 items-center gap-16">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-surface-container-lowest mb-4">Secure Your Insight Chain</h2>
+<p class="font-body-lg text-body-lg text-surface-variant mb-0">Join 15,000+ industry leaders receiving weekly neural logistics telemetry and market reports directly from our command center.</p>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex gap-2">
+<input class="flex-grow rounded-lg bg-surface/10 border-outline/30 text-white placeholder:text-outline-variant focus:ring-secondary focus:border-secondary transition-all px-4 py-3" placeholder="Corporate Email Address" type="email">
+<button class="bg-secondary text-on-secondary font-label-md text-label-md px-8 py-3 rounded-lg font-bold hover:brightness-110 active:scale-95 transition-all shadow-lg coral-glow">SUBSCRIBE</button>
+</div>
+<p class="text-label-sm font-label-sm text-outline-variant">Enterprise ready. 100% Secure. GDPR Compliant. Unsubscribe anytime.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-container-lowest border-t border-outline-variant/20 mt-auto relative w-full">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-24 max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="mb-8"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRE7UPYyJTNbApgYEi_CACMWptL0sEsWjOBeS7wUEO9NjuVnVDTAdkDNhUA9v8QmUt2RNr-u9972iI3tUDBe9jaoMnHMmcnQvND25uoVHYzC4CXJLgC0LNeNxrO5gnmIzqU1YbKrMcH-CGrljl7JBPPTYzWYBdbhdx4W8Veb857zO1zB17AEmmF9LMm43FUo1kKbg_RK29OR1nP0n2RMVAK-eh_Ydkjkx3MIEHOsvCcpGoZtcPTEB5I3FeHDxOYZ5VumagqULfl5de" alt="Route 44 Logo" class="h-10 w-auto object-contain"></div>
+<p class="font-body-md text-body-md text-surface-variant leading-relaxed opacity-80 mb-6">Advanced neural logistics and global fleet coordination for the 21st-century supply chain.</p>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded bg-surface/10 flex items-center justify-center text-surface-variant hover:text-primary-fixed cursor-pointer transition-all"><span class="material-symbols-outlined">public</span></div>
+<div class="w-10 h-10 rounded bg-surface/10 flex items-center justify-center text-surface-variant hover:text-primary-fixed cursor-pointer transition-all"><span class="material-symbols-outlined">hub</span></div>
+<div class="w-10 h-10 rounded bg-surface/10 flex items-center justify-center text-surface-variant hover:text-primary-fixed cursor-pointer transition-all"><span class="material-symbols-outlined">analytics</span></div>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary-fixed mb-8 uppercase tracking-widest">Solutions</h4>
+<ul class="space-y-4">
+<li class=""><a class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all" href="#">Haulage Services</a></li>
+<li class=""><a class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all" href="#">Specialist Logistics</a></li>
+<li class=""><a class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all" href="#">Neural Routing</a></li>
+<li class=""><a class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all" href="#">Real-time Telemetry</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary-fixed mb-8 uppercase tracking-widest">Resources</h4>
+<ul class="space-y-4">
+<li class=""><a class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all font-semibold" href="#">Media Hub</a></li>
+<li class=""><a class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all" href="#">Compliance</a></li>
+<li class=""><a class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all" href="#">Sector Analysis</a></li>
+<li class=""><a class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed hover:underline transition-all" href="#">Client Portals</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary-fixed mb-8 uppercase tracking-widest">Global HQ</h4>
+<p class="font-body-md text-body-md text-surface-variant opacity-80 leading-relaxed">
+                    Sector 44, Logistics Way<br>
+                    Innovation District, London<br>
+                    United Kingdom, EC1A 4HQ
+                </p>
+<div class="mt-8 flex flex-col gap-2">
+<a class="font-label-md text-label-md text-primary-fixed" href="tel:+440200000000">+44 (0) 20 4444 0044</a>
+<a class="font-label-md text-label-md text-primary-fixed" href="mailto:ops@route44.net">ops@route44.net</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop py-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between gap-4">
+<span class="font-label-sm text-label-sm text-surface-variant opacity-60">© 2024 Route 44 Neural Logistics. All Rights Reserved. RHA Conditions of Carriage 2024 Apply.</span>
+<div class="flex gap-6">
+<a class="font-label-sm text-label-sm text-surface-variant hover:text-primary-fixed" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-surface-variant hover:text-primary-fixed" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-surface-variant hover:text-primary-fixed" href="#">Security Hub</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple logic for category filtering simulation
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if(this.innerText.includes('Intelligence') || this.innerText.includes('Trends') || this.innerText.includes('Fleet')) {
+                    // Visual feedback for filter
+                    document.querySelectorAll('button').forEach(b => {
+                        b.classList.remove('bg-primary', 'text-on-primary');
+                        if(b.classList.contains('glass-panel')) b.classList.add('text-on-surface');
+                    });
+                    this.classList.add('bg-primary', 'text-on-primary');
+                    this.classList.remove('glass-panel', 'text-on-surface');
+                }
+            });
+        });
+
+        // Search bar interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('border-primary');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('border-primary');
+        });
+    </script>
+
+
+
+
+</body></html>
