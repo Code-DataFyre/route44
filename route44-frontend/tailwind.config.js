@@ -72,22 +72,22 @@ module.exports = {
       },
       fontSize: {
         "display-lg": [
-          "48px",
-          { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" },
+          "40px",
+          { lineHeight: "48px", letterSpacing: "-0.01em", fontWeight: "600" },
         ],
         "headline-xl": [
-          "36px",
-          { lineHeight: "44px", letterSpacing: "-0.01em", fontWeight: "700" },
+          "32px",
+          { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" },
         ],
-        "headline-lg": ["30px", { lineHeight: "38px", fontWeight: "600" }],
-        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+        "headline-lg": ["26px", { lineHeight: "34px", fontWeight: "500" }],
+        "headline-md": ["20px", { lineHeight: "28px", fontWeight: "500" }],
         "label-md": [
-          "14px",
-          { lineHeight: "20px", letterSpacing: "0.02em", fontWeight: "700" },
+          "13px",
+          { lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "600" },
         ],
         "label-sm": [
-          "10px",
-          { lineHeight: "12px", letterSpacing: "0.1em", fontWeight: "700" },
+          "12px",
+          { lineHeight: "16px", letterSpacing: "0.08em", fontWeight: "600" },
         ],
         "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
         "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],

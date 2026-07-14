@@ -9,7 +9,7 @@ function Header() {
   const navLinks = [
     { label: "Services", to: "/services" },
     { label: "Media Hub", to: "/media" },
-    { label: "Tracking", to: "/tracking" },
+    // { label: "Tracking", to: "/tracking" },
     { label: "About", to: "/about" },
     { label: "Contact", to: "/contact" },
   ];
@@ -73,12 +73,12 @@ function Header() {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-4">
-            <Link
+            {/* <Link
               to="/tracking"
               className="px-4 py-2 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200"
             >
               Client Login
-            </Link>
+            </Link> */}
             <Link
               to="/contact"
               className="bg-primary text-on-primary px-6 py-2 font-label-md text-label-md font-bold hover:brightness-110 active:scale-95 transition-all"
