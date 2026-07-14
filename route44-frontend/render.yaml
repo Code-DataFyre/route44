@@ -1,8 +1,0 @@
-services:
-  - type: static
-    name: route44-frontend
-    buildCommand: npm install && npm run build
-    staticPublishPath: ./dist
-    routes:
-      - path: /*
-        filePath: ./dist/index.html
