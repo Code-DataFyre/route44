@@ -1,8 +1,9 @@
 services:
-  - type: static
+  - type: web
     name: route44-frontend
+    runtime: node
     buildCommand: cd route44-frontend && npm install && npm run build
-    staticPublishPath: route44-frontend/dist
-    routes:
-      - path: /*
-        filePath: route44-frontend/dist/index.html
+    startCommand: cd route44-frontend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
