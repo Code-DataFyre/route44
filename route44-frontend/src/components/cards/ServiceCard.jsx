@@ -20,26 +20,26 @@ function ServiceCard({
 
   const cardContent = (
     <div
-      className={`glass-panel p-8 group ${hoverBorder} transition-all duration-300 relative overflow-hidden`}
+      className={`glass-panel p-5 group ${hoverBorder} transition-all duration-300 relative overflow-hidden`}
     >
       <div className="absolute top-0 left-0 w-1 h-full bg-primary transform -translate-x-full group-hover:translate-x-0 transition-transform" />
 
       <div
-        className={`w-12 h-12 bg-${borderColor}/10 flex items-center justify-center ${textColorClass} mb-6`}
+        className={`w-9 h-9 bg-${borderColor}/10 flex items-center justify-center ${textColorClass} mb-4`}
       >
-        <span className="material-symbols-outlined text-[32px]">{icon}</span>
+        <span className="material-symbols-outlined text-[22px]">{icon}</span>
       </div>
 
-      <h3 className="font-headline-md text-headline-md mb-4">{title}</h3>
+      <h3 className="font-headline-md text-headline-md mb-2.5">{title}</h3>
 
-      <p className="text-on-surface-variant font-body-md mb-8">{description}</p>
+      <p className="text-on-surface-variant text-sm font-body-md mb-5">{description}</p>
 
       {features.length > 0 && (
-        <ul className="space-y-3 font-label-md text-label-md text-on-surface">
+        <ul className="space-y-2 font-label-md text-label-md text-on-surface">
           {features.map((feature, idx) => (
             <li key={idx} className="flex items-center gap-2">
               <span
-                className={`material-symbols-outlined ${textColorClass} text-[16px]`}
+                className={`material-symbols-outlined ${textColorClass} text-[14px]`}
               >
                 check_circle
               </span>

@@ -186,16 +186,16 @@ function Tracking() {
         </div>
 
         {/* Map Controls */}
-        <div className="absolute bottom-8 right-8 flex flex-col gap-2 z-20">
-          <button className="w-10 h-10 bg-surface-container-lowest flex items-center justify-center rounded-md shadow-md text-on-surface hover:bg-surface transition-colors">
-            <span className="material-symbols-outlined">add</span>
+        <div className="absolute bottom-6 right-6 flex flex-col gap-2 z-20">
+          <button className="w-9 h-9 bg-surface-container-lowest flex items-center justify-center rounded-md shadow-md text-on-surface hover:bg-surface transition-colors">
+            <span className="material-symbols-outlined text-[20px]">add</span>
           </button>
-          <button className="w-10 h-10 bg-surface-container-lowest flex items-center justify-center rounded-md shadow-md text-on-surface hover:bg-surface transition-colors">
-            <span className="material-symbols-outlined">remove</span>
+          <button className="w-9 h-9 bg-surface-container-lowest flex items-center justify-center rounded-md shadow-md text-on-surface hover:bg-surface transition-colors">
+            <span className="material-symbols-outlined text-[20px]">remove</span>
           </button>
-          <button className="w-10 h-10 bg-surface-container-lowest flex items-center justify-center rounded-md shadow-md text-primary hover:bg-surface transition-colors mt-4">
+          <button className="w-9 h-9 bg-surface-container-lowest flex items-center justify-center rounded-md shadow-md text-primary hover:bg-surface transition-colors mt-3">
             <span
-              className="material-symbols-outlined"
+              className="material-symbols-outlined text-[20px]"
               style={{ fontVariationSettings: "'FILL' 1" }}
             >
               my_location
@@ -204,7 +204,7 @@ function Tracking() {
         </div>
 
         {/* Floating Legend */}
-        <div className="absolute top-8 right-8 p-4 bg-surface/80 backdrop-blur-xl rounded-md shadow-sm z-20 hidden lg:block">
+        <div className="absolute top-6 right-6 p-3 bg-surface/80 backdrop-blur-xl rounded-md shadow-sm z-20 hidden lg:block">
           <h4 className="font-label text-[10px] font-black tracking-widest text-on-surface-variant uppercase mb-3">
             Live Fleet Status
           </h4>
@@ -230,11 +230,11 @@ function Tracking() {
         className={`${showDetails ? "translate-x-0" : "translate-x-full"} lg:translate-x-0 fixed lg:relative right-0 w-full md:w-[400px] flex flex-col bg-white overflow-y-auto z-20 transition-transform duration-300 h-full`}
       >
         {/* Header Section */}
-        <div className="p-4 md:p-8 border-b border-surface-container-high">
-          <div className="flex justify-between items-start mb-4 md:mb-6">
+        <div className="p-4 md:p-6 border-b border-surface-container-high">
+          <div className="flex justify-between items-start mb-3 md:mb-5">
             <div className="flex-1">
               <div className="flex justify-between items-start mb-2">
-                <h2 className="font-headline font-extrabold text-xl md:text-2xl tracking-tighter text-red-900">
+                <h2 className="font-headline font-extrabold text-lg md:text-xl tracking-tighter text-red-900">
                   KN-9421-XB
                 </h2>
                 <button
@@ -280,7 +280,7 @@ function Tracking() {
         </div>
 
         {/* Telemetry Grid */}
-        <div className="p-4 md:p-8 space-y-6 md:space-y-8">
+        <div className="p-4 md:p-6 space-y-4 md:space-y-6">
           <div>
             <h3 className="font-headline font-bold text-sm tracking-tight mb-4 flex items-center gap-2">
               <span className="material-symbols-outlined text-primary text-lg">
@@ -403,7 +403,7 @@ function Tracking() {
           </div>
 
           {/* Action Button */}
-          <button className="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-white font-headline font-bold rounded-md shadow-lg flex items-center justify-center gap-2 hover:opacity-90 transition-all active:scale-[0.98]">
+          <button className="w-full py-3 bg-gradient-to-br from-primary to-primary-container text-white font-headline font-bold text-sm rounded-md shadow-lg flex items-center justify-center gap-2 hover:opacity-90 transition-all active:scale-[0.98]">
             <span className="material-symbols-outlined text-lg">message</span>
             CONTACT OPERATOR
           </button>

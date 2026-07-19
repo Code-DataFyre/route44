@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { usePageTransition } from "../hooks/usePageTransition";
 import CategoriesCarousel from "../components/layout/CategoriesCarousel";
+import ServicesTabs from "../components/layout/ServicesTabs";
 import TestimonialsCarousel from "../components/layout/TestimonialsCarousel";
 import heroBg from "../assets/hero bg.png";
 import leadershipImg from "../assets/Route 44 executive leadership team.png";
@@ -24,7 +25,7 @@ function Home() {
   return (
     <main ref={mainRef} className="pt-20 page-fade-in">
       {/* ── Cinematic Hero ── */}
-      <section className="relative h-screen min-h-[700px] flex items-center overflow-hidden">
+      <section className="relative h-[80vh] min-h-[560px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             alt="Route 44 precision logistics fleet on highway"
@@ -35,35 +36,35 @@ function Home() {
           <div className="absolute inset-0 technical-grid opacity-30" />
         </div>
         <div className="relative z-10 px-6 md:px-margin-desktop max-w-container-max mx-auto w-full">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-secondary/10 border border-secondary/20 mb-6">
+          <div className="max-w-xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-secondary/10 border border-secondary/20 mb-4">
               <span className="w-2 h-2 bg-secondary rounded-full animate-pulse" />
               <span className="text-secondary font-mono-data text-mono-data tracking-widest uppercase">
                 Live Global Network Active
               </span>
             </div>
-            <h1 className="font-display-lg text-[32px] sm:text-[40px] md:text-display-lg leading-tight text-white mb-6">
+            <h1 className="font-display-lg text-[26px] sm:text-[30px] md:text-display-lg leading-tight text-white mb-4">
               Precision Logistics.
               <br />
               <span className="text-secondary">Global Scale.</span>
             </h1>
-            <p className="text-white/80 font-body-lg text-body-lg mb-10 max-w-lg">
+            <p className="text-white/80 font-body-lg text-body-lg mb-6 max-w-md">
               Harnessing neural routing algorithms and a specialized fleet to
               deliver mission-critical cargo across the UK and Europe.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3">
               <Link
                 to="/about"
-                className="bg-secondary text-on-secondary px-8 py-4 font-label-md text-label-md font-bold coral-glow hover:brightness-110 transition-all flex items-center gap-2"
+                className="bg-secondary text-on-secondary px-6 py-3 font-label-md text-label-md font-bold coral-glow hover:brightness-110 transition-all flex items-center gap-2"
               >
                 About Us
-                <span className="material-symbols-outlined text-[18px]">
+                <span className="material-symbols-outlined text-[16px]">
                   arrow_forward
                 </span>
               </Link>
               <Link
                 to="/services"
-                className="border border-white/30 text-white px-8 py-4 font-label-md text-label-md font-bold hover:bg-white/10 backdrop-blur-sm transition-all"
+                className="border border-white/30 text-white px-6 py-3 font-label-md text-label-md font-bold hover:bg-white/10 backdrop-blur-sm transition-all"
               >
                 View Services
               </Link>
@@ -73,8 +74,8 @@ function Home() {
       </section>
 
       {/* ── Capability Bar ── */}
-      <div className="w-full bg-surface/10 backdrop-blur-md border-y border-outline-variant/20 py-6 relative z-20">
-        <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop flex flex-wrap justify-between items-center gap-8">
+      <div className="w-full bg-surface/10 backdrop-blur-md border-y border-outline-variant/20 py-4 relative z-20">
+        <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop flex flex-wrap justify-between items-center gap-6">
           <div className="flex items-center gap-3">
             <span className="material-symbols-outlined text-primary">
               verified
@@ -102,142 +103,17 @@ function Home() {
         </div>
       </div>
 
-      {/* ── Services Grid ── */}
-      <section className="py-24 px-6 md:px-margin-desktop max-w-container-max mx-auto bg-surface">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-          <div className="max-w-xl">
-            <h2 className="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-4">
-              Neural Infrastructure
-            </h2>
-            <p className="font-headline-lg text-headline-lg text-on-surface">
-              Scalable solutions designed for modern enterprise demands.
-            </p>
-          </div>
-          <div className="h-px flex-grow bg-outline-variant/30 hidden md:block mx-8 mb-4" />
-          <Link
-            to="/services"
-            className="font-label-md text-label-md text-primary flex items-center gap-2 hover:translate-x-1 transition-transform"
-          >
-            Explore All Services{" "}
-            <span className="material-symbols-outlined">trending_flat</span>
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-          {/* Contract Haulage */}
-          <div className="glass-panel p-8 group hover:border-primary/50 transition-all duration-300 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-1 h-full bg-primary transform -translate-x-full group-hover:translate-x-0 transition-transform" />
-            <div className="w-12 h-12 bg-primary/10 flex items-center justify-center text-primary mb-6">
-              <span className="material-symbols-outlined text-[32px]">
-                local_shipping
-              </span>
-            </div>
-            <h3 className="font-headline-md text-headline-md mb-4">
-              Contract Haulage
-            </h3>
-            <p className="text-on-surface-variant font-body-md mb-8">
-              High-volume, scheduled distribution networks utilising Euro 6
-              compliant tractor units and specialised trailers.
-            </p>
-            <ul className="space-y-3 font-label-md text-label-md text-on-surface">
-              <li className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-primary text-[16px]">
-                  check_circle
-                </span>
-                24/7 National Dispatch
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-primary text-[16px]">
-                  check_circle
-                </span>
-                Live GPS Telemetry
-              </li>
-            </ul>
-          </div>
-
-          {/* Specialist Transport */}
-          <div className="glass-panel p-8 group hover:border-secondary/50 transition-all duration-300 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-1 h-full bg-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform" />
-            <div className="w-12 h-12 bg-secondary/10 flex items-center justify-center text-secondary mb-6">
-              <span className="material-symbols-outlined text-[32px]">
-                emergency_home
-              </span>
-            </div>
-            <div className="flex flex-wrap gap-2 mb-4">
-              <span className="px-2 py-0.5 bg-secondary/10 text-secondary text-[10px] font-bold uppercase tracking-wider border border-secondary/20">
-                Hazardous (ADR)
-              </span>
-              <span className="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider border border-primary/20">
-                Chilled Fleet
-              </span>
-              <span className="px-2 py-0.5 bg-outline-variant/20 text-on-surface-variant text-[10px] font-bold uppercase tracking-wider border border-outline-variant/30">
-                NRP Logistics
-              </span>
-            </div>
-            <h3 className="font-headline-md text-headline-md mb-4">
-              Specialist Transport
-            </h3>
-            <p className="text-on-surface-variant font-body-md mb-8">
-              Handling ADR, temperature-controlled, and high-value cargo with
-              rigorous security protocols and certified handlers.
-            </p>
-            <ul className="space-y-3 font-label-md text-label-md text-on-surface">
-              <li className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-secondary text-[16px]">
-                  check_circle
-                </span>
-                Hazmat Certified
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-secondary text-[16px]">
-                  check_circle
-                </span>
-                Escort Services
-              </li>
-            </ul>
-          </div>
-
-          {/* Warehousing */}
-          <div className="glass-panel p-8 group hover:border-primary/50 transition-all duration-300 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-1 h-full bg-primary transform -translate-x-full group-hover:translate-x-0 transition-transform" />
-            <div className="w-12 h-12 bg-primary/10 flex items-center justify-center text-primary mb-6">
-              <span className="material-symbols-outlined text-[32px]">
-                warehouse
-              </span>
-            </div>
-            <h3 className="font-headline-md text-headline-md mb-4">
-              Warehousing
-            </h3>
-            <p className="text-on-surface-variant font-body-md mb-8">
-              Strategic fulfilment centres integrated with our neural tracking
-              platform for real-time inventory management.
-            </p>
-            <ul className="space-y-3 font-label-md text-label-md text-on-surface">
-              <li className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-primary text-[16px]">
-                  check_circle
-                </span>
-                Cross-docking Hubs
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-primary text-[16px]">
-                  check_circle
-                </span>
-                Bonded Storage
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      {/* ── Services Tabs ── */}
+      <ServicesTabs />
 
       {/* ── Categories Carousel ── */}
       <CategoriesCarousel />
 
       {/* ── Fleet Capacity HUD ── */}
-      <section className="bg-inverse-surface py-20 overflow-hidden relative">
+      <section className="bg-inverse-surface py-14 overflow-hidden relative">
         <div className="absolute inset-0 technical-grid opacity-10" />
         <div className="px-6 md:px-margin-desktop max-w-container-max mx-auto relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+          <div className="flex flex-wrap justify-center divide-x divide-white/10">
             {[
               {
                 label: "Fleet Readiness",
@@ -267,26 +143,26 @@ function Home() {
             ].map(({ label, labelColor, value, valueSuffix, sub }, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center md:items-start"
+                className="flex flex-col items-center text-center px-6 sm:px-10 first:pl-0 last:pr-0"
               >
                 <span
-                  className={`font-mono-data text-mono-data ${labelColor} mb-2 tracking-tighter uppercase`}
+                  className={`font-mono-data text-mono-data ${labelColor} mb-2 tracking-tighter uppercase whitespace-nowrap`}
                 >
                   {label}
                 </span>
-                <div className="text-5xl font-bold text-white mb-2">
+                <div className="text-4xl font-bold text-white mb-1.5">
                   {value}
                   {valueSuffix && (
                     <span className="text-secondary">{valueSuffix}</span>
                   )}
                 </div>
-                <p className="text-white/60 font-label-sm text-label-sm uppercase tracking-widest">
+                <p className="text-white/60 font-label-sm text-label-sm uppercase tracking-widest whitespace-nowrap">
                   {sub}
                 </p>
               </div>
             ))}
           </div>
-          <div className="mt-12 flex justify-center md:justify-start">
+          <div className="mt-8 flex justify-center">
             <Link
               to="/contact"
               className="font-label-sm text-label-sm text-secondary hover:text-white transition-colors flex items-center gap-2 uppercase tracking-widest"
@@ -298,10 +174,10 @@ function Home() {
       </section>
 
       {/* ── Vision & Leadership ── */}
-      <section className="py-32 px-6 md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
-        <div className="flex flex-col lg:flex-row items-stretch gap-16">
+      <section className="py-20 px-6 md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+        <div className="flex flex-col lg:flex-row items-stretch gap-10">
           <div className="lg:w-1/2 relative">
-            <div className="aspect-square relative overflow-hidden rounded-lg shadow-2xl">
+            <div className="aspect-square relative overflow-hidden rounded-lg shadow-xl">
               <img
                 alt="Route 44 executive leadership team"
                 className="w-full h-full object-cover grayscale contrast-125"
@@ -310,11 +186,11 @@ function Home() {
               <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />
             </div>
             {/* Quote box — absolute on lg+, inline below image on mobile */}
-            <div className="mt-6 lg:mt-0 lg:absolute lg:-bottom-8 lg:-right-8 glass-panel p-6 lg:p-8 lg:max-w-xs border-l-4 border-l-secondary">
-              <span className="material-symbols-outlined text-secondary text-[32px] lg:text-[40px] mb-3 lg:mb-4">
+            <div className="mt-4 lg:mt-0 lg:absolute lg:-bottom-6 lg:-right-6 glass-panel p-4 lg:p-6 lg:max-w-xs border-l-4 border-l-secondary">
+              <span className="material-symbols-outlined text-secondary text-[24px] lg:text-[30px] mb-2 lg:mb-3">
                 format_quote
               </span>
-              <p className="font-headline-md text-headline-md italic leading-tight text-on-surface mb-3 lg:mb-4">
+              <p className="font-headline-md text-headline-md italic leading-tight text-on-surface mb-2 lg:mb-3">
                 "We're not just moving cargo; we're optimizing the neural
                 pathways of global commerce."
               </p>
@@ -324,13 +200,13 @@ function Home() {
             </div>
           </div>
           <div className="lg:w-1/2 flex flex-col justify-center">
-            <h2 className="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em] mb-4">
+            <h2 className="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em] mb-3">
               Vision &amp; Leadership
             </h2>
-            <h3 className="font-display-lg text-display-lg text-primary mb-8">
+            <h3 className="font-display-lg text-display-lg text-primary mb-5">
               Architects of Logistics
             </h3>
-            <div className="space-y-6 text-on-surface-variant font-body-lg">
+            <div className="space-y-4 text-on-surface-variant font-body-lg">
               <p>
                 At Route 44, we believe that logistics is the backbone of the
                 global economy. Our managing directors bring over four decades
@@ -343,15 +219,15 @@ function Home() {
                 transparent than any other in the sector.
               </p>
             </div>
-            <div className="mt-12 flex gap-12">
+            <div className="mt-8 flex gap-8">
               <div>
-                <p className="text-3xl font-bold text-primary mb-1">RHA</p>
+                <p className="text-2xl font-bold text-primary mb-1">RHA</p>
                 <p className="text-xs uppercase tracking-widest text-outline">
                   Compliance Partner
                 </p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-secondary mb-1">ISO</p>
+                <p className="text-2xl font-bold text-secondary mb-1">ISO</p>
                 <p className="text-xs uppercase tracking-widest text-outline">
                   9001:2015 Registered
                 </p>
@@ -362,12 +238,12 @@ function Home() {
       </section>
 
       {/* ── Trusted Clients ── */}
-      <section className="py-16 border-t border-outline-variant/20 bg-surface">
+      <section className="py-12 border-t border-outline-variant/20 bg-surface">
         <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop">
-          <p className="font-label-sm text-label-sm text-outline uppercase tracking-[0.2em] text-center mb-10">
+          <p className="font-label-sm text-label-sm text-outline uppercase tracking-[0.2em] text-center mb-6">
             Trusted by Industry Leaders Across the UK &amp; Europe
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-x-2 gap-y-8">
+          <div className="flex flex-wrap justify-center items-center gap-x-2 gap-y-6">
             {[
               "GLOBALTECH",
               "AERO-MFG",
@@ -389,10 +265,10 @@ function Home() {
       </section>
 
       {/* ── Testimonials ── */}
-      <section className="py-24 bg-surface">
+      <section className="py-16 bg-surface">
         <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop">
-          <div className="max-w-xl mb-16">
-            <h2 className="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-4">
+          <div className="max-w-xl mb-10">
+            <h2 className="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-3">
               Client Success
             </h2>
             <p className="font-headline-lg text-headline-lg text-on-surface">
@@ -404,11 +280,11 @@ function Home() {
       </section>
 
       {/* ── Latest Insights ── */}
-      <section className="py-24 bg-surface-container-low">
+      <section className="py-16 bg-surface-container-low">
         <div className="px-6 md:px-margin-desktop max-w-container-max mx-auto">
-          <div className="flex items-center justify-between mb-12">
+          <div className="flex items-center justify-between mb-8">
             <div>
-              <h2 className="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-4">
+              <h2 className="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-3">
                 Insights
               </h2>
               <p className="font-headline-lg text-headline-lg text-on-surface">
@@ -420,46 +296,48 @@ function Home() {
               className="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2"
             >
               View Archive{" "}
-              <span className="material-symbols-outlined">grid_view</span>
+              <span className="material-symbols-outlined text-[18px]">grid_view</span>
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {/* Featured */}
             <Link
               to="/media"
-              className="md:col-span-2 group rounded-2xl overflow-hidden bg-surface shadow-md border border-outline-variant/20 hover:shadow-xl hover:border-primary/30 transition-all duration-300 flex flex-col"
+              className="md:col-span-2 group relative h-64 md:h-72 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
             >
-              <div className="relative h-56 md:h-64 overflow-hidden">
-                <img
-                  alt="Autonomous freight hub on a UK motorway at dusk"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  src="https://images.unsplash.com/photo-1708193203896-ba0630862bb6?w=1200&h=800&fit=crop"
-                />
-                <span className="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 font-label-sm text-label-sm uppercase tracking-widest">
+              <img
+                alt="Autonomous freight hub on a UK motorway at dusk"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                src="https://images.unsplash.com/photo-1708193203896-ba0630862bb6?w=1200&h=800&fit=crop"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
+
+              <div className="relative z-10 h-full p-5 flex flex-col">
+                <span className="self-start bg-primary text-on-primary px-2.5 py-1 font-label-sm text-label-sm uppercase tracking-widest">
                   Industry Report
                 </span>
-              </div>
-              <div className="p-8 flex flex-col flex-1">
-                <h4 className="font-headline-lg text-headline-lg text-on-surface mb-4 leading-tight group-hover:text-primary transition-colors">
-                  The Future of Autonomous Freight Hubs: 2025 Outlook
-                </h4>
-                <p className="text-on-surface-variant mb-6">
-                  How neural logistics is paving the way for semi-autonomous
-                  long-haul corridors across the UK arterial network.
-                </p>
-                <div className="mt-auto flex items-center gap-4 text-on-surface-variant font-label-sm">
-                  <span className="flex items-center gap-1">
-                    <span className="material-symbols-outlined text-[14px]">
-                      calendar_month
+                <div className="mt-auto">
+                  <h4 className="font-headline-lg text-headline-lg text-white mb-2 leading-tight">
+                    The Future of Autonomous Freight Hubs: 2025 Outlook
+                  </h4>
+                  <p className="text-sm text-white/75 mb-3 line-clamp-2 max-w-md">
+                    How neural logistics is paving the way for semi-autonomous
+                    long-haul corridors across the UK arterial network.
+                  </p>
+                  <div className="flex items-center gap-3 text-white/70 font-label-sm">
+                    <span className="flex items-center gap-1">
+                      <span className="material-symbols-outlined text-[13px]">
+                        calendar_month
+                      </span>
+                      Oct 24, 2024
                     </span>
-                    Oct 24, 2024
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <span className="material-symbols-outlined text-[14px]">
-                      schedule
+                    <span className="flex items-center gap-1">
+                      <span className="material-symbols-outlined text-[13px]">
+                        schedule
+                      </span>
+                      12 min read
                     </span>
-                    12 min read
-                  </span>
+                  </div>
                 </div>
               </div>
             </Link>
@@ -467,56 +345,53 @@ function Home() {
             {[
               {
                 tag: "Company News",
-                tagColor: "text-secondary",
                 title: "Fleet Expansion: 10 New Scania Super Units Arrive",
+                date: "Oct 22, 2024",
                 image:
                   "https://images.unsplash.com/photo-1724556271642-e9acaf03ac23?w=1200&h=800&fit=crop",
                 alt: "Fleet of trucks parked in a logistics yard",
-                icon: "arrow_forward",
               },
               {
                 tag: "Compliance",
-                tagColor: "text-primary",
                 title: "RHA 2024 Updates: What You Need to Know",
+                date: "Oct 18, 2024",
                 image:
                   "https://images.unsplash.com/photo-1764231467852-b609a742e082?w=1200&h=800&fit=crop",
                 alt: "Hands signing a compliance document",
-                icon: "open_in_new",
               },
-              {
-                tag: "Whitepaper",
-                tagColor: "text-secondary",
-                title: "Sustainability in Heavy Haulage",
-                image:
-                  "https://images.unsplash.com/photo-1660145954339-b94968afca8f?w=1200&h=800&fit=crop",
-                alt: "Electric truck charging",
-                icon: "download",
-              },
-            ].map(({ tag, tagColor, title, image, alt, icon }) => (
+            ].map(({ tag, title, date, image, alt }) => (
               <Link
                 to="/media"
                 key={title}
-                className="group rounded-2xl overflow-hidden bg-surface shadow-md border border-outline-variant/20 hover:shadow-xl hover:border-primary/30 transition-all duration-300 flex flex-col"
+                className="group relative h-64 md:h-72 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
               >
-                <div className="relative h-40 overflow-hidden">
-                  <img
-                    alt={alt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    src={image}
-                  />
-                </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <span
-                    className={`${tagColor} font-label-sm text-label-sm uppercase tracking-widest mb-3 inline-block`}
-                  >
+                <img
+                  alt={alt}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  src={image}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
+
+                <div className="relative z-10 h-full p-4 flex flex-col">
+                  <span className="self-start bg-white/15 backdrop-blur-sm text-white px-2 py-1 font-label-sm text-label-sm uppercase tracking-widest">
                     {tag}
                   </span>
-                  <h4 className="font-headline-md text-headline-md text-[15px] leading-snug text-on-surface mb-4">
-                    {title}
-                  </h4>
-                  <span className="mt-auto material-symbols-outlined self-end text-outline group-hover:text-primary group-hover:translate-x-1 transition-all">
-                    {icon}
-                  </span>
+                  <div className="mt-auto">
+                    <h4 className="font-headline-md text-[14px] leading-snug text-white mb-2">
+                      {title}
+                    </h4>
+                    <div className="flex items-center justify-between text-white/70">
+                      <span className="flex items-center gap-1 font-label-sm text-label-sm">
+                        <span className="material-symbols-outlined text-[13px]">
+                          calendar_month
+                        </span>
+                        {date}
+                      </span>
+                      <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">
+                        arrow_forward
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </Link>
             ))}
@@ -525,45 +400,45 @@ function Home() {
       </section>
 
       {/* ── Lead Capture CTA ── */}
-      <section className="py-32 bg-inverse-surface relative overflow-hidden">
+      <section className="py-20 bg-inverse-surface relative overflow-hidden">
         <div className="absolute inset-0 technical-grid opacity-5" />
         <div className="px-6 md:px-margin-desktop max-w-container-max mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             {/* Left: pitch + trust signals */}
             <div>
-              <h2 className="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em] mb-4">
+              <h2 className="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em] mb-3">
                 Get Started
               </h2>
-              <h3 className="font-display-lg text-display-lg text-white mb-6">
+              <h3 className="font-display-lg text-display-lg text-white mb-4">
                 Scale Your Logistics Today
               </h3>
-              <p className="text-white/60 font-body-lg text-body-lg mb-10 max-w-lg">
+              <p className="text-white/60 font-body-lg text-body-lg mb-6 max-w-md">
                 Get a custom quote and technical breakdown of how Route 44 can
                 streamline your distribution network.
               </p>
-              <ul className="space-y-4 mb-10">
+              <ul className="space-y-3 mb-6">
                 {[
                   "Response from our team within 2 business hours",
                   "GDPR-compliant, ISO 9001:2015 registered operations",
                   "No long-term contract required to get a quote",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="material-symbols-outlined text-secondary text-[20px] mt-0.5">
+                  <li key={item} className="flex items-start gap-2.5">
+                    <span className="material-symbols-outlined text-secondary text-[18px] mt-0.5">
                       check_circle
                     </span>
-                    <span className="font-body-md text-white/80">{item}</span>
+                    <span className="font-body-md text-sm text-white/80">{item}</span>
                   </li>
                 ))}
               </ul>
-              <div className="flex gap-12">
+              <div className="flex gap-8">
                 <div>
-                  <p className="text-3xl font-bold text-white mb-1">RHA</p>
+                  <p className="text-2xl font-bold text-white mb-1">RHA</p>
                   <p className="text-xs uppercase tracking-widest text-white/50">
                     Compliance Partner
                   </p>
                 </div>
                 <div>
-                  <p className="text-3xl font-bold text-secondary mb-1">ISO</p>
+                  <p className="text-2xl font-bold text-secondary mb-1">ISO</p>
                   <p className="text-xs uppercase tracking-widest text-white/50">
                     9001:2015 Registered
                   </p>
@@ -574,26 +449,26 @@ function Home() {
             {/* Right: form */}
             <div>
               {submitted ? (
-                <div className="bg-white/5 backdrop-blur-xl p-10 border border-white/10 rounded-2xl shadow-2xl text-center">
-                  <span className="material-symbols-outlined text-secondary text-[48px] mb-4">
+                <div className="bg-white/5 backdrop-blur-xl p-6 border border-white/10 rounded-xl shadow-xl text-center">
+                  <span className="material-symbols-outlined text-secondary text-[36px] mb-3">
                     check_circle
                   </span>
-                  <h3 className="font-headline-md text-headline-md text-white mb-4">
+                  <h3 className="font-headline-md text-headline-md text-white mb-3">
                     Request Submitted
                   </h3>
-                  <p className="text-white/60 font-body-md">
+                  <p className="text-white/60 text-sm font-body-md">
                     Our team will contact you within 24 hours.
                   </p>
                 </div>
               ) : (
                 <form
                   onSubmit={handleSubmit}
-                  className="bg-white/5 backdrop-blur-xl p-10 border border-white/10 rounded-2xl shadow-2xl"
+                  className="bg-white/5 backdrop-blur-xl p-6 border border-white/10 rounded-xl shadow-xl"
                   aria-label="Request a logistics quote"
                 >
-                  <div className="space-y-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div className="space-y-2">
+                  <div className="space-y-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="space-y-1.5">
                         <label
                           htmlFor="home-name"
                           className="font-label-sm text-label-sm text-white/50 uppercase tracking-widest"
@@ -609,11 +484,11 @@ function Home() {
                           onChange={(e) =>
                             setFormData({ ...formData, name: e.target.value })
                           }
-                          className="w-full bg-white/10 border border-white/20 text-white focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4 rounded transition-all placeholder:text-white/30"
+                          className="w-full bg-white/10 border border-white/20 text-white focus:border-primary focus:ring-1 focus:ring-primary h-10 px-3 text-sm rounded transition-all placeholder:text-white/30"
                           placeholder="Your name"
                         />
                       </div>
-                      <div className="space-y-2">
+                      <div className="space-y-1.5">
                         <label
                           htmlFor="home-company"
                           className="font-label-sm text-label-sm text-white/50 uppercase tracking-widest"
@@ -632,12 +507,12 @@ function Home() {
                               company: e.target.value,
                             })
                           }
-                          className="w-full bg-white/10 border border-white/20 text-white focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4 rounded transition-all placeholder:text-white/30"
+                          className="w-full bg-white/10 border border-white/20 text-white focus:border-primary focus:ring-1 focus:ring-primary h-10 px-3 text-sm rounded transition-all placeholder:text-white/30"
                           placeholder="Company name"
                         />
                       </div>
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-1.5">
                       <label
                         htmlFor="home-email"
                         className="font-label-sm text-label-sm text-white/50 uppercase tracking-widest"
@@ -653,11 +528,11 @@ function Home() {
                         onChange={(e) =>
                           setFormData({ ...formData, email: e.target.value })
                         }
-                        className="w-full bg-white/10 border border-white/20 text-white focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4 rounded transition-all placeholder:text-white/30"
+                        className="w-full bg-white/10 border border-white/20 text-white focus:border-primary focus:ring-1 focus:ring-primary h-10 px-3 text-sm rounded transition-all placeholder:text-white/30"
                         placeholder="you@company.com"
                       />
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-1.5">
                       <label
                         htmlFor="home-inquiry"
                         className="font-label-sm text-label-sm text-white/50 uppercase tracking-widest"
@@ -673,7 +548,7 @@ function Home() {
                             inquiry: e.target.value,
                           })
                         }
-                        className="w-full bg-white/10 border border-white/20 text-white focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4 rounded transition-all appearance-none"
+                        className="w-full bg-white/10 border border-white/20 text-white focus:border-primary focus:ring-1 focus:ring-primary h-10 px-3 text-sm rounded transition-all appearance-none"
                       >
                         <option className="bg-inverse-surface">
                           Contract Haulage
@@ -688,10 +563,10 @@ function Home() {
                     </div>
                     <button
                       type="submit"
-                      className="w-full bg-secondary text-on-secondary py-4 font-label-md text-label-md font-bold coral-glow hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+                      className="w-full bg-secondary text-on-secondary py-3 font-label-md text-label-md font-bold coral-glow hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
                     >
                       Initialize Consultation
-                      <span className="material-symbols-outlined text-[20px]">
+                      <span className="material-symbols-outlined text-[18px]">
                         bolt
                       </span>
                     </button>

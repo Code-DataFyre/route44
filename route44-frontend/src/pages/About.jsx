@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { usePageTransition } from "../hooks/usePageTransition";
 import leadershipImg from "../assets/Route 44 executive leadership team.png";
 
@@ -28,38 +29,72 @@ function About() {
   return (
     <main ref={mainRef} className="neural-grid pt-20 page-fade-in">
       {/* ── Hero ── */}
-      <section className="relative px-6 md:px-margin-desktop py-24 overflow-hidden">
+      <section className="relative pb-16 overflow-hidden">
         <div className="grid-pattern absolute inset-0 -z-10 grid-bg" />
-        <div className="max-w-container-max mx-auto flex flex-col items-start gap-6">
-          <div className="flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full border border-primary/20">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="font-label-sm text-label-sm text-primary uppercase tracking-widest">
-              About Route 44
+        <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary font-label-sm mb-4">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse mr-2" />
+              ABOUT ROUTE 44
             </span>
+            <h1 className="font-display-lg text-[24px] sm:text-[28px] md:text-display-lg mb-5 text-on-surface leading-tight">
+              The Neural Network{" "}
+              <span className="text-primary">of Global Logistics.</span>
+            </h1>
+            <p className="font-body-lg text-body-lg text-on-surface-variant mb-6 max-w-lg">
+              Established in 2012, Route 44 has evolved from a local haulage
+              firm into a sophisticated logistics integrator, leveraging
+              real-time data and automated routing to redefine supply chain
+              efficiency.
+            </p>
+            <a
+              href="#leadership"
+              className="px-6 py-3 bg-secondary text-on-secondary font-label-md text-label-md inline-flex items-center coral-glow hover:brightness-110 transition-all"
+            >
+              Meet Our Leadership
+              <span className="material-symbols-outlined text-[18px] ml-2">
+                arrow_downward
+              </span>
+            </a>
           </div>
-          <h1 className="font-display-lg text-[30px] sm:text-[40px] md:text-display-lg text-primary max-w-3xl">
-            The Neural Network of Global Logistics.
-          </h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-            Established in 2012, Route 44 has evolved from a local haulage firm
-            into a sophisticated logistics integrator, leveraging real-time data
-            and automated routing to redefine supply chain efficiency.
-          </p>
+          <div className="relative h-52 md:h-[380px] rounded-xl overflow-hidden bg-surface-container-low border border-outline-variant/30 shadow-sm p-4 group">
+            <img
+              alt="Route 44 executive leadership team"
+              className="w-full h-full object-cover rounded-lg grayscale contrast-125 group-hover:scale-105 transition-transform duration-700"
+              src={leadershipImg}
+            />
+            <div className="absolute bottom-4 left-4 p-4 glass-panel border-l-4 border-primary">
+              <p className="font-mono-data text-mono-data text-primary uppercase mb-1">
+                Est. 2012
+              </p>
+              <p className="font-headline-md text-headline-md">
+                12+ Years of Precision
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* ── Directors Profile ── */}
-      <section className="px-6 md:px-margin-desktop py-24 bg-surface-container-low">
-        <div className="max-w-container-max mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <section className="py-16 bg-surface-container-low" id="leadership">
+        <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop">
+          <div className="max-w-xl mb-10">
+            <h2 className="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-3">
+              Leadership
+            </h2>
+            <p className="font-headline-lg text-headline-lg text-on-surface">
+              The people steering the network.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="relative group">
-              <div className="absolute -inset-4 bg-primary/5 rounded-2xl -z-10 scale-95 group-hover:scale-100 transition-transform duration-500" />
+              <div className="absolute -inset-3 bg-primary/5 rounded-2xl -z-10 scale-95 group-hover:scale-100 transition-transform duration-500" />
               <img
                 alt="James Arkwright and Sarah Chen, Joint Managing Directors of Route 44"
-                className="w-full aspect-square object-cover rounded-xl shadow-2xl border border-outline-variant/30"
+                className="w-full aspect-square object-cover rounded-xl shadow-xl border border-outline-variant/30"
                 src={leadershipImg}
               />
-              <div className="absolute bottom-6 left-6 right-6 glass-panel p-6 border-l-4 border-secondary">
+              <div className="absolute bottom-4 left-4 right-4 glass-panel p-4 border-l-4 border-secondary">
                 <h3 className="font-headline-md text-headline-md text-on-surface">
                   The Leadership
                 </h3>
@@ -69,15 +104,15 @@ function About() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-6">
               <div>
-                <h2 className="font-headline-xl text-headline-xl text-primary mb-4">
+                <h2 className="font-headline-xl text-headline-xl text-primary mb-3">
                   James Arkwright &amp; Sarah Chen
                 </h2>
-                <p className="font-label-md text-label-md text-on-surface-variant font-bold mb-6">
+                <p className="font-label-md text-label-md text-on-surface-variant font-bold mb-4">
                   Joint Managing Directors
                 </p>
-                <p className="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+                <p className="font-body-md text-sm text-on-surface-variant mb-4 leading-relaxed">
                   Since the company's inception, James and Sarah have maintained
                   a singular vision: to treat every shipment as a critical data
                   point in a larger, living network. James brings twenty years
@@ -85,13 +120,13 @@ function About() {
                   while Sarah's background in systems engineering drives our
                   proprietary "Neural Logistics" platform.
                 </p>
-                <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                <p className="font-body-md text-sm text-on-surface-variant leading-relaxed">
                   Their joint leadership has navigated Route 44 through
                   explosive growth, ensuring that while the scale increases, the
                   precision of our delivery remains unmatched.
                 </p>
               </div>
-              <div className="flex gap-4">
+              <div className="flex gap-3">
                 {[
                   { label: "Est.", value: "2012", color: "text-primary" },
                   { label: "Assets", value: "500+", color: "text-secondary" },
@@ -99,7 +134,7 @@ function About() {
                 ].map(({ label, value, color }) => (
                   <div
                     key={label}
-                    className="px-4 py-3 bg-surface-container-highest rounded-lg flex flex-col"
+                    className="px-3 py-2.5 bg-surface-container-highest rounded-lg flex flex-col"
                   >
                     <span className={`font-mono-data text-mono-data ${color}`}>
                       {label}
@@ -118,13 +153,13 @@ function About() {
       </section>
 
       {/* ── Timeline ── */}
-      <section className="px-6 md:px-margin-desktop py-32 overflow-hidden bg-surface">
-        <div className="max-w-container-max mx-auto">
-          <div className="text-center mb-24">
+      <section className="py-20 overflow-hidden bg-surface">
+        <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop">
+          <div className="text-center mb-12">
             <h2 className="font-headline-xl text-headline-xl text-primary">
               Evolutionary Milestone
             </h2>
-            <p className="font-body-md text-body-md text-on-surface-variant mt-4">
+            <p className="font-body-md text-sm text-on-surface-variant mt-3">
               Tracking our trajectory from local routes to neural logistics.
             </p>
           </div>
@@ -172,10 +207,10 @@ function About() {
                 ({ year, color, title, subtitle, body, pulse }, idx, arr) => {
                   const colorClass = getColorClasses(color);
                   return (
-                    <div key={year} className="flex gap-5 pb-10 last:pb-0">
+                    <div key={year} className="flex gap-4 pb-6 last:pb-0">
                       <div className="flex flex-col items-center flex-shrink-0">
                         <div
-                          className={`w-4 h-4 rounded-full ${colorClass.bg} ${colorClass.ring} ring-4 mt-1 ${pulse ? "animate-pulse" : ""}`}
+                          className={`w-3.5 h-3.5 rounded-full ${colorClass.bg} ${colorClass.ring} ring-4 mt-1 ${pulse ? "animate-pulse" : ""}`}
                         />
                         {idx < arr.length - 1 && (
                           <div className="w-px flex-1 bg-outline-variant/40 mt-1" />
@@ -192,13 +227,13 @@ function About() {
                         >
                           {title}
                         </h4>
-                        <p className="text-sm text-on-surface-variant mt-2 italic">
+                        <p className="text-sm text-on-surface-variant mt-1.5 italic">
                           {subtitle}
                         </p>
                         <div
-                          className={`glass-panel p-5 mt-4 rounded-xl border-l-4 ${colorClass.border}`}
+                          className={`glass-panel p-4 mt-3 rounded-xl border-l-4 ${colorClass.border}`}
                         >
-                          <p className="font-body-md text-body-md">{body}</p>
+                          <p className="font-body-md text-sm">{body}</p>
                         </div>
                       </div>
                     </div>
@@ -255,10 +290,10 @@ function About() {
                   return (
                     <div
                       key={year}
-                      className={`relative mb-24 last:mb-0 flex items-center justify-between ${reverse ? "flex-row-reverse" : ""}`}
+                      className={`relative mb-14 last:mb-0 flex items-center justify-between ${reverse ? "flex-row-reverse" : ""}`}
                     >
                       <div
-                        className={`w-[45%] ${reverse ? "text-left pl-12" : "text-right pr-12"}`}
+                        className={`w-[45%] ${reverse ? "text-left pl-8" : "text-right pr-8"}`}
                       >
                         <h3
                           className={`font-display-lg text-display-lg ${colorClass.textMuted}`}
@@ -266,22 +301,22 @@ function About() {
                           {year}
                         </h3>
                         <h4
-                          className={`font-headline-md text-headline-md ${colorClass.text} mt-[-20px]`}
+                          className={`font-headline-md text-headline-md ${colorClass.text} mt-[-14px]`}
                         >
                           {title}
                         </h4>
-                        <p className="font-body-md text-body-md text-on-surface-variant mt-4 italic">
+                        <p className="font-body-md text-sm text-on-surface-variant mt-3 italic">
                           {subtitle}
                         </p>
                       </div>
                       <div
-                        className={`absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full ${colorClass.bg} ring-8 ${colorClass.ring} ${pulse ? "animate-pulse" : ""}`}
+                        className={`absolute left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full ${colorClass.bg} ring-8 ${colorClass.ring} ${pulse ? "animate-pulse" : ""}`}
                       />
-                      <div className={`w-[45%] ${reverse ? "pr-12" : "pl-12"}`}>
+                      <div className={`w-[45%] ${reverse ? "pr-8" : "pl-8"}`}>
                         <div
-                          className={`glass-panel p-6 rounded-xl ${reverse ? `border-r-4 ${colorClass.border} text-right` : `border-l-4 ${colorClass.border}`}`}
+                          className={`glass-panel p-4 rounded-xl ${reverse ? `border-r-4 ${colorClass.border} text-right` : `border-l-4 ${colorClass.border}`}`}
                         >
-                          <p className="font-body-md text-body-md">{body}</p>
+                          <p className="font-body-md text-sm">{body}</p>
                         </div>
                       </div>
                     </div>
@@ -293,11 +328,11 @@ function About() {
           </div>
         </div>
       </section>
-      <section className="px-6 md:px-margin-desktop py-24 bg-inverse-surface text-surface">
-        <div className="max-w-container-max mx-auto">
-          <div className="flex flex-col md:flex-row gap-16 items-start">
+      <section className="py-16 bg-inverse-surface text-surface">
+        <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop">
+          <div className="flex flex-col md:flex-row gap-10 items-start">
             <div className="md:w-1/3">
-              <div className="flex items-center gap-2 mb-6">
+              <div className="flex items-center gap-2 mb-4">
                 <span
                   className="material-symbols-outlined text-secondary"
                   style={{ fontVariationSettings: "'FILL' 1" }}
@@ -308,15 +343,15 @@ function About() {
                   Compliance First
                 </span>
               </div>
-              <h2 className="font-headline-xl text-headline-xl mb-6">
+              <h2 className="font-headline-xl text-headline-xl mb-4">
                 Fortified Logistics Infrastructure.
               </h2>
-              <p className="font-body-md text-body-md text-surface-variant mb-8">
+              <p className="font-body-md text-sm text-surface-variant mb-5">
                 We don't just move cargo; we manage risk. Our compliance
                 framework is the most rigorous in the industry, ensuring your
                 assets are protected by law and technology.
               </p>
-              <button className="px-8 py-4 bg-secondary text-on-secondary font-headline-md rounded hover:brightness-110 coral-glow transition-all">
+              <button className="px-6 py-3 bg-secondary text-on-secondary font-headline-md text-sm rounded hover:brightness-110 coral-glow transition-all">
                 Download Audit Reports
               </button>
             </div>
@@ -346,18 +381,17 @@ function About() {
               ].map(({ icon, title, desc }) => (
                 <div
                   key={title}
-                  className="p-8 bg-surface/5 border border-surface/10 rounded-xl hover:bg-surface/10 transition-colors group"
+                  className="p-5 bg-surface/5 border border-surface/10 rounded-xl hover:bg-surface/10 transition-colors group"
                 >
-                  <span
-                    className="material-symbols-outlined text-secondary text-4xl mb-6"
-                    style={{ fontVariationSettings: "'wght' 300" }}
-                  >
-                    {icon}
+                  <span className="w-9 h-9 rounded-full bg-secondary/15 flex items-center justify-center text-secondary mb-4 group-hover:bg-secondary group-hover:text-white transition-colors">
+                    <span className="material-symbols-outlined text-[20px]">
+                      {icon}
+                    </span>
                   </span>
-                  <h3 className="font-headline-md text-headline-md mb-4 group-hover:text-secondary-fixed-dim transition-colors">
+                  <h3 className="font-headline-md text-headline-md mb-3 group-hover:text-secondary-fixed-dim transition-colors">
                     {title}
                   </h3>
-                  <p className="font-body-md text-body-md text-surface-variant">
+                  <p className="font-body-md text-sm text-surface-variant">
                     {desc}
                   </p>
                 </div>
@@ -368,21 +402,43 @@ function About() {
       </section>
 
       {/* ── Stats ── */}
-      <section className="py-16 bg-primary text-on-primary">
-        <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+      <section className="py-16 bg-surface-container">
+        <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop grid grid-cols-2 lg:grid-cols-4 gap-gutter text-center">
           {[
             { value: "12+", label: "Years of Operation" },
             { value: "1.4M", label: "Neural Routes Calculated" },
             { value: "100%", label: "RHA Compliance" },
             { value: "24/7", label: "Fleet Monitoring" },
           ].map(({ value, label }) => (
-            <div key={label} className="flex flex-col">
-              <span className="font-display-lg text-display-lg">{value}</span>
-              <span className="font-label-md text-label-md uppercase opacity-70">
+            <div key={label}>
+              <p className="text-[26px] sm:text-[32px] md:font-display-lg md:text-display-lg font-bold text-primary">
+                {value}
+              </p>
+              <p className="font-label-md text-label-md text-on-surface-variant uppercase">
                 {label}
-              </span>
+              </p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section className="py-16 bg-surface">
+        <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop text-center">
+          <h2 className="font-headline-xl text-headline-xl text-primary mb-4">
+            Ready to Partner With Us?
+          </h2>
+          <p className="font-body-lg text-body-lg text-on-surface-variant mb-6 max-w-lg mx-auto">
+            Speak to our logistics engineers and get a tailored solution for
+            your business.
+          </p>
+          <Link
+            to="/contact"
+            className="bg-primary text-on-primary px-7 py-3.5 font-label-md text-label-md font-bold hover:brightness-110 active:scale-95 transition-all inline-flex items-center gap-2"
+          >
+            Request a Quote{" "}
+            <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </Link>
         </div>
       </section>
     </main>

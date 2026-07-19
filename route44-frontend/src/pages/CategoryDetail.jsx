@@ -15,17 +15,17 @@ function CategoryDetail() {
 
   if (!category) {
     return (
-      <main ref={mainRef} className="pt-32 pb-24 page-fade-in min-h-[60vh]">
+      <main ref={mainRef} className="pt-28 pb-16 page-fade-in min-h-[60vh]">
         <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop text-center">
-          <h1 className="font-headline-xl text-headline-xl text-primary mb-4">
+          <h1 className="font-headline-xl text-headline-xl text-primary mb-3">
             Category Not Found
           </h1>
-          <p className="font-body-md text-on-surface-variant mb-8">
+          <p className="font-body-md text-sm text-on-surface-variant mb-6">
             The category you're looking for doesn't exist.
           </p>
           <Link
             to="/services"
-            className="bg-primary text-on-primary px-8 py-4 font-label-md font-bold hover:brightness-110 transition-all inline-flex items-center gap-2"
+            className="bg-primary text-on-primary px-6 py-3 font-label-md text-label-md font-bold hover:brightness-110 transition-all inline-flex items-center gap-2"
           >
             Back to Services
           </Link>
@@ -40,7 +40,7 @@ function CategoryDetail() {
   return (
     <main ref={mainRef} className="pt-20 page-fade-in">
       {/* ── Banner ── */}
-      <section className="relative h-[420px] md:h-[480px] flex items-end overflow-hidden">
+      <section className="relative h-[300px] md:h-[340px] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             alt={category.title}
@@ -50,11 +50,11 @@ function CategoryDetail() {
           <div className="absolute inset-0 hero-gradient" />
           <div className="absolute inset-0 technical-grid opacity-30" />
         </div>
-        <div className="relative z-10 px-6 md:px-margin-desktop max-w-container-max mx-auto w-full pb-12">
-          <h1 className="font-display-lg text-[28px] sm:text-[36px] md:text-display-lg text-white mb-3">
+        <div className="relative z-10 px-6 md:px-margin-desktop max-w-container-max mx-auto w-full pb-8">
+          <h1 className="font-display-lg text-[22px] sm:text-[26px] md:text-display-lg text-white mb-2">
             {category.title}
           </h1>
-          <p className="font-body-lg text-body-lg text-white/80 max-w-xl">
+          <p className="font-body-lg text-body-lg text-white/80 max-w-lg">
             {category.tagline}
           </p>
         </div>
@@ -65,27 +65,27 @@ function CategoryDetail() {
         aria-label="All categories"
         className="w-full bg-glass-fill backdrop-blur-md border-b border-outline-variant/30 sticky top-24 z-30"
       >
-        <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop flex items-center gap-3 py-3">
+        <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop flex items-center gap-3 py-2.5">
           <button
             type="button"
             onClick={() => scrollNav(-1)}
             aria-label="Scroll categories left"
-            className="flex-none w-8 h-8 rounded-[9999px] border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white hover:border-primary transition-all"
+            className="flex-none w-7 h-7 rounded-[9999px] border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white hover:border-primary transition-all"
           >
-            <span className="material-symbols-outlined text-[16px]">
+            <span className="material-symbols-outlined text-[14px]">
               chevron_left
             </span>
           </button>
 
           <div
             ref={navTrackRef}
-            className="flex items-center gap-6 overflow-x-auto no-scrollbar scroll-smooth flex-1"
+            className="flex items-center gap-5 overflow-x-auto no-scrollbar scroll-smooth flex-1"
           >
             {CATEGORIES.map((cat) => (
               <Link
                 key={cat.slug}
                 to={`/categories/${cat.slug}`}
-                className={`font-label-md text-[11px] uppercase tracking-wide whitespace-nowrap flex-none transition-colors duration-200 ${
+                className={`font-label-md text-[10px] uppercase tracking-wide whitespace-nowrap flex-none transition-colors duration-200 ${
                   cat.slug === slug
                     ? "text-secondary font-bold border-b-2 border-secondary pb-1"
                     : "text-on-surface-variant font-normal hover:text-primary"
@@ -100,9 +100,9 @@ function CategoryDetail() {
             type="button"
             onClick={() => scrollNav(1)}
             aria-label="Scroll categories right"
-            className="flex-none w-8 h-8 rounded-[9999px] border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white hover:border-primary transition-all"
+            className="flex-none w-7 h-7 rounded-[9999px] border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white hover:border-primary transition-all"
           >
-            <span className="material-symbols-outlined text-[16px]">
+            <span className="material-symbols-outlined text-[14px]">
               chevron_right
             </span>
           </button>
@@ -112,25 +112,25 @@ function CategoryDetail() {
       {detail ? (
         <>
           {/* ── Intro ── */}
-          <section className="py-24 px-6 md:px-margin-desktop bg-surface">
-            <div className="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <section className="py-16 bg-surface">
+            <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
               <div className="relative">
-                <div className="absolute -inset-4 bg-primary/5 rounded-2xl -z-10 hidden lg:block" />
+                <div className="absolute -inset-3 bg-primary/5 rounded-2xl -z-10 hidden lg:block" />
                 <img
                   alt={detail.intro.heading}
-                  className="w-full aspect-[4/3] object-cover rounded-2xl shadow-2xl border border-outline-variant/30"
+                  className="w-full aspect-[4/3] object-cover rounded-xl shadow-xl border border-outline-variant/30"
                   src={detail.intro.image}
                 />
               </div>
               <div>
-                <h2 className="font-headline-xl text-headline-xl text-primary mb-6">
+                <h2 className="font-headline-xl text-headline-xl text-primary mb-4">
                   {detail.intro.heading}
                 </h2>
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {detail.intro.paragraphs.map((p, i) => (
                     <p
                       key={i}
-                      className="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                      className="font-body-md text-sm text-on-surface-variant leading-relaxed"
                     >
                       {p}
                     </p>
@@ -142,29 +142,29 @@ function CategoryDetail() {
 
           {/* ── Video / Commitment ── */}
           {detail.video && (
-            <section className="py-24 px-6 md:px-margin-desktop bg-surface-container-low">
-              <div className="max-w-container-max mx-auto text-center">
-                <h2 className="font-headline-xl text-headline-xl text-secondary mb-4 max-w-2xl mx-auto">
+            <section className="py-16 bg-surface-container-low">
+              <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop text-center">
+                <h2 className="font-headline-xl text-headline-xl text-secondary mb-3 max-w-xl mx-auto">
                   {detail.video.heading}
                 </h2>
-                <p className="font-body-md text-on-surface-variant max-w-2xl mx-auto mb-12">
+                <p className="font-body-md text-sm text-on-surface-variant max-w-xl mx-auto mb-8">
                   {detail.video.body}
                 </p>
-                <div className="relative max-w-3xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-2xl group cursor-pointer">
+                <div className="relative max-w-2xl mx-auto aspect-video rounded-xl overflow-hidden shadow-xl group cursor-pointer">
                   <img
                     alt={detail.video.caption}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     src={detail.video.thumbnail}
                   />
                   <div className="absolute inset-0 bg-inverse-surface/30 flex items-center justify-center">
-                    <span className="w-16 h-16 rounded-[9999px] bg-white/90 flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
-                      <span className="material-symbols-outlined text-primary text-[32px]">
+                    <span className="w-12 h-12 rounded-[9999px] bg-white/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                      <span className="material-symbols-outlined text-primary text-[24px]">
                         play_arrow
                       </span>
                     </span>
                   </div>
                 </div>
-                <p className="font-label-sm text-label-sm text-outline uppercase tracking-widest mt-4">
+                <p className="font-label-sm text-label-sm text-outline uppercase tracking-widest mt-3">
                   {detail.video.caption}
                 </p>
               </div>
@@ -173,16 +173,16 @@ function CategoryDetail() {
 
           {/* ── Keep Ahead ── */}
           {detail.keepAhead && (
-            <section className="py-24 px-6 md:px-margin-desktop bg-surface">
-              <div className="max-w-3xl mx-auto text-center">
-                <h2 className="font-headline-xl text-headline-xl text-primary mb-8">
+            <section className="py-16 bg-surface">
+              <div className="max-w-2xl mx-auto px-6 md:px-margin-desktop text-center">
+                <h2 className="font-headline-xl text-headline-xl text-primary mb-5">
                   {detail.keepAhead.heading}
                 </h2>
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {detail.keepAhead.paragraphs.map((p, i) => (
                     <p
                       key={i}
-                      className="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                      className="font-body-md text-sm text-on-surface-variant leading-relaxed"
                     >
                       {p}
                     </p>
@@ -194,41 +194,41 @@ function CategoryDetail() {
 
           {/* ── Service Levels ── */}
           {detail.serviceLevels && (
-            <section className="py-24 px-6 md:px-margin-desktop bg-surface-container-low">
-              <div className="max-w-container-max mx-auto">
-                <div className="max-w-2xl mb-12">
-                  <h2 className="font-headline-lg text-headline-lg text-on-surface mb-4">
+            <section className="py-16 bg-surface-container-low">
+              <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop">
+                <div className="max-w-xl mb-8">
+                  <h2 className="font-headline-lg text-headline-lg text-on-surface mb-3">
                     {detail.serviceLevels.heading}
                   </h2>
-                  <p className="font-body-md text-on-surface-variant">
+                  <p className="font-body-md text-sm text-on-surface-variant">
                     {detail.serviceLevels.intro}
                   </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {detail.serviceLevels.tiers.map((tier) => (
                     <div
                       key={tier.name}
-                      className="glass-panel p-8 border-l-4 border-primary"
+                      className="glass-panel p-5 border-l-4 border-primary"
                     >
-                      <h3 className="font-headline-md text-headline-md text-primary mb-2">
+                      <h3 className="font-headline-md text-headline-md text-primary mb-1.5">
                         {tier.name}
                       </h3>
-                      <p className="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-3">
+                      <p className="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-2">
                         {tier.tagline}
                       </p>
                       {tier.blurb && (
-                        <p className="font-body-md text-sm text-on-surface-variant leading-relaxed mb-4">
+                        <p className="font-body-md text-sm text-on-surface-variant leading-relaxed mb-3">
                           {tier.blurb}
                         </p>
                       )}
                       {tier.bullets && (
-                        <ul className="space-y-2">
+                        <ul className="space-y-1.5">
                           {tier.bullets.map((item) => (
                             <li
                               key={item}
                               className="flex items-start gap-2 text-sm"
                             >
-                              <span className="material-symbols-outlined text-primary text-[16px] mt-0.5">
+                              <span className="material-symbols-outlined text-primary text-[14px] mt-0.5">
                                 check_circle
                               </span>
                               <span className="text-on-surface-variant">
@@ -247,42 +247,42 @@ function CategoryDetail() {
 
           {/* ── Sustainability ── */}
           {detail.sustainability && (
-            <section className="py-24 px-6 md:px-margin-desktop bg-inverse-surface text-surface">
-              <div className="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <section className="py-16 bg-inverse-surface text-surface">
+              <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                 <img
                   alt={detail.sustainability.heading}
-                  className="w-full aspect-[4/3] object-cover rounded-2xl shadow-2xl order-2 lg:order-1"
+                  className="w-full aspect-[4/3] object-cover rounded-xl shadow-xl order-2 lg:order-1"
                   src={detail.sustainability.image}
                 />
                 <div className="order-1 lg:order-2">
-                  <div className="flex items-center gap-2 mb-6">
-                    <span className="material-symbols-outlined text-secondary">
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="material-symbols-outlined text-secondary text-[20px]">
                       eco
                     </span>
                     <span className="font-label-md text-label-md text-secondary-fixed-dim uppercase tracking-wider">
                       Sustainability
                     </span>
                   </div>
-                  <h2 className="font-headline-lg text-headline-lg mb-6">
+                  <h2 className="font-headline-lg text-headline-lg mb-4">
                     {detail.sustainability.heading}
                   </h2>
-                  <div className="space-y-4 mb-8">
+                  <div className="space-y-3 mb-5">
                     {detail.sustainability.paragraphs.map((p, i) => (
                       <p
                         key={i}
-                        className="font-body-md text-body-md text-surface-variant leading-relaxed"
+                        className="font-body-md text-sm text-surface-variant leading-relaxed"
                       >
                         {p}
                       </p>
                     ))}
                   </div>
-                  <ul className="space-y-3">
+                  <ul className="space-y-2">
                     {detail.sustainability.bullets.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <span className="material-symbols-outlined text-secondary text-[18px] mt-0.5">
+                      <li key={item} className="flex items-start gap-2">
+                        <span className="material-symbols-outlined text-secondary text-[16px] mt-0.5">
                           check_circle
                         </span>
-                        <span className="font-body-md text-surface-variant">
+                        <span className="font-body-md text-sm text-surface-variant">
                           {item}
                         </span>
                       </li>
@@ -295,33 +295,33 @@ function CategoryDetail() {
 
           {/* ── Solutions ── */}
           {detail.solutions && (
-            <section className="py-24 px-6 md:px-margin-desktop bg-surface">
-              <div className="max-w-container-max mx-auto">
-                <div className="text-center max-w-xl mx-auto mb-16">
-                  <h2 className="font-headline-lg text-headline-lg text-on-surface mb-4">
+            <section className="py-16 bg-surface">
+              <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop">
+                <div className="text-center max-w-lg mx-auto mb-8">
+                  <h2 className="font-headline-lg text-headline-lg text-on-surface mb-3">
                     {detail.solutions.heading}
                   </h2>
-                  <p className="font-body-md text-on-surface-variant">
+                  <p className="font-body-md text-sm text-on-surface-variant">
                     {detail.solutions.subheading}
                   </p>
                 </div>
-                <div className="flex flex-wrap justify-center gap-gutter">
+                <div className="flex flex-wrap justify-center gap-4">
                   {detail.solutions.items.map((item) =>
                     item.desc ? (
                       <div
                         key={item.title}
-                        className="group w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] rounded-2xl overflow-hidden bg-surface shadow-md border border-outline-variant/20 hover:shadow-xl hover:border-primary/30 transition-all duration-300"
+                        className="group w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)] rounded-xl overflow-hidden bg-surface shadow-sm border border-outline-variant/20 hover:shadow-lg hover:border-primary/30 transition-all duration-300"
                       >
-                        <div className="relative h-48 overflow-hidden">
+                        <div className="relative h-36 overflow-hidden">
                           <img
                             alt={item.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                             src={item.image}
                           />
                         </div>
-                        <div className="p-6">
-                          <span className="block w-8 h-[3px] bg-secondary rounded-full mb-3" />
-                          <h3 className="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">
+                        <div className="p-4">
+                          <span className="block w-6 h-[3px] bg-secondary rounded-full mb-2" />
+                          <h3 className="font-headline-md text-headline-md text-on-surface mb-1.5 group-hover:text-primary transition-colors">
                             {item.title}
                           </h3>
                           <p className="font-body-md text-sm text-on-surface-variant leading-relaxed">
@@ -332,7 +332,7 @@ function CategoryDetail() {
                     ) : (
                       <div
                         key={item.title}
-                        className="group relative w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] h-64 rounded-2xl overflow-hidden shadow-md cursor-pointer"
+                        className="group relative w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)] h-48 rounded-xl overflow-hidden shadow-sm cursor-pointer"
                       >
                         <img
                           alt={item.title}
@@ -340,7 +340,7 @@ function CategoryDetail() {
                           src={item.image}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/10 to-transparent" />
-                        <div className="absolute bottom-0 left-0 right-0 p-5 border-l-4 border-secondary">
+                        <div className="absolute bottom-0 left-0 right-0 p-4 border-l-4 border-secondary">
                           <h3 className="font-headline-md text-headline-md text-white">
                             {item.title}
                           </h3>
@@ -355,29 +355,29 @@ function CategoryDetail() {
 
           {/* ── Value Added Services ── */}
           {detail.valueAdded && (
-            <section className="py-24 px-6 md:px-margin-desktop bg-surface-container-low">
-              <div className="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <section className="py-16 bg-surface-container-low">
+              <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                 <div>
-                  <h2 className="font-headline-lg text-headline-lg text-on-surface mb-6">
+                  <h2 className="font-headline-lg text-headline-lg text-on-surface mb-4">
                     {detail.valueAdded.heading}
                   </h2>
-                  <div className="space-y-4 mb-8">
+                  <div className="space-y-3 mb-5">
                     {detail.valueAdded.paragraphs.map((p, i) => (
                       <p
                         key={i}
-                        className="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                        className="font-body-md text-sm text-on-surface-variant leading-relaxed"
                       >
                         {p}
                       </p>
                     ))}
                   </div>
-                  <ul className="space-y-3">
+                  <ul className="space-y-2">
                     {detail.valueAdded.bullets.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <span className="material-symbols-outlined text-primary text-[18px] mt-0.5">
+                      <li key={item} className="flex items-start gap-2">
+                        <span className="material-symbols-outlined text-primary text-[16px] mt-0.5">
                           check_circle
                         </span>
-                        <span className="font-body-md text-on-surface-variant">
+                        <span className="font-body-md text-sm text-on-surface-variant">
                           {item}
                         </span>
                       </li>
@@ -386,7 +386,7 @@ function CategoryDetail() {
                 </div>
                 <img
                   alt={detail.valueAdded.heading}
-                  className="w-full aspect-[4/3] object-cover rounded-2xl shadow-2xl"
+                  className="w-full aspect-[4/3] object-cover rounded-xl shadow-xl"
                   src={detail.valueAdded.image}
                 />
               </div>
@@ -395,27 +395,27 @@ function CategoryDetail() {
 
           {/* ── Specialized Goods ── */}
           {detail.specialized && (
-            <section className="py-24 px-6 md:px-margin-desktop bg-surface">
-              <div className="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <section className="py-16 bg-surface">
+              <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                 <img
                   alt={detail.specialized.heading}
-                  className="w-full aspect-[4/3] object-cover rounded-2xl shadow-2xl order-2 lg:order-1"
+                  className="w-full aspect-[4/3] object-cover rounded-xl shadow-xl order-2 lg:order-1"
                   src={detail.specialized.image}
                 />
                 <div className="order-1 lg:order-2">
-                  <h2 className="font-headline-lg text-headline-lg text-on-surface mb-6">
+                  <h2 className="font-headline-lg text-headline-lg text-on-surface mb-4">
                     {detail.specialized.heading}
                   </h2>
-                  <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-8">
+                  <p className="font-body-md text-sm text-on-surface-variant leading-relaxed mb-5">
                     {detail.specialized.intro}
                   </p>
-                  <ul className="space-y-3">
+                  <ul className="space-y-2">
                     {detail.specialized.bullets.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <span className="material-symbols-outlined text-primary text-[18px] mt-0.5">
+                      <li key={item} className="flex items-start gap-2">
+                        <span className="material-symbols-outlined text-primary text-[16px] mt-0.5">
                           check_circle
                         </span>
-                        <span className="font-body-md text-on-surface-variant">
+                        <span className="font-body-md text-sm text-on-surface-variant">
                           {item}
                         </span>
                       </li>
@@ -428,11 +428,11 @@ function CategoryDetail() {
 
           {/* ── The Route 44 Difference ── */}
           {detail.difference && (
-            <section className="py-24 px-6 md:px-margin-desktop bg-inverse-surface text-surface">
-              <div className="max-w-container-max mx-auto">
-                <div className="flex flex-col items-center mb-16">
+            <section className="py-16 bg-inverse-surface text-surface">
+              <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop">
+                <div className="flex flex-col items-center mb-8">
                   {detail.difference.icon && (
-                    <span className="material-symbols-outlined text-secondary text-[40px] mb-4">
+                    <span className="material-symbols-outlined text-secondary text-[30px] mb-3">
                       {detail.difference.icon}
                     </span>
                   )}
@@ -440,13 +440,13 @@ function CategoryDetail() {
                     {detail.difference.heading}
                   </h2>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {detail.difference.columns.map((col) => (
                     <div key={col.title}>
-                      <h3 className="font-headline-md text-headline-md text-secondary-fixed-dim mb-4">
+                      <h3 className="font-headline-md text-headline-md text-secondary-fixed-dim mb-2">
                         {col.title}
                       </h3>
-                      <p className="font-body-md text-body-md text-surface-variant leading-relaxed">
+                      <p className="font-body-md text-sm text-surface-variant leading-relaxed">
                         {col.body}
                       </p>
                     </div>
@@ -458,22 +458,22 @@ function CategoryDetail() {
 
           {/* ── Portal Banner ── */}
           {detail.portal && (
-            <section className="py-24 px-6 md:px-margin-desktop bg-primary text-on-primary">
-              <div className="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <section className="py-16 bg-primary text-on-primary">
+              <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                 <div>
-                  <h2 className="font-headline-lg text-headline-lg mb-6">
+                  <h2 className="font-headline-lg text-headline-lg mb-4">
                     {detail.portal.heading}
                   </h2>
-                  <p className="font-body-md text-body-md opacity-80 mb-8">
+                  <p className="font-body-md text-sm opacity-80 mb-5">
                     {detail.portal.body}
                   </p>
-                  <button className="bg-secondary text-on-secondary px-8 py-4 font-label-md text-label-md font-bold coral-glow hover:brightness-110 transition-all">
+                  <button className="bg-secondary text-on-secondary px-6 py-3 font-label-md text-label-md font-bold coral-glow hover:brightness-110 transition-all">
                     {detail.portal.cta}
                   </button>
                 </div>
                 <img
                   alt={detail.portal.heading}
-                  className="w-full aspect-[4/3] object-cover rounded-2xl shadow-2xl"
+                  className="w-full aspect-[4/3] object-cover rounded-xl shadow-xl"
                   src={detail.portal.image}
                 />
               </div>
@@ -482,23 +482,23 @@ function CategoryDetail() {
 
           {/* ── Facts & Figures ── */}
           {detail.facts && (
-            <section className="py-16 bg-surface-container">
+            <section className="py-12 bg-surface-container">
               <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop">
                 {detail.facts.image && (
                   <img
                     alt={detail.facts.heading}
-                    className="w-full max-w-2xl mx-auto aspect-[16/7] object-cover rounded-2xl shadow-lg mb-10"
+                    className="w-full max-w-xl mx-auto aspect-[16/7] object-cover rounded-xl shadow-md mb-6"
                     src={detail.facts.image}
                   />
                 )}
-                <h2 className="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-10 text-center">
+                <h2 className="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-6 text-center">
                   {detail.facts.heading}
                 </h2>
-                <div className="flex flex-wrap justify-center gap-x-14 gap-y-10 max-w-3xl mx-auto text-center">
+                <div className="flex flex-wrap justify-center gap-x-10 gap-y-6 max-w-2xl mx-auto text-center">
                   {detail.facts.stats.map((stat) => (
-                    <div key={stat.label} className="w-32 sm:w-36">
+                    <div key={stat.label} className="w-28 sm:w-32">
                       {stat.icon && (
-                        <span className="material-symbols-outlined text-primary text-[28px] mb-1 block">
+                        <span className="material-symbols-outlined text-primary text-[22px] mb-1 block">
                           {stat.icon}
                         </span>
                       )}
@@ -509,7 +509,7 @@ function CategoryDetail() {
                         {stat.label}
                       </p>
                       {stat.sub && (
-                        <p className="font-body-md text-sm text-on-surface-variant">
+                        <p className="font-body-md text-xs text-on-surface-variant">
                           {stat.sub}
                         </p>
                       )}
@@ -522,34 +522,34 @@ function CategoryDetail() {
 
           {/* ── Case Studies ── */}
           {detail.caseStudies && (
-            <section className="py-24 px-6 md:px-margin-desktop bg-surface">
-              <div className="max-w-container-max mx-auto">
-                <div className="max-w-2xl mb-12">
-                  <h2 className="font-headline-lg text-headline-lg text-primary mb-4">
+            <section className="py-16 bg-surface">
+              <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop">
+                <div className="max-w-xl mb-8">
+                  <h2 className="font-headline-lg text-headline-lg text-primary mb-3">
                     {detail.caseStudies.heading}
                   </h2>
-                  <p className="font-body-md text-on-surface-variant">
+                  <p className="font-body-md text-sm text-on-surface-variant">
                     {detail.caseStudies.intro}
                   </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {detail.caseStudies.items.map((item) => (
                     <div
                       key={item.title}
-                      className="rounded-2xl overflow-hidden bg-surface shadow-md border border-outline-variant/20 group cursor-pointer hover:shadow-xl transition-all"
+                      className="rounded-xl overflow-hidden bg-surface shadow-sm border border-outline-variant/20 group cursor-pointer hover:shadow-lg transition-all"
                     >
-                      <div className="h-48 overflow-hidden">
+                      <div className="h-36 overflow-hidden">
                         <img
                           alt={item.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                           src={item.image}
                         />
                       </div>
-                      <div className="p-6">
+                      <div className="p-4">
                         <span className="font-label-sm text-label-sm text-secondary uppercase tracking-widest">
                           Case Study
                         </span>
-                        <h3 className="font-headline-md text-headline-md text-on-surface mt-2">
+                        <h3 className="font-headline-md text-headline-md text-on-surface mt-1.5">
                           {item.title}
                         </h3>
                       </div>
@@ -562,20 +562,20 @@ function CategoryDetail() {
 
           {/* ── Simple CTA ── */}
           {detail.cta && (
-            <section className="py-24 px-6 md:px-margin-desktop bg-inverse-surface text-center">
-              <div className="max-w-2xl mx-auto">
-                <h2 className="font-headline-lg text-headline-lg text-white mb-4">
+            <section className="py-16 bg-inverse-surface text-center">
+              <div className="max-w-xl mx-auto px-6 md:px-margin-desktop">
+                <h2 className="font-headline-lg text-headline-lg text-white mb-3">
                   {detail.cta.heading}
                 </h2>
-                <p className="font-body-md text-white/70 mb-8">
+                <p className="font-body-md text-sm text-white/70 mb-6">
                   {detail.cta.body}
                 </p>
                 <Link
                   to={detail.cta.buttonTo}
-                  className="bg-secondary text-on-secondary px-8 py-4 font-label-md text-label-md font-bold coral-glow hover:brightness-110 transition-all inline-flex items-center gap-2"
+                  className="bg-secondary text-on-secondary px-6 py-3 font-label-md text-label-md font-bold coral-glow hover:brightness-110 transition-all inline-flex items-center gap-2"
                 >
                   {detail.cta.buttonLabel}
-                  <span className="material-symbols-outlined">
+                  <span className="material-symbols-outlined text-[18px]">
                     arrow_forward
                   </span>
                 </Link>
@@ -585,50 +585,50 @@ function CategoryDetail() {
         </>
       ) : (
         /* ── Fallback for categories without full detail content yet ── */
-        <section className="py-24 px-6 md:px-margin-desktop bg-surface">
-          <div className="max-w-container-max mx-auto">
-            <div className="max-w-2xl mb-16">
-              <h2 className="font-headline-lg text-headline-lg text-primary mb-6">
+        <section className="py-16 bg-surface">
+          <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop">
+            <div className="max-w-xl mb-8">
+              <h2 className="font-headline-lg text-headline-lg text-primary mb-4">
                 {category.title}
               </h2>
-              <p className="font-body-lg text-body-lg text-on-surface-variant mb-8">
+              <p className="font-body-lg text-body-lg text-on-surface-variant mb-5">
                 {category.desc}
               </p>
               <Link
                 to="/contact"
-                className="bg-primary text-on-primary px-8 py-4 font-label-md text-label-md font-bold hover:brightness-110 transition-all inline-flex items-center gap-2"
+                className="bg-primary text-on-primary px-6 py-3 font-label-md text-label-md font-bold hover:brightness-110 transition-all inline-flex items-center gap-2"
               >
                 Speak to a Specialist
-                <span className="material-symbols-outlined">
+                <span className="material-symbols-outlined text-[18px]">
                   arrow_forward
                 </span>
               </Link>
             </div>
 
-            <div className="max-w-xl mb-8">
-              <h3 className="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-2">
+            <div className="max-w-lg mb-5">
+              <h3 className="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-1.5">
                 Explore
               </h3>
               <p className="font-headline-md text-headline-md text-on-surface">
                 Other categories you might be interested in
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {otherCategories.slice(0, 4).map((cat) => (
                 <Link
                   key={cat.slug}
                   to={`/categories/${cat.slug}`}
-                  className="group rounded-2xl overflow-hidden bg-surface shadow-md border border-outline-variant/20 hover:shadow-xl hover:border-primary/30 transition-all duration-300"
+                  className="group rounded-xl overflow-hidden bg-surface shadow-sm border border-outline-variant/20 hover:shadow-lg hover:border-primary/30 transition-all duration-300"
                 >
-                  <div className="relative h-40 overflow-hidden">
+                  <div className="relative h-28 overflow-hidden">
                     <img
                       alt={cat.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       src={cat.image}
                     />
                   </div>
-                  <div className="p-5">
-                    <h4 className="font-headline-md text-headline-md text-[15px] text-on-surface group-hover:text-primary transition-colors">
+                  <div className="p-3.5">
+                    <h4 className="font-headline-md text-[13px] text-on-surface group-hover:text-primary transition-colors">
                       {cat.title}
                     </h4>
                   </div>

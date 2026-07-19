@@ -59,10 +59,10 @@ function CategoriesCarousel() {
   };
 
   return (
-    <section className="py-24 px-6 md:px-margin-desktop bg-surface-container-low">
-      <div className="max-w-container-max mx-auto">
-        <div className="max-w-xl mb-16">
-          <h2 className="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-4">
+    <section className="py-16 bg-surface-container-low">
+      <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop">
+        <div className="max-w-xl mb-8">
+          <h2 className="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-3">
             Categories
           </h2>
           <p className="font-headline-lg text-headline-lg text-on-surface">
@@ -72,28 +72,28 @@ function CategoriesCarousel() {
 
         <div
           ref={trackRef}
-          className="flex gap-4 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth pb-2"
+          className="flex gap-3 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth pb-2"
         >
           {CATEGORIES.map((cat) => (
             <Link
               key={cat.slug}
               to={`/categories/${cat.slug}`}
               data-card
-              className="group snap-start flex-none w-[82%] sm:w-[48%] md:w-[33%] lg:w-[24.5%] rounded-2xl overflow-hidden bg-surface shadow-md border border-outline-variant/20 hover:shadow-xl hover:border-primary/30 transition-all duration-300"
+              className="group snap-start flex-none w-[82%] sm:w-[48%] md:w-[33%] lg:w-[calc(20%-10px)] rounded-xl overflow-hidden bg-surface shadow-sm border border-outline-variant/20 hover:shadow-lg hover:border-primary/30 transition-all duration-300"
             >
-              <div className="relative h-56 overflow-hidden rounded-t-2xl">
+              <div className="relative h-36 overflow-hidden rounded-t-xl">
                 <img
                   src={cat.image}
                   alt={cat.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
-              <div className="p-6">
-                <span className="block w-8 h-[3px] bg-secondary rounded-full mb-3" />
-                <h3 className="font-headline-md text-headline-md text-[17px] leading-snug text-on-surface mb-2 group-hover:text-primary transition-colors">
+              <div className="p-4">
+                <span className="block w-6 h-[3px] bg-secondary rounded-full mb-2" />
+                <h3 className="font-headline-md text-[14px] leading-snug text-on-surface mb-1.5 group-hover:text-primary transition-colors">
                   {cat.title}
                 </h3>
-                <p className="font-body-md text-sm text-on-surface-variant leading-relaxed">
+                <p className="font-body-md text-xs text-on-surface-variant leading-relaxed">
                   {cat.desc}
                 </p>
               </div>
@@ -101,7 +101,7 @@ function CategoriesCarousel() {
           ))}
         </div>
 
-        <div className="flex items-center gap-6 mt-10">
+        <div className="flex items-center gap-4 mt-6">
           <div className="flex-1 h-1 bg-surface-container-high rounded-full overflow-hidden">
             <div
               className="h-full bg-primary rounded-full transition-all duration-500"
@@ -113,9 +113,9 @@ function CategoriesCarousel() {
               type="button"
               onClick={() => handleArrow(-1)}
               aria-label="Previous category"
-              className="w-10 h-10 rounded-[9999px] border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white hover:border-primary transition-all"
+              className="w-8 h-8 rounded-[9999px] border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white hover:border-primary transition-all"
             >
-              <span className="material-symbols-outlined text-[20px]">
+              <span className="material-symbols-outlined text-[16px]">
                 chevron_left
               </span>
             </button>
@@ -123,9 +123,9 @@ function CategoriesCarousel() {
               type="button"
               onClick={() => handleArrow(1)}
               aria-label="Next category"
-              className="w-10 h-10 rounded-[9999px] border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white hover:border-primary transition-all"
+              className="w-8 h-8 rounded-[9999px] border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white hover:border-primary transition-all"
             >
-              <span className="material-symbols-outlined text-[20px]">
+              <span className="material-symbols-outlined text-[16px]">
                 chevron_right
               </span>
             </button>

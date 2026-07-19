@@ -8,10 +8,10 @@ function Header() {
 
   const navLinks = [
     { label: "Services", to: "/services" },
-    { label: "Media Hub", to: "/media" },
-    // { label: "Tracking", to: "/tracking" },
+    { label: "Categories", to: "/categories" },
     { label: "About", to: "/about" },
     { label: "Contact", to: "/contact" },
+    // { label: "Tracking", to: "/tracking" },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -63,7 +63,7 @@ function Header() {
                 className={`font-label-md text-label-md transition-colors duration-200 ${
                   isActive(to)
                     ? "text-secondary font-bold border-b-2 border-secondary"
-                    : "text-on-surface hover:text-primary"
+                    : "text-on-surface font-normal hover:text-primary"
                 }`}
               >
                 {label}
@@ -110,7 +110,7 @@ function Header() {
                   className={`block font-label-md text-label-md py-3 px-4 transition-colors ${
                     isActive(to)
                       ? "text-secondary font-bold bg-secondary/5"
-                      : "text-on-surface hover:text-primary hover:bg-surface-container"
+                      : "text-on-surface font-normal hover:text-primary hover:bg-surface-container"
                   }`}
                 >
                   {label}
