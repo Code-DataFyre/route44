@@ -136,3 +136,125 @@
 .page-fade-in {
   animation: fadeIn 0.6s ease-in-out;
 }
+
+/* ── Loading screen ── */
+@keyframes loaderLogoIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.loader-logo-in {
+  animation: loaderLogoIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes loaderGlowRing {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+}
+
+.loader-glow-ring {
+  animation: loaderGlowRing 1.8s ease-out 0.1s infinite;
+}
+
+@keyframes loaderTextIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loader-text-in {
+  opacity: 0;
+  animation: loaderTextIn 0.5s ease-out 0.5s forwards;
+}
+
+@keyframes loaderRoadIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.loader-road-in {
+  opacity: 0;
+  animation: loaderRoadIn 0.3s ease-out 0.9s forwards;
+}
+
+@keyframes loaderRoadDashes {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -32px 0;
+  }
+}
+
+.loader-road-dashes {
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(0, 72, 112, 0.35) 0px,
+    rgba(0, 72, 112, 0.35) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  animation: loaderRoadDashes 1.4s linear 0.9s infinite;
+}
+
+@keyframes loaderTruckDrive {
+  0% {
+    left: -10%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+.loader-truck-drive {
+  left: -10%;
+  animation: loaderTruckDrive 3s ease-in-out 0.9s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader-logo-in,
+  .loader-glow-ring,
+  .loader-text-in,
+  .loader-road-in,
+  .loader-road-dashes,
+  .loader-truck-drive {
+    animation: none;
+    opacity: 1;
+  }
+}

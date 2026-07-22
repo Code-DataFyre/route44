@@ -34,7 +34,7 @@ export const TRANSPORTATION_SERVICES = [
   },
   {
     slug: "food",
-    title: "Food",
+    title: "Food & Beverages",
     desc: "Temperature-controlled logistics for fresh, chilled, frozen, and processed foods, preserving quality from pickup to delivery.",
     image: img("1542838132-92c53300491e"),
   },

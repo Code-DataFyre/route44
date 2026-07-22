@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { usePageTransition } from "../hooks/usePageTransition";
+import { submitForm } from "../utils/api";
 
 function Contact() {
   const mainRef = usePageTransition();
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const [form, setForm] = useState({
+    name: "",
+    email: "",
     pickup: "",
     destination: "",
     freightType: "Dry Van",
@@ -13,9 +18,29 @@ function Contact() {
     urgency: "Standard",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setSubmitError(false);
+    try {
+      await submitForm({
+        form_type: "freight_intake",
+        name: form.name,
+        email: form.email,
+        details: {
+          pickup: form.pickup,
+          destination: form.destination,
+          freightType: form.freightType,
+          weight: form.weight,
+          urgency: form.urgency,
+        },
+      });
+      setSubmitted(true);
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -91,6 +116,48 @@ function Contact() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-1.5">
                         <label
+                          htmlFor="contact-name"
+                          className="font-label-md text-label-md text-on-surface-variant"
+                        >
+                          Full Name
+                        </label>
+                        <input
+                          id="contact-name"
+                          type="text"
+                          required
+                          autoComplete="name"
+                          placeholder="Jordan Blake"
+                          value={form.name}
+                          onChange={(e) =>
+                            setForm({ ...form, name: e.target.value })
+                          }
+                          className="w-full px-3 py-2.5 text-sm bg-surface-container-low border-transparent focus:ring-2 focus:ring-primary focus:border-transparent rounded-lg transition-all"
+                        />
+                      </div>
+                      <div className="space-y-1.5">
+                        <label
+                          htmlFor="contact-email"
+                          className="font-label-md text-label-md text-on-surface-variant"
+                        >
+                          Email
+                        </label>
+                        <input
+                          id="contact-email"
+                          type="email"
+                          required
+                          autoComplete="email"
+                          placeholder="you@company.com"
+                          value={form.email}
+                          onChange={(e) =>
+                            setForm({ ...form, email: e.target.value })
+                          }
+                          className="w-full px-3 py-2.5 text-sm bg-surface-container-low border-transparent focus:ring-2 focus:ring-primary focus:border-transparent rounded-lg transition-all"
+                        />
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-1.5">
+                        <label
                           htmlFor="pickup"
                           className="font-label-md text-label-md text-on-surface-variant"
                         >
@@ -159,7 +226,12 @@ function Contact() {
                       <button
                         type="button"
                         onClick={() => setStep(2)}
-                        disabled={!form.pickup || !form.destination}
+                        disabled={
+                          !form.name ||
+                          !form.email ||
+                          !form.pickup ||
+                          !form.destination
+                        }
                         className="px-6 py-2.5 bg-primary text-on-primary font-label-md text-sm flex items-center gap-2 hover:brightness-110 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
                       >
                         Specifications{" "}
@@ -240,6 +312,11 @@ function Contact() {
                         </div>
                       </div>
                     </div>
+                    {submitError && (
+                      <p className="text-sm text-error">
+                        Something went wrong — please try again.
+                      </p>
+                    )}
                     <div className="flex justify-between items-center pt-4 border-t border-outline-variant/20">
                       <button
                         type="button"
@@ -250,9 +327,10 @@ function Contact() {
                       </button>
                       <button
                         type="submit"
-                        className="px-8 py-3 bg-primary text-on-primary font-headline-md text-sm shadow-lg shadow-primary/20 hover:brightness-110 transition-all"
+                        disabled={submitting}
+                        className="px-8 py-3 bg-primary text-on-primary font-headline-md text-sm shadow-lg shadow-primary/20 hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                       >
-                        Deploy Request
+                        {submitting ? "Deploying..." : "Deploy Request"}
                       </button>
                     </div>
                   </div>

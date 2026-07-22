@@ -2,11 +2,13 @@ import { Link, useParams } from "react-router-dom";
 import { usePageTransition } from "../hooks/usePageTransition";
 import { getServiceVerticalBySlug } from "../data/serviceVerticals";
 import Breadcrumbs from "../components/layout/Breadcrumbs";
+import { useQuoteModal } from "../context/useQuoteModal";
 
 function ServiceVerticalDetail() {
   const mainRef = usePageTransition();
   const { slug } = useParams();
   const vertical = getServiceVerticalBySlug(slug);
+  const { open: openQuoteModal } = useQuoteModal();
 
   if (!vertical) {
     return (
@@ -357,13 +359,14 @@ function ServiceVerticalDetail() {
           <p className="font-body-md text-sm text-white/70 mb-6">
             We handle everything from single shipments to large-scale requests — tell us what you need and we'll tailor a solution for you.
           </p>
-          <Link
-            to="/contact"
+          <button
+            type="button"
+            onClick={() => openQuoteModal(vertical.title)}
             className="bg-secondary text-on-secondary px-6 py-3 font-label-md text-sm font-bold coral-glow hover:brightness-110 transition-all inline-flex items-center gap-2"
           >
             Request a Quote
             <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-          </Link>
+          </button>
         </div>
       </section>
     </main>

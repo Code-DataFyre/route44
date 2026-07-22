@@ -6,6 +6,18 @@ import ServicesTabs from "../components/layout/ServicesTabs";
 import TestimonialsCarousel from "../components/layout/TestimonialsCarousel";
 import heroBg from "../assets/hero bg.png";
 import leadershipImg from "../assets/Route 44 executive leadership team.png";
+import { submitForm } from "../utils/api";
+import { CATEGORIES } from "../data/categories";
+import {
+  TRANSPORTATION_SERVICES,
+  VALUE_ADDED_SERVICES,
+} from "../data/servicesTabs";
+
+const CATEGORY_OPTIONS = CATEGORIES.map((c) => c.title);
+const SERVICE_OPTIONS = [
+  ...TRANSPORTATION_SERVICES.map((s) => s.title),
+  ...VALUE_ADDED_SERVICES.map((s) => s.title),
+];
 
 function Home() {
   const mainRef = usePageTransition();
@@ -13,13 +25,39 @@ function Home() {
     name: "",
     company: "",
     email: "",
-    inquiry: "Contract Haulage",
   });
+  const [inquiryKind, setInquiryKind] = useState("service");
+  const [selection, setSelection] = useState(SERVICE_OPTIONS[0]);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
-  const handleSubmit = (e) => {
+  const options = inquiryKind === "category" ? CATEGORY_OPTIONS : SERVICE_OPTIONS;
+
+  const handleKindChange = (kind) => {
+    setInquiryKind(kind);
+    setSelection(kind === "category" ? CATEGORY_OPTIONS[0] : SERVICE_OPTIONS[0]);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setSubmitError(false);
+    try {
+      await submitForm({
+        form_type: "home_lead",
+        name: formData.name,
+        email: formData.email,
+        company: formData.company || undefined,
+        service: selection,
+        details: { kind: inquiryKind },
+      });
+      setSubmitted(true);
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -32,6 +70,16 @@ function Home() {
             className="w-full h-full object-cover"
             src={heroBg}
           />
+          {/* <img
+            alt="Route 44 precision logistics fleet on highway at dusk"
+            className="w-full h-full object-cover"
+            src="https://images.unsplash.com/photo-1745956983820-6e960f7e8472?w=1920&h=1080&fit=crop&q=80"
+          /> */}
+          {/* <img
+            alt="Route 44 precision logistics fleet on highway at dusk"
+            className="w-full h-full object-cover"
+            src="/images/bernd-dittrich-x47XWbPWIk8-unsplash.jpg"
+          /> */}
           <div className="absolute inset-0 hero-gradient" />
           <div className="absolute inset-0 technical-grid opacity-30" />
         </div>
@@ -73,7 +121,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ── Capability Bar ── */}
+      {/* ── Capability Bar ──
       <div className="w-full bg-surface/10 backdrop-blur-md border-y border-outline-variant/20 py-4 relative z-20">
         <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop flex flex-wrap justify-between items-center gap-6">
           <div className="flex items-center gap-3">
@@ -102,6 +150,7 @@ function Home() {
           </div>
         </div>
       </div>
+      ── end Capability Bar ── */}
 
       {/* ── Services Tabs ── */}
       <ServicesTabs />
@@ -533,39 +582,60 @@ function Home() {
                       />
                     </div>
                     <div className="space-y-1.5">
+                      <label className="font-label-sm text-label-sm text-white/50 uppercase tracking-widest">
+                        I'm Interested In
+                      </label>
+                      <div className="flex gap-2">
+                        {[
+                          { key: "service", label: "A Service" },
+                          { key: "category", label: "A Category" },
+                        ].map(({ key, label }) => (
+                          <button
+                            key={key}
+                            type="button"
+                            onClick={() => handleKindChange(key)}
+                            className={`flex-1 py-2 text-sm font-label-md rounded transition-all ${
+                              inquiryKind === key
+                                ? "bg-secondary text-white"
+                                : "bg-white/10 text-white/60 hover:bg-white/15"
+                            }`}
+                          >
+                            {label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="space-y-1.5">
                       <label
-                        htmlFor="home-inquiry"
+                        htmlFor="home-selection"
                         className="font-label-sm text-label-sm text-white/50 uppercase tracking-widest"
                       >
-                        Inquiry Type
+                        {inquiryKind === "category" ? "Category" : "Service"}
                       </label>
                       <select
-                        id="home-inquiry"
-                        value={formData.inquiry}
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            inquiry: e.target.value,
-                          })
-                        }
+                        id="home-selection"
+                        value={selection}
+                        onChange={(e) => setSelection(e.target.value)}
                         className="w-full bg-white/10 border border-white/20 text-white focus:border-primary focus:ring-1 focus:ring-primary h-10 px-3 text-sm rounded transition-all appearance-none"
                       >
-                        <option className="bg-inverse-surface">
-                          Contract Haulage
-                        </option>
-                        <option className="bg-inverse-surface">
-                          Specialist Transport
-                        </option>
-                        <option className="bg-inverse-surface">
-                          General Inquiry
-                        </option>
+                        {options.map((title) => (
+                          <option key={title} className="bg-inverse-surface">
+                            {title}
+                          </option>
+                        ))}
                       </select>
                     </div>
+                    {submitError && (
+                      <p className="text-center text-sm text-secondary-fixed-dim">
+                        Something went wrong — please try again.
+                      </p>
+                    )}
                     <button
                       type="submit"
-                      className="w-full bg-secondary text-on-secondary py-3 font-label-md text-label-md font-bold coral-glow hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+                      disabled={submitting}
+                      className="w-full bg-secondary text-on-secondary py-3 font-label-md text-label-md font-bold coral-glow hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Initialize Consultation
+                      {submitting ? "Sending..." : "Initialize Consultation"}
                       <span className="material-symbols-outlined text-[18px]">
                         bolt
                       </span>
